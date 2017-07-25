@@ -1,0 +1,353 @@
+/*<!-- 
+<Prana-deutschland. The platform for the homeless>
+    Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
+    <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
+
+    Visitable link: www.prana-deutschland.de , for any inquiries contact at contact@prana-deutschland.de
+
+    This file is part of Prana-deutschland.
+
+    Prana-deutschland is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Prana-deutschland is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
+-->*/
+
+@import url(https://fonts.googleapis.com/css?family=Reenie+Beanie);
+
+@keyframes fade_in {
+from {
+    opacity: 0.5;
+     }
+to {
+    opacity: 1;
+   }
+   }
+   
+   @keyframes input_back_orig {
+from {
+  background-color: rgba(0, 93, 106, 0.7);
+     }
+to {
+  background-color: rgba(0, 63, 86, 0.7);
+   }
+   }
+
+body
+{
+color: black;
+background-color: E7052C2;
+background-size: 100%;
+    animation-name: fade_in;
+    animation-duration: 0.3s;
+    margin-top:0px;
+}
+
+#title_ratings_comments
+{
+    font-size: 22px;
+    width: 42%;
+}
+
+#emergency_button_div
+{
+    position:fixed;
+    float:right;
+    z-index:1000;
+    margin-top: 47%;
+    margin-left: 90%;
+    background-color:red;
+}
+
+#menu_main
+{
+    width: 95%;
+}
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) ADAPTED FOR EMERGENY BUTTON!!!*/
+.dropdown-content {
+    border: 1px rgb(29, 123, 146);
+    margin-top: -369px;
+    margin-left: -169px;
+    display: none;
+    position: absolute;
+    background-color: rgb(230,230,230);
+    min-width: 280px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2); 
+z-index: 1000;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: rgb(29, 123, 146); color: white;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#emergency_button
+{
+    border-radius:0px;
+}
+
+@font-face {
+  font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Reenie Beanie'), local('ReenieBeanie'), url(https://fonts.gstatic.com/s/reeniebeanie/v7/ljpKc6CdXusL1cnGUSamXzxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+#lang_selector
+{
+margin-right:0.5%;
+}
+
+#highlighted_text
+{
+    color: rgba(9, 103, 126, 1);
+    font-weight: bold;
+}
+
+#lang_select
+{
+float:none;
+margin-top: 3%;
+}
+
+#team_powerrrr, #supporting_p
+{
+font-family: 'Arial', regular;
+font-size: 18px;
+}
+
+#footer
+{
+float: auto;
+color: black;
+font-family: 'Arial', regular;
+font-size: 12px;
+}
+
+#logo
+{
+/*float: left;
+font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
+font-size: 56px;*/
+float: left;
+font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
+font-size: 42px;
+color: white;
+margin-top: 0px;
+margin-left: 18px;
+}
+
+hr
+{
+border: 1px solid white;
+}
+
+#lang_select
+{
+border: 1px solid rgb(255, 127, 36); float:right; width: 150px; height: 33px; background-color: rgb(220,220,220); color: black; opacity: 1.0;
+}
+
+input {
+  -webkit-transition: background-color 0.1s;
+  border-radius: 0px;
+  color: white;
+  opacity: 0.9;
+  background-color: rgba(9, 103, 126, 1);
+  float: left;
+  display: block;
+  border: 0px solid #FF7F27;
+  font-family: 'Arial', regular;
+  font-size: 14px;
+}
+
+input:hover {
+  color: white;
+  background-color: rgba(0, 93, 106, 0.7);
+}
+
+input:active {
+  background-color: rgba(0, 63, 86, 0.7);
+}
+
+#top_banner
+{
+margin-top: -10px;
+};
+
+#logo
+{
+margin-left: -50px;
+margin-top: 0px;
+float: auto;
+}
+
+#logo_pnt
+{
+margin-top: 25px;
+margin-bottom: -10px;
+margin-left: 68px;
+float: none;
+}
+
+#button_google_go_bike, #button_google_go_car, #button_google_go_walking, #button_google_go_all
+{
+width: 75px;
+height:30px;
+}
+
+#button_google_go_public
+{
+width: 115px;
+height:30px;
+}
+
+#transport_button_tram
+{
+background-color: red;
+width: 70px;
+height:30px;
+}
+
+#transport_button_walking
+{
+width: 40px;
+height:30px;
+}
+
+#transport_button_all
+{
+width: 40px;
+height:30px;
+}
+
+#transport_button_busses
+{
+background-color: purple;
+width: 70px;
+height:30px;
+}
+
+#transport_button_ubahn
+{
+background-color: blue;
+width: 70px;
+height:30px;
+}
+
+#transport_button_sbahn
+{
+background-color: green;
+width: 70px;
+height:30px;
+}
+
+#slogs
+{
+    margin-top: -4%;
+font-family: 'Reenie Beanie', cursive;
+font-size: 36px;
+}
+
+#temp
+{
+margin-top: 0%;
+color: white;
+font-family: 'Arial', regular;
+font-size: 16px;
+}
+
+#sel_home_type
+{
+width: 35%;
+margin-top: 7px;
+}
+
+#Logotext
+{
+font-family: 'Reenie Beanie', cursive;
+font-size: 16px;
+}
+
+#uacnt{
+float: right;
+text-align: right;
+width: 15%;
+margin-top: 4px;
+margin-right: 0px;
+background-color: E7052C2;
+}
+
+#uacnt_alternative{
+float: right;
+text-align: right;
+width: 0px;
+margin-top: 0px;
+margin-right: 0px;
+background-color: E7052C2;
+}
+
+p
+{
+font-family: 'Arial', regular;
+color:#2D4255;
+}
+
+h1
+{
+font-family: 'Arial', regular;
+color:#2D4255;
+}
+
+h3
+{
+font-family: 'Arial', regular;
+color:#2D4255;
+}
+
+a:link {
+color: black;
+text-decoration: none;
+font-family: 'Arial', regular;
+};
+
+a:active {color: black;
+text-decoration: none;
+};
+
+a:visited {
+color: black;
+text-decoration: none;
+font-family: 'Arial', regular; };
+
+a:hover
+{
+color: black;
+text-decoration: underline;
+};
