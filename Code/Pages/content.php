@@ -31,6 +31,7 @@
 <script src="../js/Objects.js"></script>
 <script src="../js/forms.js"></script>
 <script src="../js/session.js"></script>
+<script src="../js/maps_functions.js"></script>
 <!--Variables-->
 <script>
 set_location("content");
@@ -63,6 +64,9 @@ var home_type = localStorage.getItem("home_type");
 var paid_type = localStorage.getItem("paid_type");
 var view_type = localStorage.getItem("view_type");
 var area = localStorage.getItem("area");
+</script>
+<script>
+top_menu('content');
 </script>
 <div id="sidebanner">
   <div id="section_info">
@@ -108,11 +112,33 @@ var area = localStorage.getItem("area");
   </div>
 </div>
 <div id="content">
-<script>
-top_menu('content');
-</script>
 <br><br>
 <div id="main_content">
+    
+<div id ="gmaps" style ="border: 1px #27697C; height: 80%; width: 27%; position: fixed; margin-top: 3%; margin-right: 0%; margin-left: 51%;">
+<div id='map_'>
+    <div id="map" style="width:100%; height:100%;"></div>
+    &nbsp;
+    <script>
+      var directions = [];
+      function initMap() {
+        var markerArray = [];
+        // Instantiate a directions service.
+        var directionsService = new google.maps.DirectionsService;
+        // Create a map and center it on Berlin MANUALLY.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: {lat: 52.517627, lng: 13.405565}
+        });
+      }
+    </script></div>
+    
+    <script>
+    refresh_localstorage();
+    document.write('<scr'+'ipt as'+'ync def'+'er s'+'rc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA&callback=initMap&language='+def_langs_gmaps[lang]+'&region='+def_langs_gmaps_reg[lang]+'"></scr'+'ipt>');
+    </script>
+</div>
+    
 <div id="content_boxes_area">
 <script>
 var variableToSend = 'home_type';
@@ -130,7 +156,7 @@ var variableToSend = 'home_type';
     change_ven_allows();
 </script>
 <br><br>
-<div id="All_Content_Boxes" style="margin-left: 1.5%; width: 97%; height: 100%;">
+<div id="All_Content_Boxes" style="margin-left: 1.5%; width: 62%; height: 100%;">
 <?php
 //LOAD CONTENT
 $home_type = get_home_type();

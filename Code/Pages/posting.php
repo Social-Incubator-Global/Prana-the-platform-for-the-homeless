@@ -82,6 +82,10 @@ var paid_type = localStorage.getItem("paid_type");
 var view_type = localStorage.getItem("view_type");
 var area = localStorage.getItem("area");
 </script>
+
+<script>
+top_menu('posting');
+</script>
 <div id="sidebanner">
   <br><br>
   <div id="section_info">
@@ -99,9 +103,6 @@ var area = localStorage.getItem("area");
   </div>
 </div>
 <div id="content">
-<script>
-top_menu('posting');
-</script>
 <br><br>
 <div id="main_content">
 <div id='map_'>

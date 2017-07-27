@@ -114,6 +114,7 @@ body
 {
 margin-top: 0%;
 background-color: #F2F2F2;
+margin-left: 0%;
 }
 
 #uacnt_alternative
@@ -129,11 +130,12 @@ margin-right: 0px;
 {
 background-color: rgba(9, 103, 126, 1);
 float:right;
-width: 128.1%;
+width: 100%;
 margin-top:0%;
 height: 45px;
 color: white;
-margin-right: -2.8%;
+position: fixed;
+z-index: 1500;
 }
 
 #lang_selector
@@ -187,7 +189,6 @@ float: left;
 width: 20%;
 height: 100%;
 margin-top: 0%;
-margin-left: -8px;
 border-radius: 0px;
 color: black;
 background-color: rgb(237,237,237);
