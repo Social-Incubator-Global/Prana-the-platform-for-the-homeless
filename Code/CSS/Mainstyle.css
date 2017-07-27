@@ -69,6 +69,7 @@ background-size: 100%;
 
 #menu_main
 {
+    color: rgb(9, 103, 126);
     width: 95%;
 }
 
@@ -332,7 +333,7 @@ color:#2D4255;
 }
 
 a:link {
-color: black;
+color: rgb(9, 103, 126);
 text-decoration: none;
 font-family: 'Arial', regular;
 };
