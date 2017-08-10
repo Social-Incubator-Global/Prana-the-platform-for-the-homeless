@@ -57,6 +57,11 @@ background-size: 100%;
     width: 42%;
 }
 
+#sidebanner
+{
+    position: fixed;
+}
+
 #emergency_button_div
 {
     position:fixed;

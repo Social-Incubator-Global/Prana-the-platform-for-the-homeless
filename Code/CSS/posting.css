@@ -190,7 +190,6 @@ border-radius: 1px #27697C;
 
 #map_
 {
-margin-left:0%;
 }
 
 #lang_select
@@ -206,7 +205,9 @@ width:100%;
 
 #main_content
 {
-margin-top: 5%;
+    width: 97%;
+    margin-top: 5%;
+    margin-left: 27%;
 }
 
 #list_vw, #map_vw

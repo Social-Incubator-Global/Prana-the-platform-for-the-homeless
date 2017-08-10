@@ -58,7 +58,7 @@
                  var filters_food_soupkitchens = localStorage.getItem("filters_food_soupkitchens");
                  var filters_food_tafels = localStorage.getItem("filters_food_tafels");
 
-function start()
+function start(lang)
 {
     set_local("location", "home");
     set_local("lang", "0");    
