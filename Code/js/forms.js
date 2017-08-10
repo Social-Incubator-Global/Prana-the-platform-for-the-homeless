@@ -58,11 +58,12 @@
                  var filters_food_soupkitchens = localStorage.getItem("filters_food_soupkitchens");
                  var filters_food_tafels = localStorage.getItem("filters_food_tafels");
 
-function start(lang)
+//STARTS PRANA-DEUTSCHLAND.DE --> THIS IS THE ENTRY POINT OF THE WEBSITE.
+function start()
 {
     set_local("location", "home");
     set_local("lang", "0");    
-    document.location = "./Pages"+def_locations[0] + '?lang=0';
+    document.location = "./Pages"+def_locations[6] + '?lang=0';
     return;
 }
 

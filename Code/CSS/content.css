@@ -155,7 +155,8 @@ font-size: 14px;
 
 #section_info
 {
-margin-top: 100px;
+    overflow: scroll;
+    margin-top: 0px;
 }
 
 #content
@@ -181,22 +182,9 @@ margin-right: 0%;
 
 #filter_container
 {
-overflow:auto;
-height: 100%;
-background-color: rgb(237,237,237);
-}
-
-#sidebanner
-{
-float: left;
-width: 20%;
-height: 100%;
-margin-top: 0%;
-border-radius: 0px;
-color: rgb(9, 103, 126);
-background-color: rgb(237,237,237);
-font-family: 'Arial', regular;
-font-size: 14px;
+    overflow: hidden;
+    height: 100%;
+    background-color: rgb(237,237,237);
 }
 
 #container_filters, #more_filters
