@@ -560,6 +560,8 @@ function load_content_boxes($query__)
                $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/email.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
             }
             
+            //changes to use the icon system string must be cut down
+            //figure out loops IN FUCKING PHP
             if($row2["venue"] != null && $row2["venue"] != "")
             {
                 $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/marker.png\"/> <a target=\"_blank\" style=\"color:rgb(9, 103, 126);\" href=\"http://maps.google.com?q=".$row2["venue"]."\">". $row2["venue"] ."</a>';</script>";
@@ -593,122 +595,6 @@ function load_content_boxes($query__)
     
     mysqli_free_result($result);
 }
-
-function load_content_boxes_old($query__)
-{
-   $ht = get_home_type();
-   $result = query_($query__);
-   
-   $dy_tme_ok = FALSE;
-   $mo_ok = true;
-   $anyresults = false;
-   
-   $echo_1 = "";
-   $echo_2 = "";
-   $query2 = "";
-   $query3 = "";
-   
-   if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        
-   $dy_tme_ok = FALSE;
-   $mo_ok = false;
-        
-   $filters_time = get_filters_URL("basic");
-   if($filters_time[7] != 7)
-   {
-       if($filters_time[5] != 24 || $filters_time[6] != 24){
-            $query2 = "SELECT * FROM Organizations_Venues_Times WHERE organization='".$row["organization"]."' AND organization_venue='".$row["organization_venue_address"]."' AND ".get_day($filters_time[7])."='1' AND ".get_day($filters_time[7])."_time_start <=".$filters_time[5]." AND ".get_day($filters_time[7])."_time_stop >=".$filters_time[6];
-            //echo($query2);
-            $result2 = query_($query2);
-            if ($result2->num_rows > 0) 
-            {
-            // output data of each row
-                //echo($result2->num_rows );
-               $dy_tme_ok = true;
-            }
-            }
-            } else{ $dy_tme_ok=true; }
-           
-    mysqli_free_result($result2); 
-    if($filters_time[8] != 12)
-    {
-        $query3 = "SELECT * FROM Organizations_Venues_Months WHERE organization='".$row["organization"]."' AND organization_venue='".$row["organization_venue_address"]."' AND ". get_month($filters_time[8])."='1'";
-        $result3 = query_($query3);
-            if ($result3->num_rows > 0)
-            {
-                $mo_ok = true;
-            }
-            else{ $mo_ok = false; }
-    }
-    else{ $mo_ok=true; }
-            
-    mysqli_free_result($result3);
-        
-            if($dy_tme_ok == true && $mo_ok == true)
-            { $anyresults = true;
-                //echo("1,");
-        $echo_1=$echo_1."<div style='animation-name: fade_in;animation-duration: 0.3s; margin-left: 3%; margin-top:3%; border-radius: 0px; float: left; color: black; border: 0px solid rgb(255, 127, 36); background-color: rgba(230,230,230,1); width: 220px; height: 430px;' id='main_". $row["id"] ."'><a href=\"javascript:redirect('posting', '".$row["id"]."');\"><div id='content_box_header_". $row["id"] ."' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_". $row["id"] ."' style='float: left; margin-left:2%; margin-top:4%;'>".$row["name"]. "</div></div><div id='content_box_image_". $row["id"] ."' style='float:left; width:100%; height: 140px; background-color:white;'><img src='/Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div></a><div id='detalis_box_'" . $row["id"] . " style='font-family: Arial, bold; float:left; margin-left:2%; margin-top: 4%;'><b><script>dl(48);</script></b><br></div><div id='desc_txt_". $row["id"] ."' style='word-wrap:break-word;float:left; margin-left:2%; font-size:14px; font-family: Arial, regular; color:black; width: 210px; height:50px; margin-top: 3%;'>" . $row["text1"] . ".</div><div id='hours_".$row["id"]."' style='float:left; margin-left:2%; margin-top:8%; font-family:Arial,regular; font-size:14px;'></div><div id='tel_".$row["id"]."' style='float:left; margin-left:2%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='email_".$row["id"]."' style='float:left; margin-left:2%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='venue_".$row["id"]."' style='float:left; margin-left:2%; margin-top:3%; font-family:Arial,regular; font-size:14px; height:40px; width:100%;'></div><div id='goto_".$row["id"]."' style='float:left; text-align:right; margin-left:0%; margin-top:0%; font-family:Arial,regular; color:orange; font-size:16px; width:100%'><center><form style=\"width:130px; margin-top:-14px;\"><input type=\"button\" id=\"view_post_bttn_".$row["id"]."\" onclick=\"javascript:set_local('ID','".$row["id"]."'); redirect('posting', '".$row["id"]."');\" style=\"float: left; width:100px; height: 30px;\" value=\"View ".get_result_type_bttxt($ht)."\"></input><input type=\"image\" src=\"../Assets/Images/prn_ico/Bookmark.png\" onclick=\"\" style=\"float: left; width:30px; height: 30px;\"></input></form></center></div></div><script>document.getElementById('view_post_bttn_".$row["id"]."').value = dl_r(47);</script>";
-        
-        $result2=query_("SELECT * FROM Organizations_Venues WHERE organization='" . $row["organization"] . "' AND id='" . $row["organization_venue_address"] . "'");
-        while($row2 = $result2->fetch_assoc())
-        {
-            if($row2["image_path"] != null && $row2["image_path"] != "")
-            {
-               $echo_2=$echo_2."<script>document.getElementById('img_". $row["id"] ."').src = '". $row2["image_path"] ."';</script>";
-            }
-            
-            if($row2["houropening"] != null || $row["houropening"] !="" && $row2["hourclosing"] != null || $row["hourclosing"] !="")
-            {
-            $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = dl_r(49) + ': ". $row2["houropening"] ."-". $row2["hourclosing"] . "';</script>";
-            }
-            else
-            {
-            $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = dl_r(49) + ': - / -';</script>";
-            }
-            
-            if($row2["tel"] != null && $row2["tel"] != "")
-            {
-               $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = dl_r(50) + ': ". $row2["tel"] ."';</script>";
-            }
-            else
-            {
-               $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = dl_r(50) + ': <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
-            }
-            
-            if($row2["email"] != null && $row2["email"] != "")
-            {
-               $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = dl_r(51) + ': <a  style=\"color:rgb(9, 103, 126);\" href=\"mailto:".$row2["email"]."\">". $row2["email"] ."</a>';</script>";
-            }
-            else
-            {
-               $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = dl_r(51) + ': <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
-            }
-            
-            if($row2["venue"] != null && $row2["venue"] != "")
-            {
-                $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML = dl_r(52) + ': ". $row2["venue"] ."';</script>";
-            }
-            else
-            {$echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML = dl_r(52) + ': - / -';</script>";}
-        }
-    }
-            }
-            if($anyresults==false){$echo_1=$echo_1."<div id='no_results'><script>dl(53);</script></div>";}
-    }
-    else {
-    $echo_1=$echo_1."<div id='no_results'><script>dl(53);</script></div>";
-   }
-    
-   $echo_1 = $echo_1."/*ECHO2!!!!!!!*/".$echo_2;
-   echo($echo_1);
-    //echo($echo_1);
-    //echo($echo_2);
-    
-    mysqli_free_result($result);
-}
-
 
 function get_result_type_bttxt($ht)
 {

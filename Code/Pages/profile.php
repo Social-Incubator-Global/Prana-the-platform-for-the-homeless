@@ -28,12 +28,12 @@
 
 <head bgcolor="white">
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/CSS/Mainstyle.css"/>
-<link rel="stylesheet" href="/CSS/profile.css"/>
-    <script src="/js/Objects.js"></script>
-    <script src="/js/forms.js"></script>
-    <script src="/js/maps_functions.js"></script>
-    <script src="/js/session.js"></script>
+<link rel="stylesheet" href="../CSS/Mainstyle.css"/>
+<link rel="stylesheet" href="../CSS/profile.css"/>
+    <script src="../js/Objects.js"></script>
+    <script src="../js/forms.js"></script>
+    <script src="../js/maps_functions.js"></script>
+    <script src="../js/session.js"></script>
 
     <!--Variables-->
        <script>
@@ -70,9 +70,9 @@ set_location("profile");
   <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
   
 <?php
-include('/home/otark/public_html/phpinclude/content_functions.php');
-include('/home/otark/public_html/phpinclude/sql.php');
-include('/home/otark/public_html/phpinclude/functions.php');
+include('../phpinclude/content_functions.php');
+include('../phpinclude/sql.php');
+include('../phpinclude/functions.php');
 get_languages();
 load_languages_ToArrays("");
 $resu_ = get_filters_URL("basic");
@@ -80,7 +80,7 @@ apply_language($resu_[3]);
 ?>
 </head>
 
-<body bgcolor="#F2F2F2";>
+<body bgcolor="#F2F2F2">
 
 <!--SESSION VARIABLES-->
 <script>
@@ -98,24 +98,25 @@ apply_language($resu_[3]);
      <div id="section_image">
         <script>
              document.write(code_snippets[3]);
-             //document.getElementById("sidebanner").style.backgroundColor="black";
         </script>
      </div>
      <script>document.write('<div id="nav_buttons" style="width:145px; height:30px;"><center><form><input type="button" style="height: 30px;border-radius: 3px;" value="'+def_lang[40]+'" onclick="javascript:window.history.back();"></input><input type="button" style="height: 30px; margin-left:4px;border-radius: 3px;" value="'+def_lang[41]+'" onclick="javascript:window.history.forward();"></input></form></center></div>');</script>
      <br><br>
-     </center><br>
-     <center><br><br><br><hr><br>
+     </center>
+      <br>
+     <center>
+         <br><br><br><hr><br>
      <script>show_copyright();</script></center>
   </div>
 </div>
 <div id="content">
 <script>
-top_menu('posting');
+    top_menu('posting');
 </script>
 <br>
 <div id="top_content">
-<?php
-load_profile("person");
-?>
+    <?php
+        load_profile("person");
+    ?>
 </div>
 </body>
