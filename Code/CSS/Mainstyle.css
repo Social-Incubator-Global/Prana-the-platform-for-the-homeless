@@ -80,10 +80,10 @@ body
 #emergency_button_div
 {
     position:fixed;
-    float:right;
+    float:left;
     z-index:1000;
-    margin-top: 47%;
-    margin-left: 90%;
+    margin-top: 0%;
+    margin-left: 8%;
     background-color:red;
 }
 
