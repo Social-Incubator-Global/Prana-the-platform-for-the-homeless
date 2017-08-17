@@ -1,4 +1,4 @@
-# Organization
+﻿# Organization
 
 Homeless people come in many shapes and forms, those who want to live on the road for freedom and those who want to leave the road. Our goal is to make it easier either to live on the road or to leave the road. Prana is a digital platform bridging the information gap between volunteers, organizations and the homeless, for the resources and services they need, such as sanitary and medical services, legal advice and so on. The platform also makes it easier for people to become volunteers and so on.
 
@@ -12,7 +12,16 @@ Homeless people come in many shapes and forms, those who want to live on the roa
 > Alex Join forces lawyers: https://l.facebook.com/l.php?u=https%3A%2F%2Fwaffle.io%2FRefugeesWork%2Forganization%2Fcards%2F577a81e46ef6a69a013fb937&h=aAQGqR-We
 
 #Churches
+
+> Some kind of church pool: http://www.erzbistumberlin.de/
+
 > Emmaus Kirsche: http://www.emmaus.de/index.shtml
+> American Church Berlin: www.americanchurchberlin.de/‎
+> ST Georges: www.stgeorges.de/
+> Berlin.church: https://berlin.church/#welcome-en
+> Kirche am Südstern: http://www.kirche-am-suedstern.de/
+> St Bernard: www.English-Mission-Berlin.de
+> Mosaik Berlin: https://mosaikberlin.de/
 
 #Späti locations. Can späti's host some of our machines outside or give internet access? if so then:
 > http://www.spätifinder.de/
