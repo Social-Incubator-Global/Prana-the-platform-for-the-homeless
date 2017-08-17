@@ -77,7 +77,17 @@ width:100%;
 #home_src
 {
 float: none;
-width: 345px;
+/*width: 345px;*/
+width: 515px;
+}
+
+#src_in
+{
+    background-color: rgba(9,103,126,1.0);
+    border: 0px solid #FF7F27;
+    height: 33px;
+    width: 180px;
+    float:left;
 }
 
 #home_line
@@ -94,7 +104,7 @@ font-size: 16px;
 margin-left: 0%;
 margin-right: 0%;
 float:none;
-width: 728px;
+width: 840px;
 height: 20px;
 }
 
@@ -106,7 +116,7 @@ margin-top: 75px;
 margin-left: 0px;
 }
 
-#button2, #button3, #button4, #button5, #button6
+#button2, #button3, #button4, #button5, #button6, #button7
 {
 width: 120px;
 float: left;

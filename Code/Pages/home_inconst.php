@@ -88,8 +88,7 @@ apply_language($resu_[0]);
 <br>
 <center>
 <div id="content">
-    <script type="text/javascript">      
-    //emergency_button();
+    <script type="text/javascript">
     //dl_d(code_snippets[4]);
     top_menu("home0");
     </script>
