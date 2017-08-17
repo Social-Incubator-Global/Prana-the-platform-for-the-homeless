@@ -115,20 +115,28 @@ top_menu('content');
 <div id="main_content">
 <div id ="gmaps" style ="border: 1px #27697C; height: 100%; width: 29.1%; position: fixed; margin-top: 0%; margin-right: 0%; margin-left: 70.8%;">
 <div id='map_'>
-    <div id="map" style="width:100%; height:100%;"></div>
+    <div id="map" style="width:100%; height:95.8%;"></div>
     &nbsp;
     <script>
-      var directions = [];
-      function initMap() {
-        var markerArray = [];
-        // Instantiate a directions service.
-        var directionsService = new google.maps.DirectionsService;
-        // Create a map and center it on Berlin MANUALLY.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 11,
-          center: {lat: 52.517627, lng: 13.405565}
-        });
-      }
+        var directions = [];
+        
+        function initMap()
+        {
+            var p_lat = get_local("current_position_lat");
+            var p_long = get_local("current_position_long");
+            console.log(p_lat);
+            
+            var markerArray = [];
+            // Instantiate a directions service.
+            var directionsService = new google.maps.DirectionsService;
+            // Create a map and center it on Berlin MANUALLY.
+            var map = new google.maps.Map(document.getElementById('map'),
+                {
+                    zoom: 11,
+                    center: {lat: p_lat, lng: p_long}
+                }
+            );
+        }
     </script></div>
     
     <script>

@@ -20,7 +20,22 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
+<script async defer src="https://www.googleapis.com/geolocation/v1/geolocate?key= AIzaSyAxGWlZYvjRr42IXyeJ5gFYUrQH8m8ptjk"></script>
+<div id ="demo"></div>
+<script>
+    getLocation();
+    var x = document.getElementById("demo");
+    function getLocation()
+    {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script> 
 <?php
-
-?>

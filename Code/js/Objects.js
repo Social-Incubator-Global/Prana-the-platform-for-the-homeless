@@ -41,6 +41,10 @@ function load_localstorage()
         localStorage.setItem("map_size", "0");
         localStorage.setItem("transit_preference", "TRANSIT");
         localStorage.setItem("transit_liking", "SUBWAY");
+        
+        //GEOLOCATION
+        localStorage.setItem("current_position_lat", null);
+        localStorage.setItem("current_position_long", null);
 
         //all filters
         localStorage.setItem("all", 1);
@@ -149,6 +153,23 @@ function build_day_string(al)
 function to_integer(str_)
 {
     return parseInt(str_);
+}
+
+function getLocation()
+{
+    if (navigator.geolocation)
+    {
+        navigator.geolocation.getCurrentPosition(setPosition);
+    }   
+    else
+    {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function setPosition(position) {
+    set_local("current_position_lat", position.coords.latitude);
+    set_local("current_position_long", position.coords.longitude);
 }
 
 function dl_d(value)

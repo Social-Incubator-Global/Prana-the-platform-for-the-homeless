@@ -37,7 +37,7 @@
     
 
     <!--Variables-->
-       <script>
+    <script>
        load_localstorage();
        localStorage.setItem("session_vars_resume", 1);
        var session = localStorage.getItem("session");
@@ -47,6 +47,11 @@
        var sql_ = localStorage.getItem("sql_");
        var area = localStorage.getItem("area");
        var paid_type = localStorage.getItem("paid_type");
+    </script>
+    
+    <!--Init Functions-->
+    <script>
+       getLocation();
     </script>
 
 <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
