@@ -64,8 +64,11 @@ body
 
 #sidebanner
 {
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     position: fixed;
+    bottom: 0;
+    top:0%;
     margin-top: 45px;
     float: left;
     width: 20%;
@@ -174,8 +177,16 @@ font-size: 18px;
     border: 1px solid rgb(255, 127, 36);
 }
 
+#src_in
+{
+    color: white;
+    background-color: rgba(9,103,126,1.0);
+    border: 0px solid #FF7F27;
+}
+
 #src_in_top
 {
+    color: white;
     width: 180px;
     height: 70%;
     float: left;

@@ -155,7 +155,7 @@ font-size: 14px;
 
 #section_info
 {
-    overflow: scroll;
+    overflow: hidden;
     margin-top: 0px;
 }
 

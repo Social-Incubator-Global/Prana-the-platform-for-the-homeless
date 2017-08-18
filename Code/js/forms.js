@@ -213,7 +213,7 @@ function dashboard(Type_)
 {
     if(Type_ == "home")
     {
-        dl_d('<div id="home_"><center><br><div id="logo" style="font-size:132; float:none;"><img src="../Assets/Images/logo/prana_logo.png"></div><br><br><div id=home_src><div id="src_txt">'+dl_r(17)+'</div><br><br><form><input type="text" value="'+dl_r(18)+'" name="src_bx" style="width: 300px; height: 33px;"><select id="src_in" value="In"></select><input type="button" value=">" name="src_bx" style="width: 35px; height: 33px; background-color: rgba(9, 103, 126, 1.0);"></form></div><br><div id="home_buttons"><div id="button1"><a href="javascript:redirect(\'content\', \'food\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_food.png" width="50px" height="50px"><br>'+dl_r(19)+'</div></a><div id="button2"><a href="javascript:redirect(\'content\',\'housing\','+get_local("area")+');"><img src="../Assets/Images/icons/icon_housing.png" width="50px" height="50px"><br>'+dl_r(20)+'</a></div><div id="button3"><a href="javascript:redirect(\'content\',\'medical\', '+get_local("area")+');"><img src="../Assets/Images/icons/Icon_health.png" width="50px" height="50px"><br>'+dl_r(21)+'</a></div><div id="button4"><a href="javascript:redirect(\'content\',\'legal\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_legal and advice.png" width="50px" height="50px"><br>'+dl_r(22)+'</a></div><div id="button5"><a href="javascript:redirect(\'content\',\'study\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_study2.png" width="50px" height="50px"><br>'+dl_r(23)+'</a></div><div id="button6"><a href="javascript:redirect(\'content\',\'jobs\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_jobs.png" width="50px" height="50px"><br>'+dl_r(24)+'</a></div><div id="button7"><a href="javascript:redirect(\'content_modular\',\'\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_.png" width="50px" height="50px"><br>'+dl_r(108)+'</a></div></div></center></div></br></br>');
+        dl_d('<div id="home_"><center><br><div id="logo" style="font-size:132; float:none;"><img src="../Assets/Images/logo/prana_logo.png"></div><br><br><div id=home_src><div id="src_txt">'+dl_r(17)+'</div><br><br><form><input type="text" value="'+dl_r(18)+'" name="src_bx" style="width: 300px; height: 33px;"><select id="src_in" value="In"></select><input type="button" value=">" name="src_bx" style="width: 35px; height: 33px; background-color: rgba(9, 103, 126, 1.0);"></form></div><br><div id="home_buttons"><div id="button1"><a href="javascript:redirect(\'content\', \'food\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_food.png" width="50px" height="50px"><br>'+dl_r(19)+'</div></a><div id="button2"><a href="javascript:redirect(\'content\',\'housing\','+get_local("area")+');"><img src="../Assets/Images/icons/icon_housing.png" width="50px" height="50px"><br>'+dl_r(20)+'</a></div><div id="button3"><a href="javascript:redirect(\'content\',\'medical\', '+get_local("area")+');"><img src="../Assets/Images/icons/Icon_health.png" width="50px" height="50px"><br>'+dl_r(21)+'</a></div><div id="button4"><a href="javascript:redirect(\'content\',\'legal\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_legal and advice.png" width="50px" height="50px"><br>'+dl_r(22)+'</a></div><div id="button5"><a href="javascript:redirect(\'content\',\'study\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_study2.png" width="50px" height="50px"><br>'+dl_r(23)+'</a></div><div id="button6"><a href="javascript:redirect(\'content\',\'jobs\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_jobs.png" width="50px" height="50px"><br>'+dl_r(24)+'</a></div><div id="button7"><a href="javascript:redirect(\'content_modular\',\'\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_.png" width="50px" height="50px"><br>'+dl_r(108)+'</a></div></div></center></div></br></br><script>fill_search_type("src_in");</script>');
 }
 else if(Type_ == "profile")
 {
@@ -538,6 +538,24 @@ ndx++;
 }
 out_=out_+"</div><br>";
 document.write(out_);
+}
+
+function fill_search_type(name)
+{
+    ndx=0;
+    for(i=18; i < 24; i++)
+    {
+        if(i!=18)
+        {
+            var select = document.getElementById(name);select.options[select.options.length] = new Option(var_def_sections[ndx],var_def_sections[ndx]);
+            //out_=out_+'<a href="javascript:redirect(\'content\', \'' + var_def_sections[ndx] + '\')"> | ' + dl_r(i) + '</a>';
+        }
+        else
+        {
+            //out_=out_+'<a href="javascript:redirect(\'home\')">' + dl_r(4) + '</a> ';
+        }
+        ndx++;
+    }
 }
 
 function news_load()

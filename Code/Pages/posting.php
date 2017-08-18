@@ -137,7 +137,7 @@ top_menu('posting');
         
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
-          center: {lat: p_lat, lng: p_long}
+          center: {lat: Number(p_lat), lng: Number(p_long)}
           //center: {lat: 52.517627, lng: 13.405565}
         });
 

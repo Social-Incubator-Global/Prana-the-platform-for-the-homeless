@@ -124,7 +124,6 @@ top_menu('content');
         {
             var p_lat = get_local("current_position_lat");
             var p_long = get_local("current_position_long");
-            console.log(p_lat);
             
             var markerArray = [];
             // Instantiate a directions service.
@@ -133,7 +132,7 @@ top_menu('content');
             var map = new google.maps.Map(document.getElementById('map'),
                 {
                     zoom: 11,
-                    center: {lat: p_lat, lng: p_long}
+                    center: {lat: Number(p_lat), lng: Number(p_long)}
                 }
             );
         }
