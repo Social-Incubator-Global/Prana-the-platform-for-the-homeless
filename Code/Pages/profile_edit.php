@@ -114,8 +114,5 @@ apply_language($resu_[3]);
 <div id="content">
 <br>
 <div id="top_content">
-    <?php
-        load_profile("person");
-    ?>
 </div>
 </body>

@@ -29,14 +29,16 @@ font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
 font-size: 100px;
 }
 
-#top_banner {
+#top_banner
+{
     background-color: rgba(9, 103, 126, 1);
     float: right;
-    width: 128.1%;
-    margin-top: 0px;
+    width: 100%;
+    margin-top: 0%;
     height: 45px;
     color: white;
-    margin-right: -2.8%;
+    position: fixed;
+    z-index: 1500;
 }
 
 #login_pnt

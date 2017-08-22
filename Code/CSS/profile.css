@@ -26,13 +26,13 @@
     margin-left: 1%;
     font-size: 22px;
     width: 42%;
-font-family: 'Arial', regular;
+    font-family: 'Arial', regular;
 }
 
 #general_info
 {
-float: left;
-margin-left: 1%;
+    float: left;
+    margin-left: 1%;
 }
 
 #area_sel
@@ -180,8 +180,8 @@ font-family: 'Arial', regular;
 
 #uacnt
 {
-margin-right:1%;
-margin-top:1%;
+    margin-right: 1%;
+    margin-top: 6px;
 }
 
 #contact_posting_info
@@ -294,6 +294,7 @@ border-radius: 1px #27697C;
 body
 {
 margin-top: 0%;
+margin-left: 0%;
 }
 
 #uacnt_alternative
@@ -307,13 +308,14 @@ margin-right: 0px;
 
 #top_banner
 {
-background-color: rgba(9, 103, 126, 1);
+    background-color: rgba(9, 103, 126, 1);
     float: right;
-    width: 128.1%;
+    width: 100%;
     margin-top: 0%;
     height: 45px;
     color: white;
-    margin-right: -1.5%;
+    position: fixed;
+    z-index: 1500;
 }
 
 #view
@@ -330,7 +332,7 @@ margin-top: 100px;
 #content
 {
 height: 100%;
-margin-left:1%;
+margin-left:22%;
 float: left;
 width: 79%;
 }
@@ -374,17 +376,16 @@ font-family: 'Arial', regular;
 
 #sidebanner
 {
-float: left;
-width: 20%;
-height: 100%;
-margin-top: 0%;
-margin-left: -8px;
-  border-radius: 0px;
-  color: black;
-  background-color: rgb(237,237,237);
-
-  font-family: 'Arial', regular;
-  font-size: 14px;
+    float: left;
+    width: 20%;
+    height: 100%;
+    margin-top: 0%;
+    margin-left: 0px;
+    border-radius: 0px;
+    color: black;
+    background-color: rgb(237,237,237);
+    font-family: 'Arial', regular;
+    font-size: 14px;
 }
 
 #container_filters, #more_filters

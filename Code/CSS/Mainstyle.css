@@ -49,6 +49,7 @@ body
     animation-name: fade_in;
     animation-duration: 0.3s;
     margin-top:0px;
+    margin-left: 0px;
 }
 
 #title_ratings_comments
@@ -346,13 +347,14 @@ font-family: 'Reenie Beanie', cursive;
 font-size: 16px;
 }
 
-#uacnt{
-float: right;
-text-align: right;
-width: 15%;
-margin-top: 4px;
-margin-right: 0px;
-background-color: E7052C2;
+#uacnt
+{
+    float: right;
+    text-align: right;
+    width: 15%;
+    margin-right: 1%;
+    margin-top: 6px;
+    background-color: #E7052C2;
 }
 
 #uacnt_alternative{

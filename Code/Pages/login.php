@@ -68,10 +68,10 @@ apply_language($resu_[0]);
 ?>
 </head>
 <body bgcolor="#F2F2F2">
-<div id="content">
 <script>
 top_menu("content", "login");
 </script>
+<div id="content">
 <center><br>
        <div id="login_content">
        <div id="Logo_login"><script>document.write(def_lang[0]);</script></div>
@@ -96,14 +96,12 @@ top_menu("content", "login");
                  </script>
 
 <div id="login_button">
-
-                 <input type="button" id="log_log" onclick="javasript: var al = []; al[0] = document.getElementById('username_log').value; al[1] = document.getElementById('password_log').value; login();" name="login_button" style="width: 70px; height: 33px;">
+    <input type="button" id="log_log" onclick="javasript: var al = []; al[0] = document.getElementById('username_log').value; al[1] = document.getElementById('password_log').value; login();" name="login_button" style="width: 70px; height: 33px;">
 </div>
-                 <script>
+    <script>
                     var login_text = def_lang[0];
                     document.getElementById("log_log").value = login_text;
                  </script>
-
             </form>
             </div>
             <br>

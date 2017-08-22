@@ -90,13 +90,15 @@ apply_language($resu_[0]);
 </head>
 
 <body bgcolor="#F2F2F2">
+<script>
+top_menu('content', "signup");
+</script>
 <!--SESSION VARIABLES-->
 <div id="content">
 <script>
 set_location("signup");
 var session = localStorage.getItem("session");
 var uname = localStorage.getItem("uname");
-top_menu('content', "signup");
 </script><br>
      <center>
        <div id="login_content">
