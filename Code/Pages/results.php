@@ -23,19 +23,18 @@
 <?php session_start(); error_reporting(0);?>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Prana Deutschland</title>
+<title>Prana : Search</title>
 
 <head bgcolor="white">
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
-<link rel="stylesheet" href="../CSS/home.css"/>
+<link rel="stylesheet" href="../CSS/results.css"/>
     
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/content.js"></script>
     <script src="../js/session.js"></script>
     
-
     <!--Variables-->
     <script>
        load_localstorage();
@@ -48,23 +47,6 @@
        var area = localStorage.getItem("area");
        var paid_type = localStorage.getItem("paid_type");
     </script>
-    
-    <!--Init Functions-->
-    <script>
-       getLocation();
-    </script>
-
-<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBAiI7LmsVJTTG-MITrXmdEi8qNw78q3SM",
-    authDomain: "prana-deutschland.firebaseapp.com",
-    databaseURL: "https://prana-deutschland.firebaseio.com",
-    storageBucket: "prana-deutschland.appspot.com",
-  };
-  firebase.initializeApp(config);
-</script>
     
 <?php
 // sometimes: include('/home/otark/public_html/phpinclude/sql.php');
@@ -85,3 +67,26 @@ apply_language($resu_[0]);
     var session = localStorage.getItem("session");
     var uname = localStorage.getItem("uname");
 </script>
+
+<script>
+top_menu('search');
+</script>
+<div id="sidebanner">
+  <br><br>
+  <div id="section_info">
+  <center>
+     <div id="section_image">
+        <script>
+             document.write(code_snippets[3]);
+        </script>
+     </div>
+     <script>   
+    document.write('<div id="nav_buttons" style="width:145px; height:30px;"><center><form><input type="button" style="height: 30px;border-radius: 3px;" value="'+def_lang[40]+'" onclick="javascript:window.history.back();"></input><input type="button" style="height: 30px; margin-left:4px;border-radius: 3px;" value="'+def_lang[41]+'" onclick="javascript:window.history.forward();"></input></form></center></div>');</script><br><br>
+     </center><br>
+     <center><br><br><br><hr><br>
+     <script>show_copyright();</script></center>
+  </div>
+</div>
+<?php
+search();
+?>

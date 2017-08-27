@@ -83,57 +83,80 @@ function get_filters_URL_parsed($parse_from)
 
 function get_filters_URL($type)
 {
-$result[0] = $_GET['home_type'];
-$result[1] = $_GET['area'];
-$result[2] = $_GET['paid_type'];
-if($type != "basic")
-{
-if($type=="housing" || $type=="food" || $type=="medical")
-{
-$result[3] = $_GET['vt'];
-$result[4] = $_GET['va'];
-$result[5] = $_GET['lang'];
-$result[6] = $_GET['organization'];
-$result[7] = $_GET['to'];
-$result[8] = $_GET['tc'];
-$result[9] = $_GET['dy'];
-$result[10] = $_GET['mo'];
-}
-else if($type=="home")
-{
-$result[0] = $_GET['lang'];
-}
-else if($type == "posting")
-{
-$result[0] = $_GET['id'];
-$result[1] = $_GET['home_type'];
-$result[2] = $_GET['lang'];
-$result[3] = $_GET['organization'];
-}
-else if($type == "profile")
-{
-$result[0] = $_GET['id'];
-$result[1] = $_GET['home_type'];
-$result[2] = $_GET['lang'];
-$result[3] = $_GET['organization'];
-$result[4] = $_GET['id'];
-}
-}
-else
-{
-$result[3] = $_GET['lang'];
-$result[4] = $_GET['organization'];
-$result[5] = $_GET['to'];
-$result[6] = $_GET['tc'];
-$result[7] = $_GET['dy'];
-$result[8] = $_GET['mo'];
-}
-return $result;
+    $result[0] = $_GET['home_type'];
+    $result[1] = $_GET['area'];
+    $result[2] = $_GET['paid_type'];
+
+    if($type != "basic")
+    {
+        if($type=="housing" || $type=="food" || $type=="medical")
+        {
+            $result[3] = $_GET['vt'];
+            $result[4] = $_GET['va'];
+            $result[5] = $_GET['lang'];
+            $result[6] = $_GET['organization'];
+            $result[7] = $_GET['to'];
+            $result[8] = $_GET['tc'];
+            $result[9] = $_GET['dy'];
+            $result[10] = $_GET['mo'];
+        }
+        else if($type=="home")
+        {
+            $result[0] = $_GET['lang'];
+        }
+        else if($type == "posting")
+        {
+            $result[0] = $_GET['id'];
+            $result[1] = $_GET['home_type'];
+            $result[2] = $_GET['lang'];
+            $result[3] = $_GET['organization'];
+        }
+        else if($type == "profile")
+        {
+            $result[0] = $_GET['id'];
+            $result[1] = $_GET['home_type'];
+            $result[2] = $_GET['lang'];
+            $result[3] = $_GET['organization'];
+            $result[4] = $_GET['id'];
+        }
+        else if($type == "search")
+        {
+            $result[0] = $_GET['lang'];
+            $result[1] = $_GET['keys'];
+            $result[2] = $_GET['src'];
+        }
+    }
+    else
+    {
+        $result[3] = $_GET['lang'];
+        $result[4] = $_GET['organization'];
+        $result[5] = $_GET['to'];
+        $result[6] = $_GET['tc'];
+        $result[7] = $_GET['dy'];
+        $result[8] = $_GET['mo'];
+    }
+    return $result;
 }
 
 function create_user($id, $uname)
 {
     //Creates all necessary tables for the user $uname    
+}
+
+function search()
+{
+    $URLfilter_result = get_filters_URL("search");
+    //SEARCH RESULTS ARE DONE BY TYPE
+    
+    $query = build_query_string($URLfilter_result, "search");
+    $result = query_($query);
+    
+    while($row = $result->fetch_assoc())
+    {
+        echo("<script>document.title='Prana : ".$URLfilter_result[1]."'</script>");
+        echo("<div id='src_res'>Search Results:</div>");
+    }
+    return;
 }
 
 function load_profile($Type_)

@@ -130,25 +130,39 @@ function redirect(Where_, Inner_Where_, area_index_)
     {
         document.location = def_locations[5] + '?lang=' + get_local("lang") + '&home_type=' + get_local("home_type") + '&id=' + Inner_Where_;
     }
-else if(Where_ == "logout")
-{
-    session_reset();
-}
-else if(Where_ == "content")
-{
-    clear_ven_type_allows();
-    set_local("home_type", Inner_Where_);
-    if(area_index_ != undefined)
+    else if(Where_ == "logout")
     {
-        set_local("area", area_index_);
+        session_reset();
     }
-    document.location = eval_build_url(home_type, area);
-}
-else if(Where_ == "content_modular")
-{
-    set_local("home_type", Inner_Where_);
-    document.location = def_locations[7] + '?lang=' + get_local("lang");
-}
+    else if(Where_ == "content")
+    {
+        clear_ven_type_allows();
+        set_local("home_type", Inner_Where_);
+        if(area_index_ != undefined)
+        {
+            set_local("area", area_index_);
+        }
+        document.location = eval_build_url(home_type, area);
+    }
+    else if(Where_ == "content_modular")
+    {
+        set_local("home_type", Inner_Where_);
+        document.location = def_locations[7] + '?lang=' + get_local("lang");
+    }
+    else if(Where_ == "search")
+    {
+        val = get_item_value("src_bx");
+        val2=null;
+        try
+        {
+            val2 = get_item_value("src_in");
+        }
+        catch(Exception)
+        {
+            val2=get_item_value("src_in_top");
+        }
+        document.location = def_locations[8] + '?lang=' + get_local("lang") + "&keys=" + val + "&src=" + val2;
+    }
 return;
 }
 
@@ -213,7 +227,7 @@ function dashboard(Type_)
 {
     if(Type_ == "home")
     {
-        dl_d('<div id="home_"><center><br><div id="logo" style="font-size:132; float:none;"><img src="../Assets/Images/logo/prana_logo.png"></div><br><br><div id=home_src><div id="src_txt">'+dl_r(17)+'</div><br><br><form><input type="text" value="'+dl_r(18)+'" name="src_bx" id="src_bx" style="width: 300px; height: 33px;" onclick="javscript:val=document.getElementById(\'src_bx\').value;if(val==\''+dl_r(18)+'\'){remove_value(\'src_bx\');}"  onblur="console.log(\'aga\');val=document.getElementById(\'src_bx\').value;if(val==\'\'){document.getElementById(\'src_bx\').value='+dl_r(18)+';}"><select id="src_in" value="In"></select><input type="button" value=">" name="src_bx" style="width: 35px; height: 33px; background-color: rgba(9, 103, 126, 1.0);" onclick="javascipt:val=document.getElementById(\'src_bx\').value; search(val,\'fuck you\');"></form></div><br><div id="home_buttons"><div id="button1"><a href="javascript:redirect(\'content\', \'food\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_food.png" width="50px" height="50px"><br>'+dl_r(19)+'</div></a><div id="button2"><a href="javascript:redirect(\'content\',\'housing\','+get_local("area")+');"><img src="../Assets/Images/icons/icon_housing.png" width="50px" height="50px"><br>'+dl_r(20)+'</a></div><div id="button3"><a href="javascript:redirect(\'content\',\'medical\', '+get_local("area")+');"><img src="../Assets/Images/icons/Icon_health.png" width="50px" height="50px"><br>'+dl_r(21)+'</a></div><div id="button4"><a href="javascript:redirect(\'content\',\'legal\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_legal and advice.png" width="50px" height="50px"><br>'+dl_r(22)+'</a></div><div id="button5"><a href="javascript:redirect(\'content\',\'study\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_study2.png" width="50px" height="50px"><br>'+dl_r(23)+'</a></div><div id="button6"><a href="javascript:redirect(\'content\',\'jobs\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_jobs.png" width="50px" height="50px"><br>'+dl_r(24)+'</a></div><div id="button7"><a href="javascript:redirect(\'content_modular\',\'\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_.png" width="50px" height="50px"><br>'+dl_r(108)+'</a></div></div></center></div></br></br><script>fill_search_type("src_in");</script>');
+        dl_d('<div id="home_"><center><br><div id="logo" style="font-size:132; float:none;"><img src="../Assets/Images/logo/prana_logo.png"></div><br><br><div id=home_src><div id="src_txt">'+dl_r(17)+'</div><br><br><form><input type="text" value="'+dl_r(18)+'" name="src_bx" id="src_bx" style="width: 300px; height: 33px;" onclick="javscript:val=document.getElementById(\'src_bx\').value;if(val==\''+dl_r(18)+'\'){remove_value(\'src_bx\');}"  onblur="console.log(\'aga\');val=document.getElementById(\'src_bx\').value;if(val==\'\'){document.getElementById(\'src_bx\').value='+dl_r(18)+';}"><select id="src_in" value="In"></select><input type="button" value=">" name="src_bx" style="width: 35px; height: 33px; background-color: rgba(9, 103, 126, 1.0);" onclick="javascipt:val=document.getElementById(\'src_bx\').value; redirect(\'search\');"></form></div><br><div id="home_buttons"><div id="button1"><a href="javascript:redirect(\'content\', \'food\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_food.png" width="50px" height="50px"><br>'+dl_r(19)+'</div></a><div id="button2"><a href="javascript:redirect(\'content\',\'housing\','+get_local("area")+');"><img src="../Assets/Images/icons/icon_housing.png" width="50px" height="50px"><br>'+dl_r(20)+'</a></div><div id="button3"><a href="javascript:redirect(\'content\',\'medical\', '+get_local("area")+');"><img src="../Assets/Images/icons/Icon_health.png" width="50px" height="50px"><br>'+dl_r(21)+'</a></div><div id="button4"><a href="javascript:redirect(\'content\',\'legal\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_legal and advice.png" width="50px" height="50px"><br>'+dl_r(22)+'</a></div><div id="button5"><a href="javascript:redirect(\'content\',\'study\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_study2.png" width="50px" height="50px"><br>'+dl_r(23)+'</a></div><div id="button6"><a href="javascript:redirect(\'content\',\'jobs\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_jobs.png" width="50px" height="50px"><br>'+dl_r(24)+'</a></div><div id="button7"><a href="javascript:redirect(\'content_modular\',\'\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_.png" width="50px" height="50px"><br>'+dl_r(108)+'</a></div></div></center></div></br></br><script>fill_search_type("src_in");</script>');
 }
 else if(Type_ == "profile")
 {
@@ -261,6 +275,10 @@ else if(Type_ == "profile")
 else if(Type_ == "posting")
 {
     dl_d('<div id="top_banner"><a href="javascript:redirect(\'home\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><script>dl_d(code_snippets[7]);</script><script>dl_d(code_snippets[4]);</script><div id="uacnt"><a style="color: white;" href="javascript: if(session==1){redirect(\'profile\');}else{redirect(\'login\');}" id="login_text" href="#"><script>if(session==1){document.write(def_lang[35]); }else if (session!=1){ document.write(def_lang[0]); if(session!=1){document.write} }</script></a><script>if(session==0){document.write(" | ");}</script><a style="color: white;" href="javascript:redirect(\'signup\');"><script>if(session==0){document.write(def_lang[6]);}</script></a><a style="color: white;" href="javascript:redirect(\'logout\');" id="login_text" href="#"><script>if(session==1){document.write(" | " + def_lang[1]); }</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>');
+}
+else if(Type_ == "search")
+{
+    dl_d('<div id="top_banner" style="" ><a href="javascript:redirect(\'home\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><script>dl_d(code_snippets[7]); dl_d(code_snippets[4]);</script><div id="uacnt" style=""><a style="color: white;" href="javascript: if(session==1){redirect(\'profile\');}else{redirect(\'login\');}" id="login_text" href="#"><script>if(session==1){document.write(def_lang[35]); }else if (session!=1){ document.write(def_lang[0]); if(session!=1){document.write} }</script></a><script>if(session==0){document.write(" | ");}</script><a  style="color: white;"  href="javascript:redirect(\'signup\');"><script>if(session==0){document.write(def_lang[6]);}</script></a><a href="javascript:redirect(\'logout\');" id="login_text" href="#" style="color: white;"><script>if(session==1){document.write(" | " + def_lang[1]); }</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>');
 }
 return;
 }

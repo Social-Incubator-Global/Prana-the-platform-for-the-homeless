@@ -23,48 +23,65 @@
 */
 function build_query_string($URLfilter_result, $Type_)
 {
-$query = "";
-if($Type_ == "content")
-{
-if($URLfilter_result[1] == 0 || $URLfilter_result[1] == undefined || $URLfilter_result[1] == null)
-{
-$query="SELECT * FROM Contnt_".$URLfilter_result[0]." WHERE category='" . $URLfilter_result[0] . "' AND paid_type='" . $URLfilter_result[2] . "'";
-}
-else
-{
-$query="SELECT * FROM Contnt_".$URLfilter_result[0]." WHERE area='" . $URLfilter_result[1] . "' AND category='" . $URLfilter_result[0] . "' AND paid_type='" . $URLfilter_result[2] . "'";
-}
-//STANDARDIZE ALL FILTERS HERE!!!!
-if($URLfilter_result[0] == "housing" || $URLfilter_result[0] == "medical" || $URLfilter_result[0] == "food")
-{
-    //VT
-    if($URLfilter_result[3] != '--' && $URLfilter_result[3] != '')
+    $query = "";
+    if($Type_ == "content")
     {
-        $query = $query . " AND is_ LIKE '%" . $URLfilter_result[3] . "%'";
-    }
-    //VA
-    if($URLfilter_result[4] != '--' && $URLfilter_result[4] != '')
+        if($URLfilter_result[1] == 0 || $URLfilter_result[1] == undefined || $URLfilter_result[1] == null)
+        {
+            $query="SELECT * FROM Contnt_".$URLfilter_result[0]." WHERE category='" . $URLfilter_result[0] . "' AND paid_type='" . $URLfilter_result[2] . "'";
+        }
+    else
     {
-        $query = $query . " AND allows LIKE '%" . $URLfilter_result[4] . "%'";
+        $query="SELECT * FROM Contnt_".$URLfilter_result[0]." WHERE area='" . $URLfilter_result[1] . "' AND category='" . $URLfilter_result[0] . "' AND paid_type='" . $URLfilter_result[2] . "'";
     }
-    //ORG
-    if($URLfilter_result[6] != 0)
+    //STANDARDIZE ALL FILTERS HERE!!!!
+    if($URLfilter_result[0] == "housing" || $URLfilter_result[0] == "medical" || $URLfilter_result[0] == "food")
     {
-        $query = $query . " AND organization='". $URLfilter_result[6] ."'";
+        //VT
+        if($URLfilter_result[3] != '--' && $URLfilter_result[3] != '')
+        {
+            $query = $query . " AND is_ LIKE '%" . $URLfilter_result[3] . "%'";
+        }
+        //VA
+        if($URLfilter_result[4] != '--' && $URLfilter_result[4] != '')
+        {
+            $query = $query . " AND allows LIKE '%" . $URLfilter_result[4] . "%'";
+        }
+        //ORG
+        if($URLfilter_result[6] != 0)
+        {
+            $query = $query . " AND organization='". $URLfilter_result[6] ."'";
+        }
     }
-}
-//Housing end
-}
-//CONTENT END--------------<
-if($Type_ =="posting")
-{
-$query= "SELECT * FROM Contnt_" . $URLfilter_result[1] . " WHERE id='" . $URLfilter_result[0] . "'";
-}
-if($Type_ == "profile")
-{
-  $query = "SELECT * FROM People WHERE id='".$URLfilter_result[4]."'";
-}
-return $query;
+    //Housing end
+    }
+    //CONTENT END--------------<
+    if($Type_ == "posting")
+    {
+        $query = "SELECT * FROM Contnt_" . $URLfilter_result[1] . " WHERE id='" . $URLfilter_result[0] . "'";
+    }
+    if($Type_ == "profile")
+    {
+        $query = "SELECT * FROM People WHERE id='".$URLfilter_result[4]."'";
+    }
+    
+    //SEARCH BASED QUERIES
+    if($Type_ == "search")
+    {
+        if($URLfilter_result[2] == "all")
+        {
+        
+        }
+        else if($URLfilter_result[2] == "food")
+        {
+            $query = "SELECT * FROM contnt_food";
+        }
+        else if($URLfilter_result[2] == "housing")
+        {
+            $query = "SELECT * FROM contnt_housing WHERE name LIKE '%".$URLfilter_result[1]."%' AND fee LIKE '%".$URLfilter_result[1]."%' AND text1 LIKE '%".$URLfilter_result[1]."%' AND text2 LIKE '%".$URLfilter_result[1]."' AND link LIKE '%".$URLfilter_result[1]."%' AND is_ LIKE '%".$URLfilter_result[1]."%' AND allows LIKE '%".$URLfilter_result[1]."%'";
+        }
+    }
+    return $query;
 }
 
 function query_($quer)
