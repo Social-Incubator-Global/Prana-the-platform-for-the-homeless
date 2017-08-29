@@ -78,7 +78,7 @@ function build_query_string($URLfilter_result, $Type_)
         }
         else if($URLfilter_result[2] == "housing")
         {
-            $query = "SELECT * FROM contnt_housing WHERE name LIKE '%".$URLfilter_result[1]."%' AND fee LIKE '%".$URLfilter_result[1]."%' AND text1 LIKE '%".$URLfilter_result[1]."%' AND text2 LIKE '%".$URLfilter_result[1]."' AND link LIKE '%".$URLfilter_result[1]."%' AND is_ LIKE '%".$URLfilter_result[1]."%' AND allows LIKE '%".$URLfilter_result[1]."%'";
+            $query = "SELECT * FROM contnt_housing WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
         }
     }
     return $query;

@@ -146,16 +146,18 @@ function create_user($id, $uname)
 function search()
 {
     $URLfilter_result = get_filters_URL("search");
+    $echo = "";
     //SEARCH RESULTS ARE DONE BY TYPE
     
     $query = build_query_string($URLfilter_result, "search");
     $result = query_($query);
     
+    echo("<script>document.title='Prana : ".$URLfilter_result[1]."'</script>");
     while($row = $result->fetch_assoc())
     {
-        echo("<script>document.title='Prana : ".$URLfilter_result[1]."'</script>");
-        echo("<div id='src_res'>Search Results:</div>");
+        echo("<div id='' style='height:150px; width:437px; background-color: rgb(220,220,220);'><div id='title_".$row["id"]."' style='text-decoration: underline; font-size:22px; font-family: \"Arial\", regular;'><a href=''>".$row["name"]."</a></div></div><br><br>");
     }
+    
     return;
 }
 

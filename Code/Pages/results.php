@@ -87,6 +87,17 @@ top_menu('search');
      <script>show_copyright();</script></center>
   </div>
 </div>
-<?php
-search();
-?>
+<div id="search_content">
+<br><br>
+<div id="main_content">
+    <div id="search_title">
+        Search Results:
+    </div>
+    <br>
+    <div id="search_results">
+        <?php
+            search();
+        ?>
+    </div>
+</div>
+</div>
