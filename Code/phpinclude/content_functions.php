@@ -155,9 +155,8 @@ function search()
     echo("<script>document.title='Prana : ".$URLfilter_result[1]."'</script>");
     while($row = $result->fetch_assoc())
     {
-        echo("<div id='' style='height:150px; width:437px; background-color: rgb(220,220,220);'><div id='title_".$row["id"]."' style='text-decoration: underline; font-size:22px; font-family: \"Arial\", regular;'><a href=''>".$row["name"]."</a></div></div><br><br>");
+        echo("<div id='' style='height:300px; width:437px; background-color: rgb(220,220,220);'><input type='button' value='".$row["name"]."' id='butttitle_".$row["id"]."' style='width:100%; height:32px;'></input><br><br><div id='info_".row["id"]."'>Venue Type:<br>Address:<br>Phone:<br>Email:<br>Venue Allows/Venue Type:<br>Additional services available:</div></div><br><br>");
     }
-    
     return;
 }
 

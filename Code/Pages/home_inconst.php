@@ -94,7 +94,7 @@ apply_language($resu_[0]);
     </script>
     <br>
     <script type="text/javascript">
-    dashboard("home");
+        dashboard("home");
     </script>
 </div>
 </center>
