@@ -152,16 +152,19 @@ function redirect(Where_, Inner_Where_, area_index_)
     else if(Where_ == "search")
     {
         val = get_item_value("src_bx");
-        val2=null;
+        ndx=null; val2=null;
         try
         {
-            val2 = get_item_value("src_in");
+            ndx = get_selected_index("src_in");
+            val2 = get_selected_item("src_in");
         }
         catch(Exception)
         {
-            val2=get_item_value("src_in_top");
+            ndx = get_selected_index("src_in_top");
+            val2 = get_selected_item("src_in_top");
         }
-        document.location = def_locations[8] + '?lang=' + get_local("lang") + "&keys=" + val + "&src=" + val2;
+        set_local("search_txt_index", ndx);
+        document.location = def_locations[8] + '?lang=' + get_local("lang") + "&keys=" + val + "&src=" + ndx + "&word=" + val2;
     }
 return;
 }
@@ -558,22 +561,34 @@ out_=out_+"</div><br>";
 document.write(out_);
 }
 
+function get_search_types()
+{
+    grammer_correct_sections = [];
+    grammer_correct_sections.push(dl_r(109));
+    grammer_correct_sections.push(dl_r(19));
+    grammer_correct_sections.push(dl_r(20));
+    grammer_correct_sections.push(dl_r(21));
+    grammer_correct_sections.push(dl_r(22));
+    grammer_correct_sections.push(dl_r(23));
+    grammer_correct_sections.push(dl_r(24));
+    return;
+}
+
+function set_relevant_search_item(name)
+{
+    set_index(name, get_local("search_txt_index"));
+    return;
+}
+
 function fill_search_type(name)
 {
-    ndx=0;
-    for(i=18; i < 24; i++)
+    get_search_types();
+    for(i=0; i < 7; i++)
     {
-        if(i!=18)
-        {
-            var select = document.getElementById(name);select.options[select.options.length] = new Option(var_def_sections[ndx],var_def_sections[ndx]);
-            //out_=out_+'<a href="javascript:redirect(\'content\', \'' + var_def_sections[ndx] + '\')"> | ' + dl_r(i) + '</a>';
-        }
-        else
-        {
-            //out_=out_+'<a href="javascript:redirect(\'home\')">' + dl_r(4) + '</a> ';
-        }
-        ndx++;
+        var select = document.getElementById(name);select.options[select.options.length] = new Option(grammer_correct_sections[i],grammer_correct_sections[i]);
     }
+    set_relevant_search_item(name);
+    return;
 }
 
 function search(content, type)
@@ -588,9 +603,10 @@ function news_load()
 document.write('<div id="news_"></div>');
 }
 
+//NAME TO CHANGE TO SHOW FOOTER
 function show_copyright()
 {
-document.write("<div id='copyright' style='font-family:Arial,regular; font-size:14px;'>"+def_lang[3]+"</div>");
+document.write("<div id='copyright' style='font-family:Arial,regular; font-size:14px;'>"+def_lang[3]+" | Help us build on <a href='https://github.com/Social-Incubator-Global/Prana-The-platform-for-the-homeless'>Github</a></div>");
 }
 
 function refresh_map()

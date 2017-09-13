@@ -68,15 +68,15 @@ function build_query_string($URLfilter_result, $Type_)
     //SEARCH BASED QUERIES
     if($Type_ == "search")
     {
-        if($URLfilter_result[2] == "all")
+        if($URLfilter_result[2] == 0)
         {
         
         }
-        else if($URLfilter_result[2] == "food")
+        else if($URLfilter_result[2] == 1)
         {
             $query = "SELECT * FROM contnt_food";
         }
-        else if($URLfilter_result[2] == "housing")
+        else if($URLfilter_result[2] == 2)
         {
             $query = "SELECT * FROM contnt_housing WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
         }

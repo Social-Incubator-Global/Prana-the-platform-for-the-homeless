@@ -124,6 +124,7 @@ function get_filters_URL($type)
             $result[0] = $_GET['lang'];
             $result[1] = $_GET['keys'];
             $result[2] = $_GET['src'];
+            $result[3] = $_GET['word'];
         }
     }
     else
@@ -152,7 +153,7 @@ function search()
     $query = build_query_string($URLfilter_result, "search");
     $result = query_($query);
     
-    echo("<script>document.title='Prana : ".$URLfilter_result[1]."'</script>");
+    echo("<script>document.title='Prana '+dl_r(110)+' ".$URLfilter_result[3]."  : ".$URLfilter_result[1]."'</script>");
     while($row = $result->fetch_assoc())
     {
         echo("<div id='' style='height:300px; width:437px; background-color: rgb(220,220,220);'><input type='button' value='".$row["name"]."' id='butttitle_".$row["id"]."' style='width:100%; height:32px;'></input><br><br><div id='info_".row["id"]."'>Venue Type:<br>Address:<br>Phone:<br>Email:<br>Venue Allows/Venue Type:<br>Additional services available:</div></div><br><br>");
