@@ -86,18 +86,18 @@ function build_query_string($URLfilter_result, $Type_)
 
 function query_($quer)
 {
-mysqli::set_charset('utf8_swedish_ci');
-$hostname = 'localhost';
-$username = 'root';
-$password = 'root';
-$dbname = 'prana_db';
-$link = mysqli_connect($hostname, $username, $password, $dbname) or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
-if (mysqli_connect_errno())
-{
-  echo "Failed to connect to MYDB: " . mysqli_connect_error();
-}
-$result = mysqli_query($link, $quer) or die("".mysql_error());
-mysqli_close($link);
-return $result;
+    $hostname = 'localhost';
+    $username = 'root';
+    $password = 'sdft';
+    $dbname = 'prana_db';
+    $link = new mysqli($hostname, $username, $password, $dbname) or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
+    $link->set_charset('utf8_swedish_ci');
+    if ($link->connect_errno)
+    {
+      echo "Failed to connect to DB: " . $link->connect_errno;
+    } //else { print 'connected'; }
+    $result = $link->query($link, $quer) or die("".$link->error);
+    $link->close();
+    return $result;
 }
 ?>
