@@ -64,13 +64,13 @@ function build_query_string($URLfilter_result, $Type_)
     {
         $query = "SELECT * FROM People WHERE id='".$URLfilter_result[4]."'";
     }
-    
+
     //SEARCH BASED QUERIES
     if($Type_ == "search")
     {
         if($URLfilter_result[2] == 0)
         {
-        
+
         }
         else if($URLfilter_result[2] == 1)
         {
@@ -86,11 +86,11 @@ function build_query_string($URLfilter_result, $Type_)
 
 function query_($quer)
 {
-mysql_set_charset('utf8_swedish_ci');
+mysqli::set_charset('utf8_swedish_ci');
 $hostname = 'localhost';
-$username = 'prna_auth';
-$password = 'y2!wM_w@tTJp';
-$dbname = 'prndtbse';
+$username = 'root';
+$password = 'root';
+$dbname = 'prana_db';
 $link = mysqli_connect($hostname, $username, $password, $dbname) or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
 if (mysqli_connect_errno())
 {
