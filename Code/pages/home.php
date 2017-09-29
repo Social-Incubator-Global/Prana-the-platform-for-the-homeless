@@ -1,4 +1,4 @@
-<!-- 
+<!--
     <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -29,12 +29,12 @@
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/home.css"/>
-    
+
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/content.js"></script>
     <script src="../js/session.js"></script>
-    
+
 
     <!--Variables-->
     <script>
@@ -48,7 +48,7 @@
        var area = localStorage.getItem("area");
        var paid_type = localStorage.getItem("paid_type");
     </script>
-    
+
     <!--Init Functions-->
     <script>
        getLocation();
@@ -65,7 +65,7 @@
   };
   firebase.initializeApp(config);
 </script>
-    
+
 <?php
 // sometimes: include('/home/otark/public_html/phpinclude/sql.php');
 include('../phpinclude/sql.php');
