@@ -31,7 +31,7 @@ global $authentication;
 //USER FUNCTIONS -------->
 function login($elements)
 {
-    
+
 }
 
 function json()
@@ -41,12 +41,12 @@ function json()
 
 function signup($elements)
 {
-   
+
 }
 
 function hash_($password)
 {
-    
+
 }
 //USER FUNCTIONS END --------<
 
@@ -71,16 +71,16 @@ mysqli_free_result($lang_result);
 
 function get_languages()
 {
-global $languages;
-$lang_result = query_("SELECT * FROM Langs");
-while($row = $lang_result->fetch_assoc())
-{
-   echo('<script>def_langs.push("'.$row["text"].'")</script>');
-   echo('<script>def_langs_gmaps.push("'.$row["gmaps_lang"].'")</script>');
-   echo('<script>def_langs_gmaps_reg.push("'.$row["gmaps_reg"].'")</script>');
-   array_push($languages, $row["name"]);
-}
-mysqli_free_result($lang_result);
+    global $languages;
+    $lang_result = query_("SELECT * FROM Langs");
+    while($row = $lang_result->fetch_assoc())
+    {
+        echo('<script>def_langs.push("'.$row["text"].'")</script>');
+        echo('<script>def_langs_gmaps.push("'.$row["gmaps_lang"].'")</script>');
+        echo('<script>def_langs_gmaps_reg.push("'.$row["gmaps_reg"].'")</script>');
+        array_push($languages, $row["name"]);
+    }
+    mysqli_free_result($lang_result);
 }
 
 function load_languages_ToArrays($page)
@@ -111,7 +111,7 @@ function apply_language($name)
 {
    global $lang_English;
    global $lang_German;
-   
+
    if($name == 0)
    {
       echo('<script>def_lang = [];</script>');

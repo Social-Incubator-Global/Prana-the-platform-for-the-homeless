@@ -41,7 +41,7 @@ function load_localstorage()
         localStorage.setItem("map_size", "0");
         localStorage.setItem("transit_preference", "TRANSIT");
         localStorage.setItem("transit_liking", "SUBWAY");
-        
+
         //GEOLOCATION
         localStorage.setItem("current_position_lat", null);
         localStorage.setItem("current_position_long", null);
@@ -56,7 +56,7 @@ function load_localstorage()
         //Default flexible filter variables
         localStorage.setItem("vt", "");
         localStorage.setItem("va", "");
-        
+
         localStorage.setItem("search_txt_index", "0");
     }
 }
@@ -102,10 +102,10 @@ function send_AJAX(request_type, url, response_action, response_element)
             {
                 js_type = false;
             }
-            
+
             //EXECUTE JS using eval(). Eval should be replaced later on with something better. "Eval is evil!!!"
             if(js_type)
-            { 
+            {
                 var x = itm.getElementsByTagName("script");
                 for(var i=0;i<x.length;i++)
                 {
@@ -117,7 +117,7 @@ function send_AJAX(request_type, url, response_action, response_element)
                 try {
                 eval(this.responseText);}catch(exp){}
             }
-            
+
             if(cont)
             {
                 if(request_type==="content")
@@ -162,7 +162,7 @@ function getLocation()
     if (navigator.geolocation)
     {
         navigator.geolocation.getCurrentPosition(setPosition);
-    }   
+    }
     else
     {
         alert("Geolocation is not supported by this browser.");
@@ -311,7 +311,7 @@ var def_langs_gmaps_reg = [];
 
 var special_characters = ["<amp>"];
 
-var def_locations = ["./home_inconst.php", "./login.php", "./signup.php", "./profile.php", "./content.php", "./posting.php", "/home_inconst.php", "./content_modular.php", "./results.php"];
+var def_locations = ["./home_inconst.php", "./login.php", "./signup.php", "./profile.php", "./content.php", "./posting.php", "/home.php", "./content_modular.php", "./results.php"];
 
 var def_areas_berlin = ["Berlin All", "Mitte", "Kreuzberg", "Shoeneberg (Shöneberg)", "Tiergarten/Moabit", "Wedding", "Prenzlauerberg", "Friedrichshain", "Neukoelln (Neukölln)", "Tempelhof", "Wilmersdorf", "Charlottenburg", "Spandau", "Reinickendorf", "Pankow", "Weissensee (Weißensee)", "Hohenschoenhausen (Hohenschönhausen)", "Lichtenberg", "Marzahn", "Hellersdorf", "Koepenick (Köpenick)", "Treptow", "Steglitz", "Zehlendorf"];
 
