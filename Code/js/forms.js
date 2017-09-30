@@ -21,9 +21,9 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-//Variables we need to use! TRANSFORM ALL INTO get_local(); (DELETE)
-                 var session = get_local("session");
+//30.9.17 REMOVE THIS LINE WHEN DONE. BELOW VARIABLES COMMENTED TO TEST USING THEM ONLY THROUGH get_local();
+//VARIABLES BELOW WILL BE REMOVED FROM ALL FILES. THEY WILL ONLY BE ACCESSIBLE THROUGH get_local();
+                 /*var session = get_local("session");
                  var uname = get_local("uname");
                  var ID = get_local("ID");
                  var home_type = get_local("home_type");
@@ -56,14 +56,14 @@
 
                  //filters food
                  var filters_food_soupkitchens = localStorage.getItem("filters_food_soupkitchens");
-                 var filters_food_tafels = localStorage.getItem("filters_food_tafels");
+                 var filters_food_tafels = localStorage.getItem("filters_food_tafels");*/
 
 //STARTS PRANA-DEUTSCHLAND.DE --> THIS IS THE ENTRY POINT OF THE WEBSITE.
 function start()
 {
     set_local("location", "home");
     set_local("lang", "0");
-    document.location = "./Pages"+def_locations[6] + '?lang=0';
+    document.location = "./Pages"+def_locations[0]+'?lang=0';
     return;
 }
 
@@ -108,7 +108,7 @@ function redirect(Where_, Inner_Where_, area_index_)
     set_local("location", Where_);
     if(Where_ == "home")
     {
-        document.location = def_locations[6] + '?lang=' + get_local("lang");
+        document.location = def_locations[0] + '?lang=' + get_local("lang");
     }
     if(Where_ == "homeinner")
     {

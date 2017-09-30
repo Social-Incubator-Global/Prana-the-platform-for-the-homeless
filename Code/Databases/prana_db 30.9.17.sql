@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2017 at 05:40 PM
+-- Generation Time: Sep 30, 2017 at 06:07 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -321,8 +321,11 @@ INSERT INTO `lang_deutsch` (`id`, `word`, `notes`) VALUES
 (102, '--', NULL),
 (103, '--', NULL),
 (104, 'Geöffnet (Monat)', NULL),
-(107, '--', NULL),
-(108, '--', NULL);
+(105, '--', NULL),
+(106, '--', NULL),
+(107, '--', ''),
+(108, '--', NULL),
+(109, 'Alles', 'for search');
 
 -- --------------------------------------------------------
 
@@ -450,7 +453,10 @@ INSERT INTO `lang_english` (`id`, `word`, `owner`, `notes`) VALUES
 (105, 'Venue type', 'all', NULL),
 (106, 'Venue allows', 'all', NULL),
 (107, 'Open in Google Maps', 'all', NULL),
-(108, 'Tips & Tricks', 'all', NULL);
+(108, 'Tips & Tricks', 'all', NULL),
+(109, 'All', 'all', 'for search'),
+(110, 'search', 'all', 'for tab title in search'),
+(111, 'in', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -473,23 +479,36 @@ CREATE TABLE `lang_polish` (
 
 CREATE TABLE `organizations` (
   `id` int(11) NOT NULL,
-  `name` varchar(25) DEFAULT NULL,
-  `sub_of` int(120) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
   `address` varchar(150) DEFAULT NULL,
   `tel` varchar(20) DEFAULT NULL,
   `eml` varchar(150) DEFAULT NULL,
-  `fax` varchar(20) DEFAULT NULL,
-  `transport_routes` varchar(150) DEFAULT NULL
+  `fax` varchar(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `organizations`
 --
 
-INSERT INTO `organizations` (`id`, `name`, `sub_of`, `address`, `tel`, `eml`, `fax`, `transport_routes`) VALUES
-(1, 'GEBEWO gGMBH', NULL, 'Geibelstr. 77/78, 12305 Berlin', '03070784490', 'Geschaeftsstelle@gebewo.de', '56456', NULL),
-(2, 'Berliner Tafel', NULL, 'Beusselstr. 44 N-Q, Gebäude 30A, 10553 Berlin', '0307827414', 'ber.ta@berliner-tafel.de', NULL, NULL),
-(3, 'Süppen Kuchen Pankow', NULL, 'Franziskanerkloster Berlin-Pankow, Wollankstr. 19,13187 Berlin', '03048839620', 'andreas.brands@franziskaner.de', NULL, NULL);
+INSERT INTO `organizations` (`id`, `name`, `address`, `tel`, `eml`, `fax`) VALUES
+(1, 'GEBEWO gGMBH', 'Geibelstr. 77/78, 12305 Berlin', '03070784490', 'Oeffentlichkeitsarbeit@gebewo.de', '03070784492'),
+(2, 'Berliner Tafel', 'Beusselstr. 44 N-Q, Gebäude 30A, 10553 Berlin', '0307827414', 'ber.ta@berliner-tafel.de', '0307881973'),
+(3, 'Franziskanerkloster Berlin-Pankow', 'Wollankstr. 19, 13187 Berlin', '0304883960', 'pankow.berlin@franziskaner.de', '03048839618'),
+(4, 'Malteser Berlin', 'Alt-Lietzow 33, 10587 Berlin', '0303480030', 'info@malteser-berlin.de', '03034800350'),
+(5, 'Trinitatis-Kirchengemeinde', 'Leibnizstr. 79, 10625 Berlin\n', '030318 6850', 'buero@trinitatis-berlin.de', '03031868529'),
+(6, 'Katholisches Pfarramt Maria unter dem Kreuz', 'Hildegardstrasse 3a, 10715 Berlin', '03082791930', 'pfarrbuero@maria-unter-dem-kreuz.de', '03082791939'),
+(7, 'Katholische Kirchengemeinde St. Marien Liebfrauen', 'Wrangelstr. 50/51, 10997 Berlin', '03061129320', 'marien-liebfrauen@gmx.de', '03061129321'),
+(8, 'Evang. Kirchegemeinde Galiläa-Samariter', 'Samariterstr. 27, 10247 Berlin', '0304267775', 'gemeindebuero@galilaea-samariter.de', '03042015658'),
+(9, 'Evang. Kirchengemeinde Heilig Kreuz-Passion', 'Zossener Str. 65, 10961 Berlin', '0306912007', 'gemeindebuero@heiligkreuzpassion.de', '0306934810'),
+(10, 'Katholische Pfarrei Herz Jesu/St. Adalbert', 'Fehrbelliner Straße 99, 10119 Berlin', '0304438940', 'pfarrbuero@herz-jesu-kirche.de', NULL),
+(11, 'Netzwerk Bethanien e.V.', 'Winterthurstr. 7, 13407 Berlin', '0304965819', 'nwbethanien@vmec.de', '03049873740'),
+(13, 'Kath. Gemeinde St. Markus', 'Am Kiesteich 50, 13589 Berlin', '0303732216', 'https://www.st-markus-berlin.de/kontakte/e-mail-kontakt/pfarrbuero.html', '03037401622'),
+(14, 'Evangelische Paulus-Kirchengemeinde', 'Kirchstr. 6, 14163 Berlin', '030809830', 'kontakt@paulusgemeinde-zehlendorf.de', '03080983255'),
+(15, 'Kath. Pfarramt Steglitz, Rosenkranz-Basilika', 'Deitmerstr. 3, 12163 Berlin', '03079018230', 'pfarramt@rosenkranz-basilika.de', '03079018231'),
+(16, 'Suppenküche Lichtenrade e.v.', 'Finchleystr. 11, 12305 Berlin', '03074682356', 'mail@suppenkueche-lichtenrade.de', '03070767189'),
+(17, 'Suppenküche der Zwölf-Apostel', 'An der Apostelkirche 1, 10783 Berlin', '0302639810', 'info@zwoelf-apostel-berlin.de', '03026398118'),
+(18, 'Berliner Stadtmission', 'Lehrter Str. 68, 10557 Berlin', '030690333', 'info@berliner-stadtmission.de', NULL),
+(19, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -897,7 +916,7 @@ ALTER TABLE `langs`
 -- AUTO_INCREMENT for table `organizations`
 --
 ALTER TABLE `organizations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `organizations_venues`
 --

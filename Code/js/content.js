@@ -23,15 +23,13 @@
 
 function load()
 {
-                 var session = localStorage.getItem("session");
-                 var uname = localStorage.getItem("uname");
-                 var home_type = localStorage.getItem("home_type");
-// jQuery
-$.getScript('/js/firebase.js', function()
-{
-    // script is now loaded and executed.
-    // put your dependent JS here.
-});
-
-   
+    var session = localStorage.getItem("session");
+    var uname = localStorage.getItem("uname");
+    var home_type = localStorage.getItem("home_type");
+    // jQuery
+    $.getScript('/js/firebase.js', function()
+    {
+        // script is now loaded and executed.
+        // put your dependent JS here.
+    });
 }

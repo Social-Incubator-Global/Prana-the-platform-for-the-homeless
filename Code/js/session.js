@@ -23,11 +23,18 @@
 
 function check_session()
 {
-    if(session==1)
+    if(session===1)
     {
        load_session();
     }
     return;
+}
+
+function session_start(session, uname, area)
+{
+    localStorage.setItem("area", area);
+    localStorage.setItem("session", session);
+    localStorage.setItem("uname", uname);
 }
 
 function session_reset()

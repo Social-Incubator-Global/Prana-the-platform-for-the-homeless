@@ -29,13 +29,7 @@ font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
 font-size: 100px;
 }
 
-#logo
-{
-    margin-left: 347px;
-}
-
 #lang_selector {
-    margin-right: 2.1%;
     margin-top: 0.1%;
 }
 
@@ -76,10 +70,9 @@ width: 73%;
 {
 float: left;
 margin-left: 13%;
-
-  font-family: 'Arial', regular;
+font-family: 'Arial', regular;
 color: #FF7F27;
-margin-top: 1.5%;
+margin-top: 4%;
 }
 
 

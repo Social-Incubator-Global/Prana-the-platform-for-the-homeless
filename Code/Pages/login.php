@@ -152,11 +152,11 @@ function login()
        if(snapshot2.val().password == pwd_log){
        session=1;
        uname= snapshot.val().username_email;
-       localStorage.setItem("area", snapshot3.val().area);
+       /*localStorage.setItem("area", snapshot3.val().area);
        localStorage.setItem("session", session);
-       localStorage.setItem("uname", uname);
-       redirect('home');
-       console.log("Session set to 1." );}
+       localStorage.setItem("uname", uname);*/
+       session_start(session, uname, snapshot3.val().area);
+       redirect('home');}
        } else{ console.log("Error, return value: " + snapshot.val()); }
        
         }, function (errorObject) {
