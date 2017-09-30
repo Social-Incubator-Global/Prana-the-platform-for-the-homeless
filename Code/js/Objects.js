@@ -273,7 +273,7 @@ organization = localStorage.getItem("organization");
 
 function get_day()
 {
-    var day = "LastSync: " + new Date().now() + " @ " + new Date().timeNow();
+    return day = "LastSync: " + new Date().now() + " @ " + new Date().timeNow();
 }
 
 var def_lang = [];
@@ -311,8 +311,9 @@ var def_langs_gmaps_reg = [];
 
 var special_characters = ["<amp>"];
 
-var def_locations = ["./home_inconst.php", "./login.php", "./signup.php", "./profile.php", "./content.php", "./posting.php", "/home.php", "./content_modular.php", "./results.php"];
+var def_locations = ["./home.php", "./login.php", "./signup.php", "./profile.php", "./content.php", "./posting.php", "/home.php", "./content_modular.php", "./results.php"];
 
+//transform from def_areas_berlin[n] to def_areas_berlin[0]: ALL LOCATIONS WILL BE EMITTED INTO THE DB
 var def_areas_berlin = ["Berlin All", "Mitte", "Kreuzberg", "Shoeneberg (Shöneberg)", "Tiergarten/Moabit", "Wedding", "Prenzlauerberg", "Friedrichshain", "Neukoelln (Neukölln)", "Tempelhof", "Wilmersdorf", "Charlottenburg", "Spandau", "Reinickendorf", "Pankow", "Weissensee (Weißensee)", "Hohenschoenhausen (Hohenschönhausen)", "Lichtenberg", "Marzahn", "Hellersdorf", "Koepenick (Köpenick)", "Treptow", "Steglitz", "Zehlendorf"];
 
 var var_def_sections = ["home", "food", "housing", "medical", "legal & documents", "study", "jobs", "tips & tricks", "orgs."];

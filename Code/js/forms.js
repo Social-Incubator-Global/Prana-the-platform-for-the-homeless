@@ -108,11 +108,11 @@ function redirect(Where_, Inner_Where_, area_index_)
     set_local("location", Where_);
     if(Where_ == "home")
     {
-        document.location = def_locations[0] + '?lang=' + get_local("lang");
+        document.location = def_locations[6] + '?lang=' + get_local("lang");
     }
     if(Where_ == "homeinner")
     {
-        document.location = ".." + def_locations[0] + '?lang=' + get_local("lang");
+        document.location = ".." + def_locations[6] + '?lang=' + get_local("lang");
     }
     else if(Where_ == "signup")
     {
