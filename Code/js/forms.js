@@ -439,18 +439,21 @@ document.getElementById("org_drop").selectedIndex = organization;
 
 function change_lang()
 {
-document.getElementById("lang_select").selectedIndex = lang;
+    document.getElementById("lang_select").selectedIndex = lang;
+    return;
 }
 
 function change_mo()
 {
     document.getElementById("mo_opn").selectedIndex = get_local("mo");
+    return;
 }
 
 function clear_ven_type_allows()
 {
     set_local("vt", "");
     set_local("va", "");
+    return;
 }
 
 function change_ven_type()
