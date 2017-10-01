@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/results.css"/>
 
+    <?php include '../partials/_js.php' ?>
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/content.js"></script>

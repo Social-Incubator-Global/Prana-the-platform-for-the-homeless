@@ -22,6 +22,7 @@
 -->
 
 <?php include '../partials/_css.php' ?>
+<?php include '../partials/_js.php' ?>
 <?php
 
 /*

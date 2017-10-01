@@ -21,6 +21,7 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <?php include '../partials/_css.php' ?>
+<?php include '../partials/_js.php' ?>
 <?php
 
 /*

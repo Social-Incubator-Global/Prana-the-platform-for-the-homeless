@@ -31,6 +31,7 @@
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/profile.css"/>
+    <?php include '../partials/_js.php' ?>
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/maps_functions.js"></script>
