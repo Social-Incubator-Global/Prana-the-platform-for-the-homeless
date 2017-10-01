@@ -1,4 +1,4 @@
-/*<!-- 
+/*<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -31,7 +31,7 @@ to {
     opacity: 1;
    }
    }
-   
+
    @keyframes input_back_orig {
 from {
   background-color: rgba(0, 93, 106, 0.7);
@@ -380,27 +380,32 @@ color:#2D4255;
 
 h3
 {
-font-family: 'Arial', regular;
-color:#2D4255;
+    font-family: 'Arial', regular;
+    color:#2D4255;
 }
 
-a:link {
-color: rgb(9, 103, 126);
-text-decoration: none;
-font-family: 'Arial', regular;
-};
+a:link
+{
+    color: rgb(9, 103, 126);
+    text-decoration: none;
+    font-family: 'Arial', regular;
+}
 
-a:active {color: black;
-text-decoration: none;
-};
+a:active
+{
+    color: black;
+    text-decoration: none;
+}
 
-a:visited {
-color: black;
-text-decoration: none;
-font-family: 'Arial', regular; };
+a:visited
+{
+    color: black;
+    text-decoration: none;
+    font-family: 'Arial', regular;
+}
 
 a:hover
 {
-color: black;
-text-decoration: underline;
-};
+    color: black;
+    text-decoration: underline;
+}
