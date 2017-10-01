@@ -1,0 +1,504 @@
+/*<!-- 
+<Prana-deutschland. The platform for the homeless>
+    Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
+    <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
+
+    Visitable link: www.prana-deutschland.de , for any inquiries contact at contact@prana-deutschland.de
+
+    This file is part of Prana-deutschland.
+
+    Prana-deutschland is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Prana-deutschland is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
+-->*/
+
+#title_about, #title_projects
+{
+    margin-left: 1%;
+    font-size: 22px;
+    width: 42%;
+    font-family: 'Arial', regular;
+}
+
+#general_info
+{
+    float: left;
+    margin-left: 1%;
+}
+
+#area_sel
+{
+    border: 1px solid rgb(255, 127, 36);
+    width: 150px;
+    height: 33px;
+    background-color: rgb(220,220,220);
+    color: black;
+    opacity: 1.0;
+}
+
+#area_
+{
+    font-size: 16px;
+    font-family: 'Arial', regular;
+}
+
+#buttons_top
+{
+float:left;
+margin-left: 2%;
+}
+
+#delete_, #edit_, #create_project
+{
+height: 30px;
+background-color: #F2F2F2;
+border: 1px solid rgb(9,103,126);
+border-radius: 2px;
+color: black;
+}
+
+#message_
+{
+margin-left: 5px;
+}
+
+#bookmarks__, #description_projects
+{
+    float: left;
+    margin-left: 1%;
+    width: 437px;
+    font-size: 16px;
+    font-family: 'Arial', regular;
+}
+
+#pic_
+{
+    float: left;
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    border-radius: 3px;
+    margin-top: 35px;
+    margin-left: 1%;
+}
+
+#uname_
+{
+    color:rgb(9, 103, 126);
+    font-size: 42px;
+    font-family: 'Arial', regular;
+    margin-left: 2%;
+    margin-top: 2%;
+    float: left;
+}
+
+#type_
+{
+    margin-left: 2%;
+    float: left;
+    font-size: 16px;
+    font-family: 'Arial', regular;
+}
+
+#src_bx_cont
+{
+float: none;
+margin-left: 8%;
+}
+
+#rating_txt, #avail_txt
+{
+margin-left: 1%;
+color:rgb(9, 103, 126);
+float:left;
+}
+
+#dir_
+{
+margin-top: 0px;
+}
+
+#map_size
+{
+float:left;
+margin-top:-34px;
+height: 30px;
+}
+
+b
+{
+color: rgb(9, 103, 126);
+}
+
+#directions_gmaps
+{
+margin-top:25px;
+font-size: 14px;
+height: 225px;
+overflow-x: scroll;
+}
+
+      #map {
+        height: 250px;
+        width:100%;
+      }
+      
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      
+      #warnings-panel {
+        width: 100%;
+        height:10%;
+        text-align: center;
+      }
+
+#directions_posting_content
+{
+font-size: 22px;
+font-family: 'Arial', regular;
+}
+
+#uacnt
+{
+    margin-right: 1%;
+    margin-top: 6px;
+}
+
+#contact_posting_info
+{
+font-size: 16px;
+font-family: 'Arial', regular;
+}
+
+#mobility_posting_info
+{
+font-size: 16px;
+font-family: 'Arial', regular;
+width: 42%;
+float:right;
+}
+
+#filter_singular_text
+{
+color: rgba(9, 103, 126, 1);
+}
+
+#description_posting_content
+{
+float:left;
+margin-left: 1%;
+width: 42%;
+font-size: 14px;
+font-family: 'Arial', regular;
+}
+
+#filters_posting_info
+{
+width: 50%;
+}
+
+#filters_checked_info
+{
+margin-left:0%;
+float:left;
+}
+
+#filters_filters_info
+{
+font-size: 16px;
+}
+
+#logo_pnt
+{
+margin-left: 48px;
+margin-bottom: -15px;
+}
+
+#general_content
+{
+font-family: 'Arial', regular;
+}
+
+#planroute_posting_content
+{
+margin-top: -26px;
+font-size:22px;
+width: 42%;
+float:right;
+}
+
+#title_posting_content
+{
+margin-left: 1%;
+font-size: 22px;
+width: 42%;
+}
+
+#grid_vw
+{
+float: left;
+margin-left: 0px;
+width: 60px;
+height: 33px;
+border-radius: 1px #27697C;
+}
+
+#map_
+{
+margin-left:0%;
+}
+
+#lang_select
+{
+float:none;
+margin-top: 4%;
+}
+
+#content_boxes_area
+{
+width:100%;
+}
+
+#main_content
+{
+margin-top: 0%;
+}
+
+#list_vw, #map_vw
+{
+width: 60px;
+height: 33px;
+border-radius: 1px #27697C;
+}
+
+body
+{
+margin-top: 0%;
+margin-left: 0%;
+}
+
+#uacnt_alternative
+{
+float: right;
+text-align: right;
+width: 100%;
+margin-top: 0px;
+margin-right: 0px;
+}
+
+#top_banner
+{
+    background-color: rgba(9, 103, 126, 1);
+    float: right;
+    width: 100%;
+    margin-top: 0%;
+    height: 45px;
+    color: white;
+    position: fixed;
+    z-index: 1500;
+}
+
+#view
+{
+font-family: 'Arial', regular;
+font-size: 14px;
+}
+
+#section_info
+{
+margin-top: 100px;
+}
+
+#content
+{
+height: 100%;
+margin-left:22%;
+float: left;
+width: 79%;
+}
+
+#section_title
+{
+font-family: 'Arial', regular;
+font-size: 16px;
+color: rgba(9, 103, 126, 1);
+}
+
+#filters_title
+{
+font-size: 22px;
+}
+
+#more_filters
+{
+color: #FF7F27;
+float: right;
+margin-right: 0%;
+}
+
+#filter_container
+{
+overflow:auto;
+height: 100%;
+}
+
+#content_title
+{
+font-size:20px;
+font-family: 'Arial', regular;
+}
+
+#description_text
+{
+font-size:16px;
+font-family: 'Arial', regular;
+}
+
+#sidebanner
+{
+    float: left;
+    width: 20%;
+    height: 100%;
+    margin-top: 0%;
+    margin-left: 0px;
+    border-radius: 0px;
+    color: black;
+    background-color: rgb(237,237,237);
+    font-family: 'Arial', regular;
+    font-size: 14px;
+}
+
+#container_filters, #more_filters
+{
+background-color: rgba(0, 63, 76, 0.4);
+}
+
+#filter_type_text
+{
+float:left;
+margin-left:10%;
+}
+
+#by_organ_text
+{
+float:left;
+margin-left:10%;
+}
+
+#distance_min
+{
+margin-top: 15px;
+font-size: 10px;
+float: left;
+}
+
+#distance_max
+{
+margin-top: 15px;
+font-size: 10px;
+float: right;
+margin-right: 0%;
+}
+
+#filter_type
+{
+width: 79%;
+float: none;
+margin-left: 0%;
+}
+
+#filter_distance
+{
+width:70%;
+margin-right: 0%;
+float: none;
+margin-left: 0%;
+}
+
+#filter_distance_text
+{
+float: left;
+margin-left: 10%;
+}
+
+#upref{
+float: auto;
+margin-top: 20%;
+font-size: 14px;
+font-family: 'Arial', regular;
+}
+
+#login_text
+{
+float: none;
+margin-top: -30%;
+}
+
+#footer
+{
+float: auto;
+color: white;
+font-family: 'Arial', regular;
+font-size: 12px;
+}
+
+#categ_text, #best_rated_text
+{
+color: black;
+font-family: 'Arial', 'Arial', regular;
+font-size: 20px;
+margin-left: 2%;
+}
+
+#categ_line, #best_rated_line
+{
+float: left;
+margin-left: 1.5%;
+}
+
+#categ_content, #best_rated_content
+{
+height: 200px;
+float: left;
+margin-left: 2%;
+width: 97%;
+}
+
+#All_Categories_Boxes
+{
+height: 21%;
+width: 97%;
+margin-left: 1.5%;
+}
+
+#src_bx
+{
+
+}
+
+#src_bx_bttn
+{
+margin-top: 0px;
+float: none;
+background-color: rgba(9, 103, 126, 1);
+}

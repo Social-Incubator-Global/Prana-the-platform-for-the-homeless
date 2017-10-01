@@ -1,0 +1,24 @@
+{
+  "name": "prana-the-platform-for-the-homeless",
+  "version": "0.1.0",
+  "description": "Homeless people come in many shapes and forms, those who want to live on the road for freedom and those who want to leave the road. Our goal is to make it easier either to live on the road or to leave the road. Prana is a digital platform bridging the information gap between volunteers, organizations and the homeless, for the resources and services they need, such as sanitary and medical services, legal advice and so on. The platform also makes it easier for people to become volunteers and so on.",
+  "main": "home.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Social-Incubator-Global/Prana-the-platform-for-the-homeless.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Social-Incubator-Global/Prana-the-platform-for-the-homeless/issues"
+  },
+  "homepage": "https://github.com/Social-Incubator-Global/Prana-the-platform-for-the-homeless#readme",
+  "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
