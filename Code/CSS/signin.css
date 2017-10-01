@@ -29,11 +29,13 @@ font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
 font-size: 100px;
 }
 
-#lang_selector {
+#lang_selector
+{
     margin-top: 0.1%;
 }
 
-#uacnt {
+#uacnt
+{
     margin-top: 14px;
     margin-right: 13.4px;
 }
@@ -60,32 +62,33 @@ float: left;
 
 #input_fm
 {
-margin-top: 3%;
-margin-left: 12.3%;
-float: left;
-width: 73%;
+    margin-top: 3%;
+    margin-left: 12.3%;
+    float: left;
+    width: 73%;
 }
 
 #required_su
 {
-float: left;
-margin-left: 13%;
-font-family: 'Arial', regular;
-color: #FF7F27;
-margin-top: 4%;
+    float: left;
+    margin-left: 13%;
+    font-family: 'Arial', regular;
+    color: #FF7F27;
+    margin-top: 4%;
 }
 
 
-input {
-  color: #31859C;
-  opacity: 1.0;
-  background-color: white;
-  float: none;
-  display: block;
-  border: 1px solid #31859C;
-  font-family: 'Arial', regular;
-  font-size: 14px;
-  border-radius: 2px;
+input
+{
+    color: #31859C;
+    opacity: 1.0;
+    background-color: white;
+    float: none;
+    display: block;
+    border: 1px solid #31859C;
+    font-family: 'Arial', regular;
+    font-size: 14px;
+    border-radius: 2px;
 }
 
 input:hover {

@@ -1,4 +1,4 @@
-/*<!--
+/*<!-- 
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -31,7 +31,7 @@ to {
     opacity: 1;
    }
    }
-
+   
    @keyframes input_back_orig {
 from {
   background-color: rgba(0, 93, 106, 0.7);
@@ -97,8 +97,6 @@ body
     width: 95%;
 }
 
-
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown
 {
@@ -107,7 +105,8 @@ body
 }
 
 /* Dropdown Content (Hidden by Default) ADAPTED FOR EMERGENY BUTTON!!!*/
-.dropdown-content {
+.dropdown-content
+{
     border: 1px rgb(29, 123, 146);
     margin-top: 13%;
     display: none;
@@ -380,32 +379,48 @@ color:#2D4255;
 
 h3
 {
-    font-family: 'Arial', regular;
-    color:#2D4255;
+font-family: 'Arial', regular;
+color:#2D4255;
 }
 
-a:link
-{
-    color: rgb(9, 103, 126);
-    text-decoration: none;
-    font-family: 'Arial', regular;
-}
+a:link {
+color: rgb(9, 103, 126);
+text-decoration: none;
+font-family: 'Arial', regular;
+};
 
-a:active
-{
-    color: black;
-    text-decoration: none;
-}
+a:active {color: black;
+text-decoration: none;
+};
 
-a:visited
-{
-    color: black;
-    text-decoration: none;
-    font-family: 'Arial', regular;
-}
+a:visited {
+color: black;
+text-decoration: none;
+font-family: 'Arial', regular; };
 
 a:hover
 {
-    color: black;
-    text-decoration: underline;
+color: black;
+text-decoration: underline;
+};
+
+.default_box_content_font
+{
+    font-family: 'Arial', regular;
+    font-size: 14px;
+    color: rgb(9, 103, 126);
+}
+
+.result_box_all
+{
+    animation-name: fade_in;
+    animation-duration: 0.3s;
+    margin-left: 3%;
+    margin-top: 3%;
+    border-radius: 0px;
+    float: left;
+    color: rgb(9, 103, 126);
+    background-color: rgba(230,230,230,1);
+    width: 300px;
+    height: 410px;
 }

@@ -21,6 +21,31 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->*/
 
+.result_image_div
+{
+    width: 100%;
+}
+
+.result_image
+{
+    height: 50%;
+}
+
+.result_info
+{
+    margin-top: 2%;
+}
+
+.result_box
+{
+    height:300px;
+    width:250px;
+    background-color: rgb(220,220,220);
+    font-family: 'Arial', regular;
+    font-size: 14px;
+    color: rgb(9, 103, 126);
+}
+
 #title_about, #title_projects
 {
     margin-left: 1%;
