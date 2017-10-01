@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -21,11 +21,11 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
+<?php include '../partials/_css.php' ?>
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-

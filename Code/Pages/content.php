@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -25,6 +25,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Prana Deutschland</title>
 <head bgcolor="white">
+<?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/content.css"/>
@@ -119,12 +120,12 @@ top_menu('content');
     &nbsp;
     <script>
         var directions = [];
-        
+
         function initMap()
         {
             var p_lat = get_local("current_position_lat");
             var p_long = get_local("current_position_long");
-            
+
             var markerArray = [];
             // Instantiate a directions service.
             var directionsService = new google.maps.DirectionsService;
@@ -137,13 +138,13 @@ top_menu('content');
             );
         }
     </script></div>
-    
+
     <script>
     refresh_localstorage();
     document.write('<scr'+'ipt as'+'ync def'+'er s'+'rc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA&callback=initMap&language='+def_langs_gmaps[lang]+'&region='+def_langs_gmaps_reg[lang]+'"></scr'+'ipt>');
     </script>
 </div>
-    
+
 <div id="content_boxes_area">
 <script>
 var variableToSend = 'home_type';
@@ -171,6 +172,6 @@ $query = build_query_string($URLfilter_result, "content");
 <script>redirect_ajax(0);/*redirect_ajax(2);*/ /*response is async resp(2) is finished before resp(0)*/</script>
 </div>
 </div>
-</div>         
+</div>
 </div>
 </body>

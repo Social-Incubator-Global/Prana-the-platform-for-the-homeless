@@ -1,4 +1,4 @@
-<!-- 
+<!--
     <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -26,15 +26,16 @@
 <title>Prana : Search</title>
 
 <head bgcolor="white">
+<?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/results.css"/>
-    
+
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/content.js"></script>
     <script src="../js/session.js"></script>
-    
+
     <!--Variables-->
     <script>
        load_localstorage();
@@ -47,7 +48,7 @@
        var area = localStorage.getItem("area");
        var paid_type = localStorage.getItem("paid_type");
     </script>
-    
+
 <?php
 // sometimes: include('/home/otark/public_html/phpinclude/sql.php');
 include('../phpinclude/sql.php');
@@ -80,7 +81,7 @@ top_menu('search');
              document.write(code_snippets[3]);
         </script>
      </div>
-     <script>   
+     <script>
     document.write('<div id="nav_buttons" style="width:145px; height:30px;"><center><form><input type="button" style="height: 30px;border-radius: 3px;" value="'+def_lang[40]+'" onclick="javascript:window.history.back();"></input><input type="button" style="height: 30px; margin-left:4px;border-radius: 3px;" value="'+def_lang[41]+'" onclick="javascript:window.history.forward();"></input></form></center></div>');</script><br><br>
      </center><br>
      <center><br><br><br><hr><br>

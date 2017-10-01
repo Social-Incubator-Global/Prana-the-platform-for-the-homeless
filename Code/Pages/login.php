@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -25,6 +25,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Prana : Login</title>
 <head>
+<?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/login.css"/>
@@ -32,7 +33,7 @@
 <script src="../js/forms.js"></script>
 <script src="../js/session.js"></script>
 <!--JS Variables-->
-<script>  
+<script>
 set_location("login");
 var session = localStorage.getItem("session");
 if(session==1){redirect('home');}
@@ -56,7 +57,7 @@ if(session==1){redirect('home');}
   <!-- Leave out Storage -->
   <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
 
-<?php 
+<?php
 include('../phpinclude/sql.php');
 include('../phpinclude/functions.php');
 include('../phpinclude/objects.php');
@@ -123,7 +124,7 @@ function login()
     var uname_eml_log = document.getElementById("username_log").value;
     var pwd_log = document.getElementById("password_log").value;
     var snapshot, snapshot2, snapshot3;
-    
+
     var pass= true;
     if(uname_eml_log == "")
     {
@@ -138,7 +139,7 @@ function login()
 
     if(Boolean(pass)==true)
     {
-         
+
 
         var ref = new Firebase("https://prana-deutschland.firebaseio.com/web/data/prna_users/" + uname_eml_log + "");
         ref.orderByChild("username_email").on("value", function(snapshot) {
@@ -146,7 +147,7 @@ function login()
         ref.orderByChild("password").on("value", function(snapshot2) {
            console.log(snapshot2.val().password);
            ref.orderByChild("area").on("value", function(snapshot3) {
-           
+
        if(snapshot.val().username_email == uname_eml_log)
        {
        if(snapshot2.val().password == pwd_log){
@@ -158,7 +159,7 @@ function login()
        session_start(session, uname, snapshot3.val().area);
        redirect('home');}
        } else{ console.log("Error, return value: " + snapshot.val()); }
-       
+
         }, function (errorObject) {
            console.log("The read failed: " + errorObject.code);
         })

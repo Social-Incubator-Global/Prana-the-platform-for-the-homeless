@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -26,6 +26,7 @@
 <title>Prana : Sign up</title>
 
 <head>
+<?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/signin.css"/>
@@ -49,7 +50,7 @@
 <!--  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>-->
 <!--  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script> -->
 <!--  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script> -->
-<!--  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script> --> 
+<!--  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script> -->
 
   <!-- Leave out Storage -->
   <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
@@ -75,9 +76,9 @@
   };
   firebase.initializeApp(config);
 </script>
-  
-<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>  
-<?php 
+
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<?php
 include('../phpinclude/sql.php');
 include('../phpinclude/functions.php');
 include('../phpinclude/objects.php');
@@ -133,7 +134,7 @@ var uname = localStorage.getItem("uname");
                  <script>document.write(def_lang[11])</script>
             </div>
                  <input type="password" id="password_su" value="" name="pwd" style="width: 300px; height: 33px; border: 1px solid #FF7F27"></input><br>
-                 
+
             </form>
             <form id="bttns" style="width:78%;">
             <div id="sign_upbttn">
@@ -146,7 +147,7 @@ var uname = localStorage.getItem("uname");
             </div>
             <div id="required_su">
             <script>document.write(def_lang[12])</script>
-           
+
             </div>
        <!--<button onclick="write_to_firebase();">write</button>
        <button onclick="erase_from_firebase();">erase</button>
@@ -160,21 +161,21 @@ var uname = localStorage.getItem("uname");
 </div>
 <script>
 // erase user profile from firebase
-function erase_from_firebase() 
+function erase_from_firebase()
 {
-    
+
 }
 function read_from_firebase()
 {
     var myFirebaseRef = new Firebase("https://rc-prana-login.firebaseio.com/data");
-    
+
     //read data from firebase
     myFirebaseRef.on('value', function(snapshot) {JSON.stringify(console.log(snapshot.val()));});
 }
-// write user profile to firebase    
-function write_to_firebase() 
+// write user profile to firebase
+function write_to_firebase()
 {
-  
+
 
     var myFirebaseRef = new Firebase("https://rc-prana-login.firebaseio.com/data");
     var myFirebaseRef0 = new Firebase("https://rc-prana-login.firebaseio.com/data0");
@@ -185,7 +186,7 @@ function write_to_firebase()
     var ar  = document.getElementById("area_su").selectedIndex;
     var pwd   = document.getElementById("password_su").value;
     //write profile to database
-    
+
     //note: use 'push' instead of 'set'
     //      in order to generate unique ID for each profile
     myFirebaseRef0.set(null,function(error){if (error) {alert("something is wrong!");}
@@ -200,23 +201,23 @@ function write_to_firebase()
     });
     alert("Done!");
 }
-    
+
 function signup()
 {
-    
+
     //get input strings from input tabs "username_su" and "password_su"
     var eml = document.getElementById("username_su").value;
     var pwd = document.getElementById("password_su").value;
     var empty = false;
     var redir = true;
     if (eml === "" || pwd === "") {
-      document.getElementById("username_su").style = "color: white; background-color: green; width: 300px; height: 33px;";  
+      document.getElementById("username_su").style = "color: white; background-color: green; width: 300px; height: 33px;";
       document.getElementById("password_su").style = "color: white; background-color: green; width: 300px; height: 33px;";
       empty = true;
     }
     //firebase sign-up
     firebase.auth().createUserWithEmailAndPassword(eml, pwd)
-    .catch(function(error) 
+    .catch(function(error)
         {
                  // Handle Errors here.
         var errorCode = error.code;
@@ -232,7 +233,7 @@ function signup()
         console.log(error);
         }
       ).then(function() {alert(redir.toString()); if (redir) {success();}});
-     
+
 }
 //asynchronicity of promise!
 
@@ -243,7 +244,7 @@ function sign_up()
     var lst_nme_su = document.getElementById("lastname_su").value;
     var are_su = document.getElementById("area_su").selectedIndex;
     var pwd = document.getElementById("password_su").value;
-    
+
     var pass= true;
     if(uname_eml_su == "")
     {
@@ -268,20 +269,20 @@ function sign_up()
 
     if(Boolean(pass)==true)
     {
-        //var hash = CryptoJS.SHA256(pwd); 
+        //var hash = CryptoJS.SHA256(pwd);
         //hash=hash.toString(CryptoJS.enc.Base64);
-        
+
         //check user exists
         // Get a database reference to our posts
         var ref = new Firebase("https://prana-deutschland.firebaseio.com/web/data/prna_users/" + uname_eml_su + "");
         // Attach an asynchronous callback to read the data at our posts reference
         ref.orderByChild("username_email").on("value", function(snapshot) {
            console.log(snapshot.val());
-           
+
        if(snapshot.val() == null)
        {
            //USER DOESN'T EXIST. CREATE USER.
-       
+
         var ref = new Firebase("https://prana-deutschland.firebaseio.com/web/data/");
         console.log("creating user!");
         var usersRef = ref.child("prna_users");
@@ -291,13 +292,13 @@ function sign_up()
                    last_name: lst_nme_su,
                    area: are_su,
                    password: pwd},function(error){ success();});
-       
-       
-       } 
+
+
+       }
        else
-       { 
+       {
        console.log("Error, User exists.");
-       
+
        document.getElementById("username_su").style = "color: red; border: 1px solid red; width: 300px; height: 33px;";
        document.getElementById("firstname_su").value = "";
        document.getElementById("lastname_su").value = "";
@@ -305,11 +306,11 @@ function sign_up()
        document.getElementById("username_su").value = "USERNAME ALREADY IN USE";
        document.getElementById("area_su").selectedIndex = 0;
        }
-       
+
         }, function (errorObject) {
            console.log("The read failed: " + errorObject.code);
-        
-    })} 
+
+    })}
     }
 
 function success()

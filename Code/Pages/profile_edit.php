@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -27,6 +27,7 @@
 <title>Prana Deutschland</title>
 
 <head bgcolor="white">
+<?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/profile.css"/>
@@ -37,7 +38,7 @@
 
     <!--Variables-->
        <script>
-           
+
 set_location("profile");
        var session = localStorage.getItem("session");
        var uname = localStorage.getItem("uname");
@@ -60,7 +61,7 @@ set_location("profile");
   };
   firebase.initializeApp(config);
 </script>
-    
+
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
@@ -68,7 +69,7 @@ set_location("profile");
 
   <!-- Leave out Storage -->
   <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
-  
+
 <?php
 include('../phpinclude/content_functions.php');
 include('../phpinclude/sql.php');

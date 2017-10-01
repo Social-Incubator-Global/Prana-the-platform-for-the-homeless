@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -24,6 +24,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Prana Deutschland</title>
 <head bgcolor="white">
+<?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
 <link rel="stylesheet" href="../CSS/posting.css"/>
@@ -95,7 +96,7 @@ top_menu('posting');
              document.write(code_snippets[3]);
         </script>
      </div>
-     <script>   
+     <script>
     document.write('<div id="nav_buttons" style="width:145px; height:30px;"><center><form><input type="button" style="height: 30px;border-radius: 3px;" value="'+def_lang[40]+'" onclick="javascript:window.history.back();"></input><input type="button" style="height: 30px; margin-left:4px;border-radius: 3px;" value="'+def_lang[41]+'" onclick="javascript:window.history.forward();"></input></form></center></div>');</script><br><br>
      </center><br>
      <center><br><br><br><hr><br>
@@ -134,7 +135,7 @@ top_menu('posting');
         // Create a map and center it on Berlin MANUALLY.
         var p_lat = get_local("current_position_lat");
         var p_long = get_local("current_position_long");
-        
+
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
           center: {lat: Number(p_lat), lng: Number(p_long)}
@@ -159,13 +160,13 @@ top_menu('posting');
         document.getElementById('end').addEventListener('change', onChangeHandler);
       }
 
-      function calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map) 
+      function calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map)
       {
         // First, remove any existing markers from the map.
         for (var i = 0; i < markerArray.length; i++) {
           markerArray[i].setMap(null);
         }
-        
+
         var p_latlng = get_local("current_position_lat") + "," + get_local("current_position_long");
         // Retrieve the start and end locations and create a DirectionsRequest using
         // WALKING directions.
@@ -205,7 +206,7 @@ top_menu('posting');
           directions.push(myRoute.steps[i].instructions);
           document.getElementById("directions_gmaps").innerHTML+= "<div id='dir_'>" + i + ". " + myRoute.steps[i].instructions + "</div><hr>";
         }
-        
+
       }
 
       function attachInstructionText(stepDisplay, marker, text, map) {
