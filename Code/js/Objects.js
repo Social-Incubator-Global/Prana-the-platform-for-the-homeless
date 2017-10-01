@@ -311,8 +311,9 @@ var def_langs_gmaps_reg = [];
 
 var special_characters = ["<amp>"];
 
+//[0]: home here must be directed to the current directory. [6]: home here must be directed to the root directory
 var def_locations = [
-    "/home.php",
+    "./home.php",
     "./login.php",
     "./signup.php",
     "./profile.php",
