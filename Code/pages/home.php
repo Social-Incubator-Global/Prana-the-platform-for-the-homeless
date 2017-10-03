@@ -26,10 +26,10 @@
 <title>Prana Deutschland</title>
 
 <head bgcolor="white">
-<?php include '../partials/_css.php' ?>
-<link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="../CSS/Mainstyle.css"/>
-<link rel="stylesheet" href="../CSS/home.css"/>
+    <?php include '../partials/_css.php' ?>
+    <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
+    <link rel="stylesheet" href="../CSS/home.css"/>
 
     <?php include '../partials/_js.php' ?>
     <script src="../js/Objects.js"></script>
@@ -40,32 +40,32 @@
 
     <!--Variables-->
     <script>
-       load_localstorage();
-       localStorage.setItem("session_vars_resume", 1);
-       var session = localStorage.getItem("session");
-       var uname = localStorage.getItem("uname");
-       var ID = localStorage.getItem("ID");
-       var home_type = localStorage.getItem("home_type");
-       var sql_ = localStorage.getItem("sql_");
-       var area = localStorage.getItem("area");
-       var paid_type = localStorage.getItem("paid_type");
+    load_localstorage();
+    localStorage.setItem("session_vars_resume", 1);
+    var session = localStorage.getItem("session");
+    var uname = localStorage.getItem("uname");
+    var ID = localStorage.getItem("ID");
+    var home_type = localStorage.getItem("home_type");
+    var sql_ = localStorage.getItem("sql_");
+    var area = localStorage.getItem("area");
+    var paid_type = localStorage.getItem("paid_type");
     </script>
 
     <!--Init Functions-->
     <script>
-       getLocation();
+    getLocation();
     </script>
 
-<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
-<script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBAiI7LmsVJTTG-MITrXmdEi8qNw78q3SM",
     authDomain: "prana-deutschland.firebaseapp.com",
     databaseURL: "https://prana-deutschland.firebaseio.com",
     storageBucket: "prana-deutschland.appspot.com",
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 </script>
 
 <?php
@@ -82,27 +82,27 @@ apply_language($resu_[0]);
 </head>
 
 <body bgcolor="#F2F2F2">
-<!--SESSION VARIABLES-->
-<script>
-    var session = localStorage.getItem("session");
-    var uname = localStorage.getItem("uname");
-</script>
-<br>
-<center>
-<div id="content">
-    <script type="text/javascript">
+  <!--SESSION VARIABLES-->
+  <script>
+  var session = localStorage.getItem("session");
+  var uname = localStorage.getItem("uname");
+  </script>
+  <br>
+  <center>
+    <div id="content">
+      <script type="text/javascript">
     //dl_d(code_snippets[4]);
     top_menu("home0");
     </script>
     <br>
     <script type="text/javascript">
-        dashboard("home");
+    dashboard("home");
     </script>
 </div>
 </center>
 <br><br><br><br><br><br>
 <div id="footer">
-    <center><script>show_copyright();</script></center>
+  <center><script>show_copyright();</script></center>
 </div>
 <script type="text/javascript">change_lang();</script>
 </body>
