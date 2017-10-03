@@ -225,7 +225,14 @@ border: 1px solid white;
 border: 1px solid rgb(255, 127, 36); float:right; width: 150px; height: 33px; background-color: rgb(220,220,220); color: black; opacity: 1.0;
 }
 
-input {
+select
+{
+  font-family: 'Arial', regular;
+  font-size: 14px;
+}
+
+input
+{
   -webkit-transition: background-color 0.1s;
   border-radius: 0px;
   color: white;
