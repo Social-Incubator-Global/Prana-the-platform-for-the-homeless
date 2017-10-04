@@ -21,6 +21,9 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+include 'connect.php'; 
+
 function build_query_string($URLfilter_result, $Type_)
 {
     $query = "";
@@ -82,23 +85,5 @@ function build_query_string($URLfilter_result, $Type_)
         }
     }
     return $query;
-}
-
-function query_($quer)
-{
-    $hostname = 'localhost';
-    $username = 'root';
-    $password = 'root';
-    $dbname = 'prana_db';
-    $link = new mysqli($hostname, $username, $password, $dbname)
-        or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
-    $link->set_charset('utf8_swedish_ci');
-    if ($link->connect_errno)
-    {
-      echo "Failed to connect to DB: " . $link->connect_errno;
-    } //else { print 'connected'; }
-    $result = $link->query($quer) or die("".$link->error.'Query error');
-    $link->close();
-    return $result;
 }
 ?>
