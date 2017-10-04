@@ -116,7 +116,7 @@ body
     position: absolute;
     background-color: rgb(230,230,230);
     min-width: 280px;
-    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.4);
 }
 
 /* Links inside the dropdown */
@@ -217,86 +217,86 @@ margin-left: 18px;
 
 hr
 {
-border: 1px solid white;
+    border: 1px solid white;
 }
 
 #lang_select
 {
-border: 1px solid rgb(255, 127, 36); float:right; width: 150px; height: 33px; background-color: rgb(220,220,220); color: black; opacity: 1.0;
+    border: 1px solid rgb(255, 127, 36); float:right; width: 150px; height: 33px; background-color: rgb(220,220,220); color: black; opacity: 1.0;
 }
 
 select
 {
-  font-family: 'Arial', regular;
-  font-size: 14px;
+    font-family: 'Arial', regular;
+    font-size: 14px;
 }
 
 input
 {
-  -webkit-transition: background-color 0.1s;
-  border-radius: 0px;
-  color: white;
-  opacity: 0.9;
-  background-color: rgba(9, 103, 126, 1);
-  float: left;
-  display: block;
-  border: 0px solid #FF7F27;
-  font-family: 'Arial', regular;
-  font-size: 14px;
+    -webkit-transition: background-color 0.1s;
+    border-radius: 0px;
+    color: white;
+    opacity: 0.9;
+    background-color: rgba(9, 103, 126, 1);
+    float: left;
+    display: block;
+    border: 0px solid #FF7F27;
+    font-family: 'Arial', regular;
+    font-size: 14px;
 }
 
 input:hover {
-  color: white;
-  background-color: rgba(0, 93, 106, 0.7);
+    color: white;
+    background-color: rgba(0, 93, 106, 0.7);
 }
 
 input:active {
-  background-color: rgba(0, 63, 86, 0.7);
+    background-color: rgba(0, 63, 86, 0.7);
 }
 
 #top_banner
 {
-margin-top: -10px;
+    margin-top: 0px;
 };
 
 #logo
 {
-margin-left: -50px;
-margin-top: 0px;
-float: auto;
+    margin-left: 10px;
+    margin-top: 0px;
+    float: auto;
 }
 
 #logo_pnt
 {
-margin-top: 25px;
-margin-bottom: -10px;
-margin-left: 68px;
-float: none;
+    margin-top: 25px;
+    margin-bottom: -10px;
+    margin-left: 68px;
+    float: none;
 }
 
 #button_google_go_bike, #button_google_go_car, #button_google_go_walking, #button_google_go_all
 {
-width: 75px;
-height:30px;
+    width: 75px;
+    height:30px;
 }
 
 #button_google_go_public
 {
-width: 115px;
-height:30px;
+    width: 115px;
+    height:30px;
 }
 
 #transport_button_tram
 {
-background-color: red;
-width: 70px;
-height:30px;
+    background-color: red;
+    width: 70px;
+    height:30px;
 }
 
 #transport_button_walking
 {
-width: 40px;
-height:30px;
+    width: 40px;
+    height:30px;
 }
 
 #transport_button_all
@@ -355,6 +355,8 @@ font-size: 16px;
 
 #uacnt
 {
+    font-family: 'Arial', regular;
+    font-size: 14px;
     float: right;
     text-align: right;
     width: 15%;
