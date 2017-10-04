@@ -27,7 +27,8 @@
   height: 50%; }
 
 .result_info {
-  margin-top: 2%; }
+  margin-top: 2%;
+  width: 100%; }
 
 .result_box {
   height: 300px;
@@ -266,7 +267,9 @@ body {
 #search_title {
   margin-top: 5%;
   font-size: 30px;
-  font-family: 'Arial', regular; }
+  font-family: 'Arial', regular;
+  margin-left: 3%;
+  color: #09677e; }
 
 #search_content {
   height: 100%;

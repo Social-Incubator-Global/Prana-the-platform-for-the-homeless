@@ -177,6 +177,7 @@ function setPosition(position) {
 function dl_d(value)
 {
     document.write(value);
+    return;
 }
 
 function dl_r(ndx)
@@ -187,6 +188,13 @@ function dl_r(ndx)
 function set_value(name, ndx)
 {
     document.getElementById(name).value = dl_r(ndx);
+    return;
+}
+
+function set_innerhtml(name, HTML)
+{
+    document.getElementById(name).innerHTML = HTML;
+    return;
 }
 
 function set_index(name, ndx)

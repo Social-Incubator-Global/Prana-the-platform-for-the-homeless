@@ -93,7 +93,7 @@ top_menu('search');
 <br><br>
 <div id="main_content">
     <div id="search_title">
-        Search Results:
+        <!--Filled in through content_functions.php/search();-->
     </div>
     <br>
     <div id="search_results">

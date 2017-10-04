@@ -91,7 +91,7 @@ body {
   position: absolute;
   background-color: #e6e6e6;
   min-width: 280px;
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.4); }
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.5); }
 
 /* Links inside the dropdown */
 .dropdown-content a {

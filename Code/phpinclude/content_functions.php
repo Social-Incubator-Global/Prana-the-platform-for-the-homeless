@@ -144,6 +144,7 @@ function create_user($id, $uname)
     //Creates all necessary tables for the user $uname
 }
 
+//Executing this function returns search frontend search content to results.php based on URL arguments
 function search()
 {
     $URLfilter_result = get_filters_URL("search");
@@ -154,6 +155,7 @@ function search()
     $result = query_($query);
 
     echo("<script>document.title='Prana '+dl_r(110)+' ".$URLfilter_result[3]."  : ".$URLfilter_result[1]."'</script>");
+    echo("<script>set_innerhtml('search_title', dl_r(112)+' ' +dl_r(113)+' ' + dl_r(114) + dl_r(115) + ' <a href>".$URLfilter_result[1]."</a>');</script>");
     while($row = $result->fetch_assoc())
     {
         $query2 = "SELECT image_path FROM organizations_venues WHERE id=".$row["organization_venue_address"];
@@ -167,7 +169,7 @@ function search()
             $img_path = $row2["image_path"];
         }
         
-        echo("<div class='result_box_all' id='resultbox_".$row["id"]."'><div id='content_box_header_1' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_1' style='float: left; margin-left:2%; margin-top:4%;'>Test Venue</div></div><div id='result_image' class='result_image_div'><img class='result_image' src='../Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div><br><div id='info_".row["id"]."' style='margin-top: 70%;height: 50px;margin-left: 20px;'>Venue Type:<br>Address:<br>Phone:<br>Email:<br>Venue Allows/Venue Type:<br>Additional services available:</div></div><script>document.getElementById('img_". $row["id"] ."').src = '". $img_path ."';</script>");
+        echo("<div class='result_box_all' id='resultbox_".$row["id"]."'><div id='content_box_header_1' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_1' style='float: left; margin-left:2%; margin-top:4%;'>Test Venue</div></div><div id='result_image' class='result_image_div'><img class='result_image' src='../Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div><br><div class='result_info' id='info_".row["id"]."'>Venue Type:<br>Address:<br>Phone:<br>Email:<br>Venue Allows/Venue Type:<br>Additional services available:</div></div><script>document.getElementById('img_". $row["id"] ."').src = '". $img_path ."';</script>");
     }
     return;
 }
