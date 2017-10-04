@@ -87,7 +87,6 @@ apply_language($resu_[0]);
     var session = localStorage.getItem("session");
     var uname = localStorage.getItem("uname");
 </script>
-<br>
 <center>
 <div id="content">
     <script type="text/javascript">

@@ -206,7 +206,7 @@ top_menu('posting');
           attachInstructionText(
               stepDisplay, marker, myRoute.steps[i].instructions, map);
           directions.push(myRoute.steps[i].instructions);
-          document.getElementById("directions_gmaps").innerHTML+= "<div id='dir_'>" + i + ". " + myRoute.steps[i].instructions + "</div><hr>";
+          document.getElementById("directions_gmaps").innerHTML+= "<div id='dir_'>" + i + ". " + myRoute.steps[i].instructions + "</div>";
         }
 
       }

@@ -20,407 +20,322 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->*/
-
 @import url(https://fonts.googleapis.com/css?family=Reenie+Beanie);
-
 @keyframes fade_in {
-from {
-    opacity: 0.5;
-     }
-to {
-    opacity: 1;
-   }
-   }
-   
-   @keyframes input_back_orig {
-from {
-  background-color: rgba(0, 93, 106, 0.7);
-     }
-to {
-  background-color: rgba(0, 63, 86, 0.7);
-   }
-   }
+  from {
+    opacity: 0.5; }
+  to {
+    opacity: 1; } }
+@keyframes input_back_orig {
+  from {
+    background-color: rgba(0, 93, 106, 0.7); }
+  to {
+    background-color: rgba(0, 63, 86, 0.7); } }
+body {
+  color: black;
+  background-color: #E7052C2;
+  background-size: 100%;
+  animation-name: fade_in;
+  animation-duration: 0.3s;
+  margin-top: 0px;
+  margin-left: 0px; }
 
-body
-{
-    color: black;
-    background-color: #E7052C2;
-    background-size: 100%;
-    animation-name: fade_in;
-    animation-duration: 0.3s;
-    margin-top:0px;
-    margin-left: 0px;
-}
+#title_ratings_comments {
+  font-size: 22px;
+  width: 42%; }
 
-#title_ratings_comments
-{
-    font-size: 22px;
-    width: 42%;
-}
+#section_image {
+  margin-top: 50px; }
 
-#section_image
-{
-    margin-top: 50px;
-}
+#sidebanner {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  bottom: 0;
+  top: 0%;
+  margin-top: 45px;
+  float: left;
+  width: 20%;
+  height: 100%;
+  border-radius: 0px;
+  color: #09677e;
+  background-color: #ededed;
+  font-family: 'Arial', regular;
+  font-size: 14px; }
 
-#sidebanner
-{
-    overflow-x: hidden;
-    overflow-y: scroll;
-    position: fixed;
-    bottom: 0;
-    top:0%;
-    margin-top: 45px;
-    float: left;
-    width: 20%;
-    height: 100%;
-    border-radius: 0px;
-    color: rgb(9, 103, 126);
-    background-color: rgb(237,237,237);
-    font-family: 'Arial', regular;
-    font-size: 14px;
-}
+#emergency_button_div {
+  position: fixed;
+  float: left;
+  z-index: 1000;
+  margin-top: 0%;
+  margin-left: 8%;
+  background-color: red; }
 
-#emergency_button_div
-{
-    position:fixed;
-    float:left;
-    z-index:1000;
-    margin-top: 0%;
-    margin-left: 8%;
-    background-color:red;
-}
-
-#menu_main
-{
-    color: rgb(9, 103, 126);
-    width: 95%;
-}
+#menu_main {
+  color: #09677e;
+  width: 95%; }
 
 /* The container <div> - needed to position the dropdown content */
-.dropdown
-{
-    position: relative;
-    display: inline-block;
-}
+.dropdown {
+  position: relative;
+  display: inline-block; }
 
 /* Dropdown Content (Hidden by Default) ADAPTED FOR EMERGENY BUTTON!!!*/
-.dropdown-content
-{
-    border: 1px rgb(29, 123, 146);
-    margin-top: 13%;
-    display: none;
-    margin-left: 35%;
-    width: 30%;
-    z-index: 1800;
-    position: absolute;
-    background-color: rgb(230,230,230);
-    min-width: 280px;
-    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.2);
-}
+.dropdown-content {
+  border: 1px #1d7b92;
+  margin-top: 13%;
+  display: none;
+  margin-left: 35%;
+  width: 30%;
+  z-index: 1800;
+  position: absolute;
+  background-color: #e6e6e6;
+  min-width: 280px;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.4); }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: rgb(29, 123, 146); color: white;}
+.dropdown-content a:hover {
+  background-color: #1d7b92;
+  color: white; }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {
+  display: block; }
 
-#emergency_button
-{
-    border-radius:0px;
-}
+#emergency_button {
+  border-radius: 0px; }
 
 @font-face {
   font-family: 'Reenie Beanie';
   font-style: normal;
   font-weight: 400;
-  src: local('Reenie Beanie'), local('ReenieBeanie'), url(https://fonts.gstatic.com/s/reeniebeanie/v7/ljpKc6CdXusL1cnGUSamXzxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
+  src: local("Reenie Beanie"), local("ReenieBeanie"), url(https://fonts.gstatic.com/s/reeniebeanie/v7/ljpKc6CdXusL1cnGUSamXzxObtw73-qQgbr7Be51v5c.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+#lang_selector {
+  margin-right: 0.5%; }
 
-#lang_selector
-{
-margin-right:0.5%;
-}
+#highlighted_text {
+  color: #09677e;
+  font-weight: bold; }
 
-#highlighted_text
-{
-    color: rgba(9, 103, 126, 1);
-    font-weight: bold;
-}
+#lang_select {
+  float: none;
+  margin-top: 3%; }
 
-#lang_select
-{
-float:none;
-margin-top: 3%;
-}
+#team_powerrrr, #supporting_p {
+  font-family: 'Arial', regular;
+  font-size: 18px; }
 
-#team_powerrrr, #supporting_p
-{
-font-family: 'Arial', regular;
-font-size: 18px;
-}
+#src_bx_top {
+  width: 35px;
+  background-color: #ff7f24;
+  height: 70%;
+  border: 1px solid #ff7f24; }
 
-#src_bx_top
-{
-    width: 35px;
-    background-color: rgb(255, 127, 36);
-    height: 70%;
-    border: 1px solid rgb(255, 127, 36);
-}
+#src_in {
+  color: white;
+  background-color: #09677e;
+  border: 0px solid #FF7F27; }
 
-#src_in
-{
-    color: white;
-    background-color: rgba(9,103,126,1.0);
-    border: 0px solid #FF7F27;
-}
+#src_in_top {
+  color: white;
+  width: 180px;
+  height: 70%;
+  float: left;
+  background-color: #09677e;
+  border: 1px solid #ff7f24; }
 
-#src_in_top
-{
-    color: white;
-    width: 180px;
-    height: 70%;
-    float: left;
-    background-color: rgba(9, 103, 126, 1.0);
-    border: 1px solid rgb(255, 127, 36);
-}
+#footer {
+  float: auto;
+  color: black;
+  font-family: 'Arial', regular;
+  font-size: 12px; }
 
-#footer
-{
-float: auto;
-color: black;
-font-family: 'Arial', regular;
-font-size: 12px;
-}
+#logo {
+  /*float: left;
+  font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
+  font-size: 56px;*/
+  float: left;
+  font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
+  font-size: 42px;
+  color: white;
+  margin-top: 0px;
+  margin-left: 18px; }
 
-#logo
-{
-/*float: left;
-font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
-font-size: 56px;*/
-float: left;
-font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
-font-size: 42px;
-color: white;
-margin-top: 0px;
-margin-left: 18px;
-}
+hr {
+  border: 1px solid white; }
 
-hr
-{
-border: 1px solid white;
-}
+#lang_select {
+  border: 1px solid #ff7f24;
+  float: right;
+  width: 150px;
+  height: 33px;
+  background-color: gainsboro;
+  color: black;
+  opacity: 1.0; }
 
-#lang_select
-{
-border: 1px solid rgb(255, 127, 36); float:right; width: 150px; height: 33px; background-color: rgb(220,220,220); color: black; opacity: 1.0;
-}
+select {
+  font-family: 'Arial', regular;
+  font-size: 14px; }
 
 input {
   -webkit-transition: background-color 0.1s;
   border-radius: 0px;
   color: white;
   opacity: 0.9;
-  background-color: rgba(9, 103, 126, 1);
+  background-color: #09677e;
   float: left;
   display: block;
   border: 0px solid #FF7F27;
   font-family: 'Arial', regular;
-  font-size: 14px;
-}
+  font-size: 14px; }
 
 input:hover {
   color: white;
-  background-color: rgba(0, 93, 106, 0.7);
-}
+  background-color: rgba(0, 93, 106, 0.7); }
 
 input:active {
-  background-color: rgba(0, 63, 86, 0.7);
-}
+  background-color: rgba(0, 63, 86, 0.7); }
 
-#top_banner
-{
-margin-top: -10px;
-};
+#top_banner {
+  margin-top: 0px; }
 
-#logo
-{
-margin-left: -50px;
-margin-top: 0px;
-float: auto;
-}
+#logo {
+  margin-left: 10px;
+  margin-top: 0px;
+  float: auto; }
 
-#logo_pnt
-{
-margin-top: 25px;
-margin-bottom: -10px;
-margin-left: 68px;
-float: none;
-}
+#logo_pnt {
+  margin-top: 25px;
+  margin-bottom: -10px;
+  margin-left: 68px;
+  float: none; }
 
-#button_google_go_bike, #button_google_go_car, #button_google_go_walking, #button_google_go_all
-{
-width: 75px;
-height:30px;
-}
+#button_google_go_bike, #button_google_go_car, #button_google_go_walking, #button_google_go_all {
+  width: 75px;
+  height: 30px; }
 
-#button_google_go_public
-{
-width: 115px;
-height:30px;
-}
+#button_google_go_public {
+  width: 115px;
+  height: 30px; }
 
-#transport_button_tram
-{
-background-color: red;
-width: 70px;
-height:30px;
-}
+#transport_button_tram {
+  background-color: red;
+  width: 70px;
+  height: 30px; }
 
-#transport_button_walking
-{
-width: 40px;
-height:30px;
-}
+#transport_button_walking {
+  width: 40px;
+  height: 30px; }
 
-#transport_button_all
-{
-width: 40px;
-height:30px;
-}
+#transport_button_all {
+  width: 40px;
+  height: 30px; }
 
-#transport_button_busses
-{
-background-color: purple;
-width: 70px;
-height:30px;
-}
+#transport_button_busses {
+  background-color: purple;
+  width: 70px;
+  height: 30px; }
 
-#transport_button_ubahn
-{
-background-color: blue;
-width: 70px;
-height:30px;
-}
+#transport_button_ubahn {
+  background-color: blue;
+  width: 70px;
+  height: 30px; }
 
-#transport_button_sbahn
-{
-background-color: green;
-width: 70px;
-height:30px;
-}
+#transport_button_sbahn {
+  background-color: green;
+  width: 70px;
+  height: 30px; }
 
-#slogs
-{
-    margin-top: -4%;
-font-family: 'Reenie Beanie', cursive;
-font-size: 36px;
-}
+#slogs {
+  margin-top: -4%;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 36px; }
 
-#temp
-{
-margin-top: 0%;
-color: white;
-font-family: 'Arial', regular;
-font-size: 16px;
-}
+#temp {
+  margin-top: 0%;
+  color: white;
+  font-family: 'Arial', regular;
+  font-size: 16px; }
 
-#sel_home_type
-{
-width: 35%;
-margin-top: 7px;
-}
+#sel_home_type {
+  width: 35%;
+  margin-top: 7px; }
 
-#Logotext
-{
-font-family: 'Reenie Beanie', cursive;
-font-size: 16px;
-}
+#Logotext {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 16px; }
 
-#uacnt
-{
-    float: right;
-    text-align: right;
-    width: 15%;
-    margin-right: 1%;
-    margin-top: 6px;
-    background-color: #E7052C2;
-}
+#uacnt {
+  font-family: 'Arial', regular;
+  font-size: 14px;
+  float: right;
+  text-align: right;
+  width: 15%;
+  margin-right: 1%;
+  margin-top: 6px;
+  background-color: #E7052C2; }
 
-#uacnt_alternative{
-float: right;
-text-align: right;
-width: 0px;
-margin-top: 0px;
-margin-right: 0px;
-background-color: E7052C2;
-}
+#uacnt_alternative {
+  float: right;
+  text-align: right;
+  width: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  background-color: E7052C2; }
 
-p
-{
-font-family: 'Arial', regular;
-color:#2D4255;
-}
+p {
+  font-family: 'Arial', regular;
+  color: #2D4255; }
 
-h1
-{
-font-family: 'Arial', regular;
-color:#2D4255;
-}
+h1 {
+  font-family: 'Arial', regular;
+  color: #2D4255; }
 
-h3
-{
-font-family: 'Arial', regular;
-color:#2D4255;
-}
+h3 {
+  font-family: 'Arial', regular;
+  color: #2D4255; }
 
 a:link {
-color: rgb(9, 103, 126);
-text-decoration: none;
-font-family: 'Arial', regular;
-};
+  color: #09677e;
+  text-decoration: none;
+  font-family: 'Arial', regular; }
 
-a:active {color: black;
-text-decoration: none;
-};
+a:active {
+  color: black;
+  text-decoration: none; }
 
 a:visited {
-color: black;
-text-decoration: none;
-font-family: 'Arial', regular; };
+  color: black;
+  text-decoration: none;
+  font-family: 'Arial', regular; }
 
-a:hover
-{
-color: black;
-text-decoration: underline;
-};
+a:hover {
+  color: black;
+  text-decoration: underline; }
 
-.default_box_content_font
-{
-    font-family: 'Arial', regular;
-    font-size: 14px;
-    color: rgb(9, 103, 126);
-}
+.default_box_content_font {
+  font-family: 'Arial', regular;
+  font-size: 14px;
+  color: #09677e; }
 
-.result_box_all
-{
-    animation-name: fade_in;
-    animation-duration: 0.3s;
-    margin-left: 3%;
-    margin-top: 3%;
-    border-radius: 0px;
-    float: left;
-    color: rgb(9, 103, 126);
-    background-color: rgba(230,230,230,1);
-    width: 300px;
-    height: 410px;
-}
+.result_box_all {
+  animation-name: fade_in;
+  animation-duration: 0.3s;
+  margin-left: 3%;
+  margin-top: 3%;
+  border-radius: 0px;
+  float: left;
+  color: #09677e;
+  background-color: #e6e6e6;
+  width: 300px;
+  height: 410px; }
+
+/*# sourceMappingURL=Mainstyle.css.map */
