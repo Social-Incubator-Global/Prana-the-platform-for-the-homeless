@@ -113,9 +113,9 @@ top_menu('content');
   </div>
 </div>
 <div id="content">
-<br><br>
+<!--<br><br>-->
 <div id="main_content">
-<div id ="gmaps" style ="border: 1px #27697C; height: 100%; width: 29.1%; position: fixed; margin-top: 0%; margin-right: 0%; margin-left: 70.8%;">
+<div id ="gmaps" style ="border: 1px #27697C; height: 97.3%; width: 29.1%; position: fixed; margin-top: 0%; margin-right: 0%; margin-left: 70.8%;">
 <div id='map_'>
     <div id="map" style="width:100%; height:95.8%;"></div>
     &nbsp;
