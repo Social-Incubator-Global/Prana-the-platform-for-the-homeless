@@ -44,11 +44,20 @@ function new_route()
 
 function center_marker()
 {
+    return;
+}
+
+function map_placeholder()
+{
+    set_innerhtml("map_", "<center><div style='color: rgb(9, 103, 126); font-size:18px; font-family: \"Arial\", regular;'>Loading map...</div></center>");
+    
+    return;
 }
 
 function start_map()
 {
-document.write('<div id="map_"><script type="text/javascript" src="http://maps.google.com/maps/api/js?key= AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA"></script><div style="overflow:hidden;height:250px;width:100%;"><div id="gmap_canvas" style="height:250px;width:100%;"><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.themecircle.net/wordpress-portfolio/" id="get-map-data">themecircle</a></div></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:11,center:mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});}google.maps.event.addDomListener(window, "load", init_map);</script></div>');
+    document.write('<div id="map_"><script type="text/javascript" src="http://maps.google.com/maps/api/js?key= AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA"></script><div style="overflow:hidden;height:250px;width:100%;"><div id="gmap_canvas" style="height:250px;width:100%;"><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.themecircle.net/wordpress-portfolio/" id="get-map-data">themecircle</a></div></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:11,center:mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});}google.maps.event.addDomListener(window, "load", init_map);</script></div>');
+    return;
 }
 
 //dead function?

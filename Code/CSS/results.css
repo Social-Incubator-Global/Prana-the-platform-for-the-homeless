@@ -24,7 +24,8 @@
   width: 100%; }
 
 .result_image {
-  height: 50%; }
+  width: 250px;
+  height: 250px; }
 
 .result_info {
   margin-top: 2%;
