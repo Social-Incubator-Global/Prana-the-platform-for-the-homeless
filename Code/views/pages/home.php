@@ -28,11 +28,11 @@
 <head bgcolor="white">
     <?php include '../partials/_css.php' ?>
     <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
-    <link rel="stylesheet" href="../CSS/home.css"/>
+    <link rel="stylesheet" href="../css/Mainstyle.css"/>
+    <link rel="stylesheet" href="../css/home.css"/>
 
     <?php include '../partials/_js.php' ?>
-    <script src="../js/Objects.js"></script>
+    <script src="../js/objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/session.js"></script>
 
@@ -69,6 +69,7 @@ firebase.initializeApp(config);
 
 <?php
 // sometimes: include('/home/otark/public_html/phpinclude/sql.php');
+include('../phpinclude/helpers.php');
 include('../phpinclude/sql.php');
 include('../phpinclude/functions.php');
 include('../phpinclude/objects.php');

@@ -27,11 +27,11 @@
 <head>
 <?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="../CSS/Mainstyle.css"/>
-<link rel="stylesheet" href="../CSS/login.css"/>
+<link rel="stylesheet" href="../css/Mainstyle.css"/>
+<link rel="stylesheet" href="../css/login.css"/>
 
 <?php include '../partials/_js.php' ?>
-<script src="../js/Objects.js"></script>
+<script src="../js/objects.js"></script>
 <script src="../js/forms.js"></script>
 <script src="../js/session.js"></script>
 <!--JS Variables-->
