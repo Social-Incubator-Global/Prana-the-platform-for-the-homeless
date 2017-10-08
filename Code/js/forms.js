@@ -108,27 +108,27 @@ function redirect(Where_, Inner_Where_, area_index_)
     set_local("location", Where_);
     if(Where_ == "home")
     {
-        document.location = def_locations[0] + '?lang=' + get_local("lang");
+        document.location = def_locations.home + '?lang=' + get_local("lang");
     }
     if(Where_ == "homeinner")
     {
-        document.location = ".." + def_locations[6] + '?lang=' + get_local("lang");
+        document.location = def_locations.home + '?lang=' + get_local("lang");
     }
     else if(Where_ == "signup")
     {
-        document.location = def_locations[2] + '?lang=' + get_local("lang");
+        document.location = def_locations.signup + '?lang=' + get_local("lang");
     }
     else if(Where_ == "login")
     {
-        document.location = def_locations[1] + '?lang=' + get_local("lang");
+        document.location = def_locations.login + '?lang=' + get_local("lang");
     }
     else if(Where_ == "profile")
     {
-        document.location = def_locations[3] + '?lang=' + get_local("lang") + '&id=' + get_local("uname");
+        document.location = def_locations.profile + '?lang=' + get_local("lang") + '&id=' + get_local("uname");
     }
     else if(Where_ == "posting")
     {
-        document.location = def_locations[5] + '?lang=' + get_local("lang") + '&home_type=' + get_local("home_type") + '&id=' + Inner_Where_;
+        document.location = def_locations.posting + '?lang=' + get_local("lang") + '&home_type=' + get_local("home_type") + '&id=' + Inner_Where_;
     }
     else if(Where_ == "logout")
     {
@@ -147,7 +147,7 @@ function redirect(Where_, Inner_Where_, area_index_)
     else if(Where_ == "content_modular")
     {
         set_local("home_type", Inner_Where_);
-        document.location = def_locations[7] + '?lang=' + get_local("lang");
+        document.location = def_locations.content_modular + '?lang=' + get_local("lang");
     }
     else if(Where_ == "search")
     {
@@ -164,7 +164,7 @@ function redirect(Where_, Inner_Where_, area_index_)
             val2 = get_selected_item("src_in_top");
         }
         set_local("search_txt_index", ndx);
-        document.location = def_locations[8] + '?lang=' + get_local("lang") + "&keys=" + val + "&src=" + ndx + "&word=" + val2;
+        document.location = def_locations.results + '?lang=' + get_local("lang") + "&keys=" + val + "&src=" + ndx + "&word=" + val2;
     }
 return;
 }
@@ -179,7 +179,7 @@ function eval_build_url(Type__, area_index_, use_special_character, direct_url, 
     var link = "";
     if(!direct_url)
     {
-        link = def_locations[4] + '?';
+        link = def_locations.content + '?';
     }
     if(Type__ === "housing")
     {
