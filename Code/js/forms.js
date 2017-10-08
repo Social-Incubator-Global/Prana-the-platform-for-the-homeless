@@ -63,7 +63,7 @@ function start()
 {
     set_local("location", "home");
     set_local("lang", "0");
-    document.location = def_locations.home + '?lang=0';
+    document.location = '/pages/' . def_locations.home + '?lang=0';
     return;
 }
 

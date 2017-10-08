@@ -1,4 +1,3 @@
-
 <!--
     <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
@@ -21,11 +20,10 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<?php session_start(); error_reporting(0);?>
+
 <html>
     @include('partials._head')
     <body bgcolor="#F2F2F2">
-        <h1>Hello</h1>
         @yield('content')
     </body>
 </html>

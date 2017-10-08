@@ -15,7 +15,11 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $start_position = strrpos($url, '/') + 1;
 $stop_positon = strrpos($url, '?');
 $sub_len = $stop_positon - $start_position;
-$path = substr($url, $start_position, $sub_len);
+if(strrpos($url, '?')) {
+	$path = substr($url, $start_position, $sub_len);
+} else {
+	$path = substr($url, $start_position);
+}
 if (empty($path)) {
 	$path = "home";
 }

@@ -8,23 +8,22 @@
     @yield('css')
 
     <script src="{{BASE_URL}}/js/bootstrap.min.js"></script>
-    <script src="../js/objects.js"></script>
-    <script src="../js/forms.js"></script>
-    <script src="../js/session.js"></script>
+    <script src="{{BASE_URL}}/js/objects.js"></script>
+    <script src="{{BASE_URL}}/js/forms.js"></script>
+    <script src="{{BASE_URL}}/js/session.js"></script>
     @yield('js')
-
 
     <!--Variables-->
     <script>
-    load_localstorage();
-    localStorage.setItem("session_vars_resume", 1);
-    var session = localStorage.getItem("session");
-    var uname = localStorage.getItem("uname");
-    var ID = localStorage.getItem("ID");
-    var home_type = localStorage.getItem("home_type");
-    var sql_ = localStorage.getItem("sql_");
-    var area = localStorage.getItem("area");
-    var paid_type = localStorage.getItem("paid_type");
+        load_localstorage();
+        localStorage.setItem("session_vars_resume", 1);
+        var session = localStorage.getItem("session");
+        var uname = localStorage.getItem("uname");
+        var ID = localStorage.getItem("ID");
+        var home_type = localStorage.getItem("home_type");
+        var sql_ = localStorage.getItem("sql_");
+        var area = localStorage.getItem("area");
+        var paid_type = localStorage.getItem("paid_type");
     </script>
 
     <!--Init Functions-->
@@ -42,13 +41,15 @@
         firebase.initializeApp(config);
     </script>
 
-    // sometimes: include('/home/otark/public_html/phpinclude(sql.php');
-    @include('partials.sql')
-    @include('partials.functions')
-    @include('partials.objects')
-    @include('partials.content_functions')
-    {{ get_languages() }}
-    {{ load_languages_ToArrays("") }}
-    {{ $resu_ = get_filters_URL("home") }}
-    {{ apply_language($resu_[0]) }}
+    <?php
+        include($_SERVER['DOCUMENT_ROOT'] . '/phpinclude/sql.php');
+        include($_SERVER['DOCUMENT_ROOT'] . '/phpinclude/functions.php');
+        include($_SERVER['DOCUMENT_ROOT'] . '/phpinclude/objects.php');
+        include($_SERVER['DOCUMENT_ROOT'] . '/phpinclude/content_functions.php');
+        get_languages();
+        load_languages_ToArrays("");
+        $resu_ = get_filters_URL("home");
+        apply_language($resu_[0]);
+    ?>
+
 </head>

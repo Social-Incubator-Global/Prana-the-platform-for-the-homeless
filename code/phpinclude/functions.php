@@ -61,18 +61,18 @@ function cut_variables($string_)
 
 function load_organizations()
 {
-$lang_result = query_("SELECT * FROM Organizations");
-while($row = $lang_result->fetch_assoc())
-{
-   echo('<script>def_organizations.push("'.$row["name"].'")</script>');
-}
-mysqli_free_result($lang_result);
+    $lang_result = query_("SELECT * FROM Organizations");
+    while($row = $lang_result->fetch_assoc())
+    {
+        echo('<script>def_organizations.push("'.$row["name"].'")</script>');
+    }
+    mysqli_free_result($lang_result);
 }
 
 function get_languages()
 {
     global $languages;
-    $lang_result = query_("SELECT * FROM Langs");
+    $lang_result = query_("SELECT * FROM langs");
     while($row = $lang_result->fetch_assoc())
     {
         echo('<script>def_langs.push("'.$row["text"].'")</script>');
@@ -85,26 +85,26 @@ function get_languages()
 
 function load_languages_ToArrays($page)
 {
-global $lang_English;
-global $lang_German;
-global $languages;
+    global $lang_English;
+    global $lang_German;
+    global $languages;
 
-foreach($languages as $lang)
-{
-$lang_result = query_("SELECT * FROM Lang_".$lang." ORDER BY id ASC");
-while($row = $lang_result->fetch_assoc())
-{
-   if($lang == "English")
-   {
-      array_push($lang_English, $row["word"]);
-   }
-   else if($lang == "Deutsch")
-   {
-      array_push($lang_German, $row["word"]);
-   }
-}
-mysqli_free_result($lang_result);
-}
+    foreach($languages as $lang)
+    {
+        $lang_result = query_("SELECT * FROM Lang_".$lang." ORDER BY id ASC");
+        while($row = $lang_result->fetch_assoc())
+        {
+           if($lang == "English")
+           {
+              array_push($lang_English, $row["word"]);
+           }
+           else if($lang == "Deutsch")
+           {
+              array_push($lang_German, $row["word"]);
+           }
+        }
+        mysqli_free_result($lang_result);
+    }
 }
 
 function apply_language($name)

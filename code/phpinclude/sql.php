@@ -21,13 +21,12 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
-include('../config.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
+
 
 function query_($quer)
 {
-    echo 'hey';
-    // die(print_r($database));
-    $link = new mysqli($hostname, $username, $password, $dbname)
+    $link = new mysqli(hostname, username, password, dbname)
         or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
     $link->set_charset('utf8_swedish_ci');
     if ($link->connect_errno)

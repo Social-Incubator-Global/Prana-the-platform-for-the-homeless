@@ -1,3 +1,5 @@
+@extends('main')
+
 @section('title', ' | Home') @endsection
 
 @section('css')
@@ -5,7 +7,6 @@
 @endsection
 
 @section('content')
-<h1>Hey</h1>
 <!--SESSION VARIABLES-->
 <script>
 var session = localStorage.getItem("session");
