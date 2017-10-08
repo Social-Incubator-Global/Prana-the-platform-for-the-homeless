@@ -252,7 +252,9 @@ function top_menu(Type_, Subtype__)
 {
     if(Type_=="home0")
     {
-        dl_d('<div id="top_banner"><script>dl_d(code_snippets[4]);</script><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><div id="uacnt"><a style="color: black;" href="javascript: if(session==1){redirect(\'profile\');}else{redirect(\'login\');}" id="login_text" href="#"><script>if(session==1){document.write(def_lang[35]); }else if (session!=1){ document.write(def_lang[0]); if(session!=1){document.write} }</script></a><script>if(session==0){document.write(" | ");}</script><a style="color: black;" href="javascript:redirect(\'signup\');"><script>if(session==0){document.write(def_lang[6]);}</script></a><a style="color: black;" href="javascript:redirect(\'logout\');" id="login_text" href="#"><script>if(session==1){document.write(" | " + def_lang[1]); }</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>');
+        // moved this code to views/partials/_top_banner.php
+        // since this if statement will break here and just render this code
+        // we might has well just include the html from views/partials/_top_banner.php
     }
     else if(Type_ == "content")
     {
