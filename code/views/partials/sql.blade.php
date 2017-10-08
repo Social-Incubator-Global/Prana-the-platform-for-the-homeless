@@ -22,8 +22,6 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-@include('view')
-
 function query_($quer)
 {
     $link = new mysqli($hostname, $username, $password, $dbname)
