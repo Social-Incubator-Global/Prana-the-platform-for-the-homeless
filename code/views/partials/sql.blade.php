@@ -33,7 +33,7 @@ function query_($quer)
     {
       echo "Failed to connect to DB: " . $link->connect_errno;
     } //else { print 'connected'; }
-    $result = $link->query($quer) or die("".$link->error.'Query error');
+    $result = $link->query($quer) or die("".$link->error.' Query error');
     $link->close();
     return $result;
 }
