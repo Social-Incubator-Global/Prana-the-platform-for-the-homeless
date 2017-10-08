@@ -31,7 +31,7 @@ function operate()
             document.write(this.responseText);
         }
     }
-        xmlhttp.open("GET","/views/partials/ajax_get.php?question=google", true);
+        xmlhttp.open("GET","/phpinclude(ajax_get.php?question=google", true);
         xmlhttp.send();
         document.write("Sent Request");
 }

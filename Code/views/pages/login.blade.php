@@ -60,10 +60,10 @@ if(session==1){redirect('home');}
   <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
 
 <?php
-include('../views/partials/sql.php');
-include('../views/partials/functions.php');
-include('../views/partials/objects.php');
-include('../views/partials/content_functions.php');
+include('../phpinclude(sql.php');
+include('../phpinclude(functions.php');
+include('../phpinclude(objects.php');
+include('../phpinclude(content_functions.php');
 get_languages();
 load_languages_ToArrays("");
 $resu_ = get_filters_URL("home");

@@ -42,7 +42,7 @@
         firebase.initializeApp(config);
     </script>
 
-    // sometimes: include('/home/otark/public_html/views/partials/sql.php');
+    // sometimes: include('/home/otark/public_html/phpinclude(sql.php');
     @include('partials.sql')
     @include('partials.functions')
     @include('partials.objects')

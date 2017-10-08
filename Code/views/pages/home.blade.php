@@ -1,10 +1,11 @@
-@section('title', ' | Home')
+@section('title', ' | Home') @endsection
 
 @section('css')
 <link rel="stylesheet" href="{{BASE_URL}}/css/home.css"/>
 @endsection
 
 @section('content')
+<h1>Hey</h1>
 <!--SESSION VARIABLES-->
 <script>
 var session = localStorage.getItem("session");

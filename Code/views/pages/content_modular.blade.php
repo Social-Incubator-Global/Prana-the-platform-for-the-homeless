@@ -46,12 +46,12 @@ var sql_ = localStorage.getItem("sql_");
 </script>
 <?php
 //GODADDY
-//include('/home/otark/public_html/views/partials/content_functions.php');
+//include('/home/otark/public_html/phpinclude(content_functions.php');
 //NEW
-include('../views/partials/content_functions.php');
-include('../views/partials/sql.php');
-include('../views/partials/functions.php');
-include('../views/partials/objects.php');
+include('../phpinclude(content_functions.php');
+include('../phpinclude(sql.php');
+include('../phpinclude(functions.php');
+include('../phpinclude(objects.php');
 get_languages();
 load_languages_ToArrays("");
 $resu_ = get_filters_URL("basic");

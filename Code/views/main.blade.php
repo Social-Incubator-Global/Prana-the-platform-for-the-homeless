@@ -25,6 +25,7 @@
 <html>
     @include('partials._head')
     <body bgcolor="#F2F2F2">
+        <h1>Hello</h1>
         @yield('content')
     </body>
 </html>

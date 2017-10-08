@@ -24,12 +24,12 @@
 // handles the click event for link 1, sends the query
 function getOutput() {
   getRequest(
-      '/views/partials/sql.php', // URL for the PHP file
+      '/phpinclude/sql.php', // URL for the PHP file
        drawOutput,  // handle successful request
        drawError    // handle error
   );
   return false;
-}  
+}
 // handles drawing an error message
 function drawError() {
     var container = document.getElementById('output');
@@ -64,7 +64,7 @@ function getRequest(url, success, error) {
     if (typeof error!= 'function') error = function () {};
     req.onreadystatechange = function(){
         if(req.readyState == 4) {
-            return req.status === 200 ? 
+            return req.status === 200 ?
                 success(req.responseText) : error(req.status);
         }
     }

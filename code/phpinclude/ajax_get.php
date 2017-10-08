@@ -24,11 +24,11 @@
 
 function include_()
 {
-//include('/home/otark/public_html/views/partials/content_functions.php');
-include('../views/partials/content_functions.php');
-include('../views/partials/sql.php');
-include('../views/partials/functions.php');
-include('../views/partials/objects.php');
+    //include('/home/otark/public_html/phpinclude/content_functions.php');
+    include('./content_functions.php');
+    include('./sql.php');
+    include('./functions.php');
+    include('./objects.php');
 }
 
 function replace_special_character($url_)
