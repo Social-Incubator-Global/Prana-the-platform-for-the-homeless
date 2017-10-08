@@ -81,10 +81,10 @@
 
 <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 <?php
-include('../phpinclude/sql.php');
-include('../phpinclude/functions.php');
-include('../phpinclude/objects.php');
-include('../phpinclude/content_functions.php');
+include('../views/partials/sql.php');
+include('../views/partials/functions.php');
+include('../views/partials/objects.php');
+include('../views/partials/content_functions.php');
 get_languages();
 load_languages_ToArrays("");
 $resu_ = get_filters_URL("home");

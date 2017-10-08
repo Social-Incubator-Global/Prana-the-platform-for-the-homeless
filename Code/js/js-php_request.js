@@ -24,7 +24,7 @@
 // handles the click event for link 1, sends the query
 function getOutput() {
   getRequest(
-      '/phpinclude/sql.php', // URL for the PHP file
+      '/views/partials/sql.php', // URL for the PHP file
        drawOutput,  // handle successful request
        drawError    // handle error
   );

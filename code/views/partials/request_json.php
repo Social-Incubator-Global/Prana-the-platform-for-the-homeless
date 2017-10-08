@@ -22,6 +22,6 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-include('/phpinclude/sql.php');
+include('/views/partials/sql.php');
 query_();
 ?>

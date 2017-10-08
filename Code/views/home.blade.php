@@ -68,12 +68,12 @@ firebase.initializeApp(config);
 </script>
 
 <?php
-// sometimes: include('/home/otark/public_html/phpinclude/sql.php');
-include('../phpinclude/helpers.php');
-include('../phpinclude/sql.php');
-include('../phpinclude/functions.php');
-include('../phpinclude/objects.php');
-include('../phpinclude/content_functions.php');
+// sometimes: include('/home/otark/public_html/views/partials/sql.php');
+include('../views/partials/helpers.php');
+include('../views/partials/sql.php');
+include('../views/partials/functions.php');
+include('../views/partials/objects.php');
+include('../views/partials/content_functions.php');
 get_languages();
 load_languages_ToArrays("");
 $resu_ = get_filters_URL("home");
