@@ -1,16 +1,17 @@
 <head bgcolor="white">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Prana Deutschland</title>
+    <title>Prana Deutschland @yield('title')</title>
 
-    <?php include '../partials/_css.php' ?>
+    <link rel="stylesheet" href="{{BASE_URL}}/css/bootstrap.min.css"/>
     <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../css/Mainstyle.css"/>
-    <link rel="stylesheet" href="../css/home.css"/>
+    <link rel="stylesheet" href="{{BASE_URL}}/css/Mainstyle.css"/>
+    @yield('css')
 
-    <?php include '../partials/_js.php' ?>
+    <script src="{{BASE_URL}}/js/bootstrap.min.js"></script>
     <script src="../js/objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/session.js"></script>
+    @yield('js')
 
 
     <!--Variables-->
@@ -27,21 +28,19 @@
     </script>
 
     <!--Init Functions-->
-    <script>
-    getLocation();
-    </script>
+    <script>getLocation();</script>
 
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
     <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBAiI7LmsVJTTG-MITrXmdEi8qNw78q3SM",
-    authDomain: "prana-deutschland.firebaseapp.com",
-    databaseURL: "https://prana-deutschland.firebaseio.com",
-    storageBucket: "prana-deutschland.appspot.com",
-};
-firebase.initializeApp(config);
-</script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBAiI7LmsVJTTG-MITrXmdEi8qNw78q3SM",
+            authDomain: "prana-deutschland.firebaseapp.com",
+            databaseURL: "https://prana-deutschland.firebaseio.com",
+            storageBucket: "prana-deutschland.appspot.com",
+        };
+        firebase.initializeApp(config);
+    </script>
 
     <?php
     // sometimes: include('/home/otark/public_html/views/partials/sql.php');

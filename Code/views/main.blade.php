@@ -24,29 +24,7 @@
 <?php session_start(); error_reporting(0);?>
 <html>
     @include('partials._head')
-<body bgcolor="#F2F2F2">
-
-<!--SESSION VARIABLES-->
-<script>
-    var session = localStorage.getItem("session");
-    var uname = localStorage.getItem("uname");
-</script>
-<center>
-<div id="content">
-    <script type="text/javascript">
-    //dl_d(code_snippets[4]);
-    top_menu("home0");
-    </script>
-    <br>
-    <script type="text/javascript">
-    dashboard("home");
-    </script>
-</div>
-</center>
-<br><br><br><br><br><br>
-<div id="footer">
-  <center><script>show_copyright();</script></center>
-</div>
-<script type="text/javascript">change_lang();</script>
-</body>
+    <body bgcolor="#F2F2F2">
+        @yield('content')
+    </body>
 </html>
