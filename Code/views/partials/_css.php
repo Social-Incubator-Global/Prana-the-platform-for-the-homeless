@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="../CSS/bootstrap.min.css"/>
+<link rel="stylesheet" href="<?php Utility::root; ?>/css/bootstrap.min.css"/>
