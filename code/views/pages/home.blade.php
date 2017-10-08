@@ -17,14 +17,14 @@ var uname = localStorage.getItem("uname");
         <script type="text/javascript">
         //dl_d(code_snippets[4]);
 
-        // top_menu("home0");
-        @include('partials._top_banner')
+            top_menu("home0");
+        // @include('partials._top_banner')
         </script>
         <br>
-        {{-- <script type="text/javascript">
-        dashboard("home");
-        </script> --}}
-        @include('partials._dashboard_home')
+        <script type="text/javascript">
+            dashboard("home");
+        </script>
+        {{-- @include('partials._dashboard_home') --}}
     </div>
 </center>
 <br><br><br><br><br><br>
