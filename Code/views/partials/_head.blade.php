@@ -47,8 +47,8 @@
     @include('partials.functions')
     @include('partials.objects')
     @include('partials.content_functions')
-    {!! get_languages() !!}
-    {!! load_languages_ToArrays("") !!}
-    {!! $resu_ = get_filters_URL("home") !!}
-    {!! apply_language($resu_[0]) !!}
+    {{ get_languages() }}
+    {{ load_languages_ToArrays("") }}
+    {{ $resu_ = get_filters_URL("home") }}
+    {{ apply_language($resu_[0]) }}
 </head>
