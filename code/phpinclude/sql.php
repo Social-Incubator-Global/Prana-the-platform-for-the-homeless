@@ -21,7 +21,7 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
-include_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
+include_once(DOC_ROOT . '/config.php');
 
 
 function query_($quer)

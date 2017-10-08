@@ -1,6 +1,7 @@
 <?php
 
 const BASE_URL = 'http://localhost/prana/code/';
+DEFINE(DOC_ROOT, $_SERVER['DOCUMENT_ROOT']);
 
 const hostname = 'localhost';
 const username = 'root';

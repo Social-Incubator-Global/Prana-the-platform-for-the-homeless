@@ -41,15 +41,7 @@
         firebase.initializeApp(config);
     </script>
 
-    <?php
-        include($_SERVER['DOCUMENT_ROOT'] . '/phpinclude/sql.php');
-        include($_SERVER['DOCUMENT_ROOT'] . '/phpinclude/functions.php');
-        include($_SERVER['DOCUMENT_ROOT'] . '/phpinclude/objects.php');
-        include($_SERVER['DOCUMENT_ROOT'] . '/phpinclude/content_functions.php');
-        get_languages();
-        load_languages_ToArrays("");
-        $resu_ = get_filters_URL("home");
-        apply_language($resu_[0]);
-    ?>
-
+    {{ get_languages() }}
+    {{ load_languages_ToArrays("") }}
+    {{ apply_language($resu_[0]) }}
 </head>
