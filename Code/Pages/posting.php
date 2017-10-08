@@ -65,29 +65,29 @@
 <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
 
 <?php
-include('../phpinclude/content_functions.php');
-include('../phpinclude/sql.php');
-include('../phpinclude/functions.php');
-get_languages();
-load_languages_ToArrays("");
-$resu_ = get_filters_URL("basic");
-apply_language($resu_[3]);
+    include('../phpinclude/content_functions.php');
+    include('../phpinclude/sql.php');
+    include('../phpinclude/functions.php');
+    get_languages();
+    load_languages_ToArrays("");
+    $resu_ = get_filters_URL("basic");
+    apply_language($resu_[3]);
 ?>
 </head>
 
 <body bgcolor="#F2F2F2">
 <!--SESSION VARIABLES-->
 <script>
-var session = localStorage.getItem("session");
-var uname = localStorage.getItem("uname");
-var home_type = localStorage.getItem("home_type");
-var paid_type = localStorage.getItem("paid_type");
-var view_type = localStorage.getItem("view_type");
-var area = localStorage.getItem("area");
+    var session = localStorage.getItem("session");
+    var uname = localStorage.getItem("uname");
+    var home_type = localStorage.getItem("home_type");
+    var paid_type = localStorage.getItem("paid_type");
+    var view_type = localStorage.getItem("view_type");
+    var area = localStorage.getItem("area");
 </script>
 
 <script>
-top_menu('posting');
+    top_menu('posting');
 </script>
 <div id="sidebanner">
   <br><br>
@@ -109,7 +109,11 @@ top_menu('posting');
 <br><br>
 <div id="main_content">
 <div id='map_'>
-    <form><input id='map_size' type='button' onclick='javascript:var sze=localStorage.getItem("map_size"); if(sze==0){document.getElementById("map_size").value=dl_r(80);document.getElementById("map").style.height="90%"; localStorage.setItem("map_size",1);} else{document.getElementById("map_size").value=dl_r(79);document.getElementById("map").style.height="250px";localStorage.setItem("map_size",0);} refresh_map();'></input></form><script>document.getElementById("map_size").value=dl_r(79);</script>
+    <script>map_placeholder();</script>
+    <form>
+        <input id='map_size' type='button' onclick='javascript:var sze=localStorage.getItem("map_size"); if(sze==0){document.getElementById("map_size").value=dl_r(80);document.getElementById("map").style.height="90%"; localStorage.setItem("map_size",1);} else{document.getElementById("map_size").value=dl_r(79);document.getElementById("map").style.height="250px";localStorage.setItem("map_size",0);} refresh_map();'></input>
+    </form>
+    <script>document.getElementById("map_size").value=dl_r(79);</script>
     <div id="floating-panel">
     <select id="start">
       <option value="Spandau, berlin, de">Test->Spandau</option>
@@ -206,7 +210,7 @@ top_menu('posting');
           attachInstructionText(
               stepDisplay, marker, myRoute.steps[i].instructions, map);
           directions.push(myRoute.steps[i].instructions);
-          document.getElementById("directions_gmaps").innerHTML+= "<div id='dir_'>" + i + ". " + myRoute.steps[i].instructions + "</div><hr>";
+          document.getElementById("directions_gmaps").innerHTML+= "<div id='dir_'>" + i + ". " + myRoute.steps[i].instructions + "</div>";
         }
 
       }

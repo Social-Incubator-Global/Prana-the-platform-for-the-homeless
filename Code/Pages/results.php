@@ -34,7 +34,6 @@
     <?php include '../partials/_js.php' ?>
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
-    <script src="../js/content.js"></script>
     <script src="../js/session.js"></script>
 
     <!--Variables-->
@@ -93,7 +92,7 @@ top_menu('search');
 <br><br>
 <div id="main_content">
     <div id="search_title">
-        Search Results:
+        <!--Filled in through content_functions.php/search();-->
     </div>
     <br>
     <div id="search_results">

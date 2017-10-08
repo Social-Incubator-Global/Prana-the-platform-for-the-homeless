@@ -177,6 +177,7 @@ function setPosition(position) {
 function dl_d(value)
 {
     document.write(value);
+    return;
 }
 
 function dl_r(ndx)
@@ -187,6 +188,13 @@ function dl_r(ndx)
 function set_value(name, ndx)
 {
     document.getElementById(name).value = dl_r(ndx);
+    return;
+}
+
+function set_innerhtml(name, HTML)
+{
+    document.getElementById(name).innerHTML = HTML;
+    return;
 }
 
 function set_index(name, ndx)
@@ -311,7 +319,10 @@ var def_langs_gmaps_reg = [];
 
 var special_characters = ["<amp>"];
 
-//[0]: home here must be directed to the current directory. [6]: home here must be directed to the root directory
+//def_locations [0]: home here must be directed to the current directory
+//AS "./home.php"
+//def_locations [6]: home here must be directed to the root directory AS
+//"/home.php"
 var def_locations = [
     "./home.php",
     "./login.php",

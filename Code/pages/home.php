@@ -34,7 +34,6 @@
     <?php include '../partials/_js.php' ?>
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
-    <script src="../js/content.js"></script>
     <script src="../js/session.js"></script>
 
 
@@ -82,6 +81,7 @@ apply_language($resu_[0]);
 </head>
 
 <body bgcolor="#F2F2F2">
+<<<<<<< HEAD
   <!--SESSION VARIABLES-->
   <script>
   var session = localStorage.getItem("session");
@@ -91,6 +91,16 @@ apply_language($resu_[0]);
   <center>
     <div id="content">
       <script type="text/javascript">
+=======
+<!--SESSION VARIABLES-->
+<script>
+    var session = localStorage.getItem("session");
+    var uname = localStorage.getItem("uname");
+</script>
+<center>
+<div id="content">
+    <script type="text/javascript">
+>>>>>>> master
     //dl_d(code_snippets[4]);
     top_menu("home0");
     </script>
