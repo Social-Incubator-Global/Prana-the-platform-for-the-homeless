@@ -42,16 +42,13 @@
         firebase.initializeApp(config);
     </script>
 
-    <?php
     // sometimes: include('/home/otark/public_html/views/partials/sql.php');
-    include('../views/partials/sql.php');
     @include('partials.sql')
-    include('../views/partials/functions.php');
-    include('../views/partials/objects.php');
-    include('../views/partials/content_functions.php');
-    get_languages();
-    load_languages_ToArrays("");
-    $resu_ = get_filters_URL("home");
-    apply_language($resu_[0]);
-    ?>
+    @include('partials.functions')
+    @include('partials.objects')
+    @include('partials.content_functions')
+    {!! get_languages() !!}
+    {!! load_languages_ToArrays("") !!}
+    {!! $resu_ = get_filters_URL("home") !!}
+    {!! apply_language($resu_[0]) !!}
 </head>
