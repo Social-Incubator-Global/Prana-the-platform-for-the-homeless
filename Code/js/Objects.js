@@ -323,17 +323,16 @@ var special_characters = ["<amp>"];
 //AS "./home.php"
 //def_locations [6]: home here must be directed to the root directory AS
 //"/home.php"
-var def_locations = [
-    "./home.php",
-    "./login.php",
-    "./signup.php",
-    "./profile.php",
-    "./content.php",
-    "./posting.php",
-    "/home.php",
-    "./content_modular.php",
-    "./results.php"
-];
+var def_locations = {
+    home: "/pages/home.php",
+    login: "/pages/login.php",
+    signup: "/pages/signup.php",
+    profile: "/pages/profile.php",
+    content: "/pages/content.php",
+    posting: "/pages/posting.php",
+    content_modular: "/pages/content_modular.php",
+    results: "/pages/results.php"
+};
 
 //transform from def_areas_berlin[n] to def_areas_berlin[0]: ALL LOCATIONS WILL BE EMITTED INTO THE DB
 var def_areas_berlin = ["Berlin All", "Mitte", "Kreuzberg", "Shoeneberg (Shöneberg)", "Tiergarten/Moabit", "Wedding", "Prenzlauerberg", "Friedrichshain", "Neukoelln (Neukölln)", "Tempelhof", "Wilmersdorf", "Charlottenburg", "Spandau", "Reinickendorf", "Pankow", "Weissensee (Weißensee)", "Hohenschoenhausen (Hohenschönhausen)", "Lichtenberg", "Marzahn", "Hellersdorf", "Koepenick (Köpenick)", "Treptow", "Steglitz", "Zehlendorf"];
