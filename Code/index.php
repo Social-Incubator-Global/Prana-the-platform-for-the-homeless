@@ -12,9 +12,12 @@ $renderer = new BladeRenderer($paths, array('cache_path' => __DIR__ . '/cache'))
 
 //Load page based on uri
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$path = substr($url, strrpos($url, '/') + 1);
+$start_position = strrpos($url, '/') + 1;
+$stop_positon = strrpos($url, '?');
+$sub_len = $stop_positon - $start_position;
+$path = substr($url, $start_position, $sub_len);
 if (empty($path)) {
-	$path = "index";
+	$path = "home";
 }
 require __DIR__ . '/pages/' . $path . '.php';
 
