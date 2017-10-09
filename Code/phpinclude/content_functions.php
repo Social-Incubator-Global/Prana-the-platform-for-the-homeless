@@ -147,12 +147,27 @@ function create_user($id, $uname)
 //Executing this function returns search frontend search content to results.php based on URL arguments
 function search()
 {
+    $getbacks[9];
     $URLfilter_result = get_filters_URL("search");
-    $echo = "";
+    $echo = ""; $result = ""; $result2 = ""; $result3 = "";
     //SEARCH RESULTS ARE DONE BY TYPE
 
-    $query = build_query_string($URLfilter_result, "search");
-    $result = query_($query);
+    if($URLfilter_result[2] == "all")
+    {
+        $query = build_query_string_search($URLfilter_result, "housing");
+        $query2 = build_query_string_search($URLfilter_result, "food");
+        $query3 = build_query_string_search($URLfilter_result, "medical");
+        
+        $result = query_($query);
+        $result = query_($query2);
+        $result = query_($query3);
+    }
+    else
+    {
+        $query = build_query_string_search($URLfilter_result, $URLfilter_result[2]);
+        $result = query_($query);
+    }
+    //$query = build_query_string($URLfilter_result, "search");
 
     echo("<script>document.title='Prana '+dl_r(110)+' ".$URLfilter_result[3]."  : ".$URLfilter_result[1]."'</script>");
     echo("<script>set_innerhtml('search_title', dl_r(112)+' ' +dl_r(113)+' ' + dl_r(114) + dl_r(115) + ' <a href>".$URLfilter_result[1]."</a>');</script>");

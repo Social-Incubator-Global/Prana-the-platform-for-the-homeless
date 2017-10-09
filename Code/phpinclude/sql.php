@@ -68,6 +68,7 @@ function build_query_string($URLfilter_result, $Type_)
         $query = "SELECT * FROM People WHERE id='".$URLfilter_result[4]."'";
     }
 
+    //DEPRECIATED
     //SEARCH BASED QUERIES
     if($Type_ == "search")
     {
@@ -77,12 +78,31 @@ function build_query_string($URLfilter_result, $Type_)
         }
         else if($URLfilter_result[2] == 1)
         {
-            $query = "SELECT * FROM contnt_food";
+            //FOOD
+            $query = "SELECT * FROM contnt_food WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";;
         }
         else if($URLfilter_result[2] == 2)
         {
+            //HOUSING
             $query = "SELECT * FROM contnt_housing WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
         }
+        else if($URLfilter_result[2] == 2)
+        {
+            //MEDICAL
+            $query = "SELECT * FROM contnt_housing WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
+        }
+    }
+    return $query;
+}
+
+function build_query_string_search($URLfilter_result, $getback)
+{
+    $query = "";
+    
+    
+    if($getback == $URLfilter_result[2])
+    {
+        $query = "SELECT * FROM contnt_".$getback." WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
     }
     return $query;
 }
