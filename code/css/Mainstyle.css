@@ -339,3 +339,9 @@ a:hover {
   height: 410px; }
 
 /*# sourceMappingURL=Mainstyle.css.map */
+
+
+/*boostrap changes*/
+.bg-primary {
+  background-color: #09677e !important;
+}
