@@ -3,7 +3,7 @@ function query_($quer)
 {
     $hostname = 'localhost';
     $username = 'root';
-    $password = 'root';
+    $password = '';
     $dbname = 'prana_db';
     $link = new mysqli($hostname, $username, $password, $dbname)
         or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
