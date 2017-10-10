@@ -1,4 +1,4 @@
-/*<!-- 
+/*<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe>
@@ -64,11 +64,11 @@ body {
   font-size: 14px; }
 
 #emergency_button_div {
-  position: fixed;
-  float: left;
-  z-index: 1000;
-  margin-top: 0%;
-  margin-left: 8%;
+  /*position: fixed;*/
+  /*float: left;*/
+  /*z-index: 1000;*/
+  /*margin-top: 0%;*/
+  /*margin-left: 8%;*/
   background-color: red; }
 
 #menu_main {

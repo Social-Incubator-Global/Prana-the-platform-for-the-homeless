@@ -1,6 +1,7 @@
 <div id='emergency_button_div'>
     <form>
-        <input id='emergency_call' src='{{DOC_ROOT}}/assets/images/prn_ico/call.png' style='float: left; background-color: red;' type='image' onclick='javascript:show_drop_down();'><input class='emergency_button' id='emergency_button' type='button' style='background-color:red; height:30px;' onclick='javascript:show_drop_down();' value='Emergency'></input>
+        <input id='emergency_call' src='{{BASE_URL}}/assets/images/prn_ico/call.png' style='background-color: red;' type='image' onclick='javascript:show_drop_down();'>
+        <input class='emergency_button' id='emergency_button' type='button' style='background-color:red; height:30px;' onclick='javascript:show_drop_down();' value='Emergency'></input>
     </form>
 </div>
 <div>
@@ -8,7 +9,7 @@
         <div style='background-color:rgb(9, 103, 126);'>
             <center>
                 <br>
-                <img src='{{DOC_ROOT}}/assets/images/icons/icon_health1.png' height='100px' width='100px'/>
+                <img src='{{BASE_URL}}/assets/images/icons/icon_health1.png' height='100px' width='100px'/>
                 <br>
                 <br>
             </center>
