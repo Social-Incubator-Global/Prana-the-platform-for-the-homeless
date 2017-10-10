@@ -2,10 +2,10 @@
 
 function asset($path)
 {
-	return DOC_ROOT . '/assets'. $path;
+	return BASE_URL . '/assets'. $path;
 }
 
 function url($uri)
 {
-	return  DOC_ROOT . '/' . $uri;
+	return  BASE_URL . '/' . $uri;
 }

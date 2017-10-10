@@ -24,6 +24,7 @@
 <html>
     @include('partials._head')
     <body bgcolor="#F2F2F2">
+    {{-- <body bgcolor="blue"> --}}
         @yield('content')
         @include('partials._footer')
     </body>
