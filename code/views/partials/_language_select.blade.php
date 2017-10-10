@@ -1,4 +1,4 @@
-<div {{-- id="lang_selector" --}} class="float-right">
+<div {{-- id="lang_selector" --}}>
     <form>
         <select {{-- id="lang_select" --}} onChange="javascript:var ndx=document.getElementById('lang_select').selectedIndex; apply_language(ndx); if(location_!='posting'){redirect(location_, home_type, area);}else{redirect(location_, ID, area);}"></select>
             <script>
