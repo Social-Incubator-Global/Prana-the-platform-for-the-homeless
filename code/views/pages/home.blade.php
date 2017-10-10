@@ -15,21 +15,16 @@
 
 {{-- <div id="content"> --}}
 <nav class="navbar navbar-toggleable-md navbar-light bg-primary">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     {{-- <a class="navbar-brand" href="{{url('home')}}">
         <img src="{{asset('/images/logo/prana_logo_tool.png')}}">
     </a> --}}
     {{-- dl_d(code_snippets[4]); --}}
     @include('partials._emergency_button')
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        {{-- code snippets[0] --}}
-        {{-- language select --}}
-        @include('partials._language_select')
-        {{-- end language select --}}
-    </div>
+    {{-- code snippets[0] --}}
+    {{-- language select --}}
+    @include('partials._language_select')
+    {{-- end language select --}}
 </nav>
 
 <div class="container-fluid">
