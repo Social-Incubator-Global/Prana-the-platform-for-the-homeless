@@ -90,8 +90,15 @@ top_menu('search');
 </div>
 <div id="search_content">
 <div id="main_content">
+    <br>
+    <br>
     <div id="search_title">
         <!--Filled in through content_functions.php/search();-->
+    </div>
+    <div id="filter_elements">
+        <script>
+            document.write(code_snippets[8]);
+        </script>
     </div>
     <br>
     <?php
@@ -99,3 +106,4 @@ top_menu('search');
     ?>
 </div>
 </div>
+<!--DON#T YA WISH YOUR GIRLFRIEND WAS HOT LIKE MEI; DONTCHA? Who wrote this? who knows? dirty pig.-->
