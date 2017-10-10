@@ -29,7 +29,14 @@
 
 .result_info {
   margin-top: 2%;
-  width: 100%; }
+  width: 100%;
+  margin-right: 2%; }
+
+.results_titles {
+  font-size: 24px;
+  font-family: "Arial", regular;
+  float: left;
+  margin-left: 3%; }
 
 .result_box {
   height: 300px;

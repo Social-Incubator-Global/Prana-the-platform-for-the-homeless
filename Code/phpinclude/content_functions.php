@@ -160,15 +160,26 @@ function search()
         $result = query_($query);
         $result2 = query_($query2);
         $result3 = query_($query3);
+        
+        /*echo("<div class='results_titles'><img style='margin-top:-3%' width='30px' src=/>In Housing:</div>");*/
+        process_single_search($result, $URLfilter_result, '../Assets/Images/icons/icon_housing.png');
+        /*echo("<div class='results_titles'><img style='margin-top:-3%' width='30px' src=/>In Food:</div>");*/
+        process_single_search($result2, $URLfilter_result, '../Assets/Images/icons/icon_food.png');
+        /*echo("<div class='results_titles'><img style='margin-top:-3%' width='30px' src='../Assets/Images/icons/Icon_health.png'/><div style='float:left; margin-left:2%;'>In Medical:</div></div>");*/
+        process_single_search($result3, $URLfilter_result, '../Assets/Images/icons/Icon_health.png');
     }
     else
     {
         $query = build_query_string_search($URLfilter_result, strtolower($URLfilter_result[3]));
         $result = query_($query);
+        process_single_search($result, $URLfilter_result);
     }
-    //$query = build_query_string($URLfilter_result, "search");
-
     echo("<script>document.title='Prana '+dl_r(110)+' ".$URLfilter_result[3]."  : ".$URLfilter_result[1]."'</script>");
+    return;
+}
+
+function process_single_search($result, $URLfilter_result, $ico_path)
+{
     echo("<script>set_innerhtml('search_title', dl_r(112)+' ' +dl_r(113)+' ' + dl_r(114) + dl_r(115) + ' <a href>".$URLfilter_result[1]."</a>');</script>");
     while($row = $result->fetch_assoc())
     {
@@ -181,14 +192,9 @@ function search()
         while($row2 = $result2->fetch_assoc())
         {
             $img_path = $row2["image_path"];
-            echo("<a href='javascript:redirect(\"posting\",".$row["id"].");'><div class='result_box_all' id='resultbox_".$row["id"]."'><div id='content_box_header_1' style='font-family: \"Arial\", underlined; color: rgb(9, 103, 126);; font-size: 16px; width: 100%; height: 37px;'><div id='title_1' style='float: left; margin-left:2%; margin-top:4%; font-size:24px;'><u>".$row["name"]."</u></div></div><br><br><div id='result_box_desc' style='color:black; margin-left:2%; float:left;'>".$row["text2"]."</div><br><div class='result_info' id='info_".row["id"]."' style='float:left; margin-left:2%; color:black;'><img src='../Assets/Images/prn_ico/led_icons/marker.png'> ".$row2["venue"]."<br><img src='../Assets/Images/prn_ico/led_icons/telephone.png'> ".$row2["tel"]."<br><img src='../Assets/Images/prn_ico/led_icons/email.png'> ".$row2["email"]."<br>Venue is: ".$row2["is_"]."<br><img src='../Assets/Images/prn_ico/led_icons/accept.png'> ".$row2["allows"]."</div></div></a><script>document.getElementById('img_". $row["id"] ."').src = '". $img_path ."';</script>");
+            echo("<a href='javascript:redirect(\"posting\",".$row["id"].");'><div class='result_box_long' id='resultbox_".$row["id"]."'><div id='content_box_header_1' style='font-family: \"Arial\", underlined; color: rgb(9, 103, 126);; font-size: 16px; width: 100%; height: 37px;'><div id='title_1' style='float: left; margin-left:2%; margin-top:0%; font-size:24px;'><img style='margin-top:-3%; margin-left:-36px;' width='30px' src='".$ico_path."'/> <u>".$row["name"]."</u></div></div><div id='result_box_desc' style='color:black; margin-left:2%; float:left; margin-top:1%;'>".$row["text2"]."</div><br><div class='result_info' id='info_".row["id"]."' style='float:left; margin-left:2%; margin-right:2%; color:black;'><img src='../Assets/Images/prn_ico/led_icons/marker.png'> ".$row2["venue"]."<br><img src='../Assets/Images/prn_ico/led_icons/telephone.png'> ".$row2["tel"]."<br><img src='../Assets/Images/prn_ico/led_icons/email.png'> ".$row2["email"]."<br>Venue is: ".$row2["is_"]."<br><img src='../Assets/Images/prn_ico/led_icons/accept.png'> ".$row2["allows"]."</div></div></a><script>document.getElementById('img_". $row["id"] ."').src = '". $img_path ."';</script>");
         }
     }
-    return;
-}
-
-function process_single_search($Result_set)
-{
     return;
 }
 

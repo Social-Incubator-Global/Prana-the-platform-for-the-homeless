@@ -433,3 +433,16 @@ text-decoration: underline;
     width: 300px;
     height: 410px;
 }
+
+.result_box_long
+{
+    animation-name: fade_in;
+    animation-duration: 0.3s;
+    margin-left: 3%;
+    margin-top: 3%;
+    border-radius: 0px;
+    float: left;
+    color: rgb(9, 103, 126);
+    width: 90%;
+    height: 280px;
+}

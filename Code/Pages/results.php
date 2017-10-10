@@ -89,16 +89,13 @@ top_menu('search');
   </div>
 </div>
 <div id="search_content">
-<br><br>
 <div id="main_content">
     <div id="search_title">
         <!--Filled in through content_functions.php/search();-->
     </div>
     <br>
-    <div id="search_results">
-        <?php
-            search();
-        ?>
-    </div>
+    <?php
+        search();
+    ?>
 </div>
 </div>
