@@ -349,4 +349,12 @@ a:hover {
   width: 90%;
   height: 280px; }
 
+.select_filters {
+  border: 1px solid #ff7f24;
+  width: 150px;
+  height: 33px;
+  background-color: gainsboro;
+  color: black;
+  opacity: 1.0; }
+
 /*# sourceMappingURL=Mainstyle.css.map */

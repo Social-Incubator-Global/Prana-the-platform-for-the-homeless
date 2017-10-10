@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2017 at 08:01 PM
+-- Generation Time: Oct 10, 2017 at 10:44 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -58,39 +58,34 @@ INSERT INTO `contnt_categories` (`id`, `name`, `category_id`, `text`, `paid_type
 
 CREATE TABLE `contnt_food` (
   `id` int(16) NOT NULL,
-  `name` varchar(120) DEFAULT NULL,
+  `name` varchar(25) CHARACTER SET latin1 COLLATE latin1_german1_ci DEFAULT NULL,
   `category` varchar(25) DEFAULT NULL,
   `sub_category` varchar(500) DEFAULT NULL COMMENT 'divided by commas',
   `paid_type` int(11) DEFAULT NULL,
+  `to_` int(11) DEFAULT NULL,
+  `tc` int(11) DEFAULT NULL,
+  `days_open` varchar(16) DEFAULT NULL,
   `area` varchar(100) DEFAULT NULL,
   `availability` int(11) DEFAULT NULL,
   `fee` varchar(25) NOT NULL DEFAULT 'N.A.',
-  `text1` varchar(76) DEFAULT NULL,
-  `text2` text,
+  `text1` varchar(76) DEFAULT 'N.A.',
+  `text1_Deutsch` varchar(76) DEFAULT NULL,
+  `text2` varchar(400) DEFAULT 'N.A.',
   `overide_image` varchar(150) DEFAULT NULL,
   `rating` int(16) DEFAULT NULL,
   `link` varchar(500) DEFAULT NULL,
   `organization` varchar(500) DEFAULT NULL,
   `organization_venue_address` varchar(500) DEFAULT NULL,
-  `womenonly` tinyint(4) DEFAULT '0',
-  `menonly` tinyint(4) DEFAULT '0',
-  `children` tinyint(4) DEFAULT '0',
-  `pets` tinyint(4) DEFAULT '0',
-  `soupkitchen` tinyint(4) NOT NULL DEFAULT '0',
-  `tafel` tinyint(4) NOT NULL DEFAULT '0',
-  `free_givaway` tinyint(4) NOT NULL DEFAULT '0',
-  `churchgive` tinyint(4) NOT NULL DEFAULT '0',
-  `foodtour` tinyint(4) NOT NULL DEFAULT '0',
-  `smoking` tinyint(4) NOT NULL DEFAULT '0'
+  `is_` varchar(150) DEFAULT NULL COMMENT 'MUST BE CARBON COPY OF "is_" IN organization_venues, divided by commas',
+  `allows` varchar(150) DEFAULT NULL COMMENT 'MUST BE CARBON COPY OF "allows" IN organization_venues, divided by commas'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `contnt_food`
 --
 
-INSERT INTO `contnt_food` (`id`, `name`, `category`, `sub_category`, `paid_type`, `area`, `availability`, `fee`, `text1`, `text2`, `overide_image`, `rating`, `link`, `organization`, `organization_venue_address`, `womenonly`, `menonly`, `children`, `pets`, `soupkitchen`, `tafel`, `free_givaway`, `churchgive`, `foodtour`, `smoking`) VALUES
-(1, 'Food test 1', 'food', NULL, 0, '0', 100, 'N.A.', 'This is a food test.This is a food test.This is a food test.This is a food t', 'This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.', NULL, 3, NULL, '1', '1', 1, 0, 0, 0, 0, 0, 1, 1, 0, 0),
-(2, 'Food Test 2', 'food', NULL, 0, '0', 100, 'N.A.', 'This is a food test.This is a food test.This is a food test.This is a food t', 'This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.This is a food test.', NULL, 3, NULL, '1', '1', 1, 0, 0, 0, 0, 0, 1, 1, 0, 0);
+INSERT INTO `contnt_food` (`id`, `name`, `category`, `sub_category`, `paid_type`, `to_`, `tc`, `days_open`, `area`, `availability`, `fee`, `text1`, `text1_Deutsch`, `text2`, `overide_image`, `rating`, `link`, `organization`, `organization_venue_address`, `is_`, `allows`) VALUES
+(1, 'Food Test', 'food', NULL, 0, 7, 18, '5,4', '0', 0, 'N.A.', 'WOT', NULL, 'SWIGTY SWOOTY', NULL, NULL, NULL, '1', '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -131,10 +126,8 @@ INSERT INTO `contnt_housing` (`id`, `name`, `category`, `sub_category`, `paid_ty
 (2, 'NOTÜBERNACHTUNG ARCOSTR.', 'housing', NULL, 0, 4, 5, NULL, '0', 0, 'N.A.', 'Enter Description', 'Enter Description', 'This is a description. Descriptions are nice though this one only allows 600 characters, oh bummer. Bet you what. you like this description. anyways I\'m testing the 600 characters. Its not to easy but i have to count this. One min. ok I don\'t think it is as many as I think so I will keep writing, I think I will use this text to test all of the db entries. Anyways, life\'s cool, ugly weather today.T', NULL, 5, '', '1', '2', 'Shelters', ''),
 (3, 'Test Venue 3', 'housing', NULL, 0, NULL, NULL, NULL, '0', 99, 'N.A.', 'N.A.', NULL, 'N.A.', NULL, NULL, NULL, '1', '1', NULL, NULL),
 (4, 'huguz', 'housing', NULL, 2, NULL, NULL, NULL, '0', 5, 'N.A.', 'N.A.', NULL, 'N.A.', NULL, NULL, NULL, '1', '3', NULL, NULL),
-(5, 'tfzt', 'food', NULL, 0, NULL, NULL, NULL, '0', 0, 'N.A.', ',mlökmlö', NULL, NULL, NULL, NULL, NULL, '1', '1', NULL, NULL),
 (6, 'WHAT??', 'housing', NULL, 0, NULL, NULL, NULL, '3', 32, 'N.A.', 'EHHH?', NULL, NULL, NULL, NULL, NULL, '1', '1', NULL, NULL),
-(7, 'SJFKSDJF', 'housing', NULL, 0, 4, 5, NULL, '5', 54, 'N.A.', 'fsfs', NULL, NULL, NULL, NULL, NULL, '2', '1', NULL, NULL),
-(8, 'Fo9odland', 'food', NULL, 0, NULL, NULL, NULL, '0', 100, 'N.A.', 'dayum bro, dat some food.', NULL, 'text 2?', NULL, 3, NULL, '1', '1', '0', '0');
+(7, 'SJFKSDJF', 'housing', NULL, 0, 4, 5, NULL, '5', 54, 'N.A.', 'fsfs', NULL, NULL, NULL, NULL, NULL, '2', '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,38 +137,27 @@ INSERT INTO `contnt_housing` (`id`, `name`, `category`, `sub_category`, `paid_ty
 
 CREATE TABLE `contnt_medical` (
   `id` int(16) NOT NULL,
-  `name` varchar(120) DEFAULT NULL,
+  `name` varchar(25) CHARACTER SET latin1 COLLATE latin1_german1_ci DEFAULT NULL,
   `category` varchar(25) DEFAULT NULL,
   `sub_category` varchar(500) DEFAULT NULL COMMENT 'divided by commas',
   `paid_type` int(11) DEFAULT NULL,
+  `to_` int(11) DEFAULT NULL,
+  `tc` int(11) DEFAULT NULL,
+  `days_open` varchar(16) DEFAULT NULL,
   `area` varchar(100) DEFAULT NULL,
   `availability` int(11) DEFAULT NULL,
   `fee` varchar(25) NOT NULL DEFAULT 'N.A.',
-  `text1` varchar(76) DEFAULT NULL,
-  `text2` text,
+  `text1` varchar(76) DEFAULT 'N.A.',
+  `text1_Deutsch` varchar(76) DEFAULT NULL,
+  `text2` varchar(400) DEFAULT 'N.A.',
   `overide_image` varchar(150) DEFAULT NULL,
   `rating` int(16) DEFAULT NULL,
   `link` varchar(500) DEFAULT NULL,
   `organization` varchar(500) DEFAULT NULL,
   `organization_venue_address` varchar(500) DEFAULT NULL,
-  `womenonly` tinyint(4) DEFAULT '0',
-  `menonly` tinyint(4) DEFAULT '0',
-  `children` tinyint(4) DEFAULT '0',
-  `pets` tinyint(4) DEFAULT '0',
-  `soupkitchen` tinyint(4) NOT NULL DEFAULT '0',
-  `tafel` tinyint(4) NOT NULL DEFAULT '0',
-  `free_givaway` tinyint(4) NOT NULL DEFAULT '0',
-  `churchgive` tinyint(4) NOT NULL DEFAULT '0',
-  `foodtour` tinyint(4) NOT NULL DEFAULT '0',
-  `smoking` tinyint(4) NOT NULL DEFAULT '0'
+  `is_` varchar(150) DEFAULT NULL COMMENT 'MUST BE CARBON COPY OF "is_" IN organization_venues, divided by commas',
+  `allows` varchar(150) DEFAULT NULL COMMENT 'MUST BE CARBON COPY OF "allows" IN organization_venues, divided by commas'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `contnt_medical`
---
-
-INSERT INTO `contnt_medical` (`id`, `name`, `category`, `sub_category`, `paid_type`, `area`, `availability`, `fee`, `text1`, `text2`, `overide_image`, `rating`, `link`, `organization`, `organization_venue_address`, `womenonly`, `menonly`, `children`, `pets`, `soupkitchen`, `tafel`, `free_givaway`, `churchgive`, `foodtour`, `smoking`) VALUES
-(1, 'Medical Test', 'medical', NULL, 0, '0', 100, 'N.A.', 'This is a test medical postingThis is a test medical postingThis is a test m', 'This is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical postingThis is a test medical posting', NULL, 100, 'www.google.com', '1', '1', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -198,8 +180,7 @@ CREATE TABLE `langs` (
 
 INSERT INTO `langs` (`id`, `name`, `text`, `table`, `gmaps_lang`, `gmaps_reg`) VALUES
 (1, 'English', 'English', 'Lang_English', 'en', 'gb'),
-(2, 'Deutsch', 'Deutsch', 'Lang_Deutsch', 'de', 'de'),
-(3, 'Polish', 'Polish', 'Lang_Polish', 'pl', 'pl');
+(2, 'Deutsch', 'Deutsch', 'Lang_Deutsch', 'de', 'de');
 
 -- --------------------------------------------------------
 
@@ -902,7 +883,7 @@ ALTER TABLE `contnt_categories`
 -- AUTO_INCREMENT for table `contnt_food`
 --
 ALTER TABLE `contnt_food`
-  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `contnt_housing`
@@ -914,7 +895,7 @@ ALTER TABLE `contnt_housing`
 -- AUTO_INCREMENT for table `contnt_medical`
 --
 ALTER TABLE `contnt_medical`
-  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `langs`
