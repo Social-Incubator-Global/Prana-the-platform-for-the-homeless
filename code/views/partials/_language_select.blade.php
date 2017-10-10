@@ -1,6 +1,6 @@
-<div id="lang_selector" class="float-right">
+<div {{-- id="lang_selector" --}} class="float-right">
     <form>
-        <select id="lang_select"  onChange="javascript:var ndx=document.getElementById('lang_select').selectedIndex; apply_language(ndx); if(location_!='posting'){redirect(location_, home_type, area);}else{redirect(location_, ID, area);}"></select>
+        <select {{-- id="lang_select" --}} onChange="javascript:var ndx=document.getElementById('lang_select').selectedIndex; apply_language(ndx); if(location_!='posting'){redirect(location_, home_type, area);}else{redirect(location_, ID, area);}"></select>
             <script>
                 var index = 0;
                 for (index = 0; index < def_langs.length; ++index)
