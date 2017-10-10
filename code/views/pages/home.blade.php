@@ -19,12 +19,17 @@
         <img src="{{asset('/images/logo/prana_logo_tool.png')}}">
     </a> --}}
     {{-- dl_d(code_snippets[4]); --}}
+    {{-- code snippets[0] --}}
+
+    {{-- language select --}}
     @include('partials._emergency_button')
+    {{-- end language select --}}
 
     {{-- code snippets[0] --}}
     {{-- language select --}}
     @include('partials._language_select')
     {{-- end language select --}}
+
 </nav>
 
 <div class="container-fluid">

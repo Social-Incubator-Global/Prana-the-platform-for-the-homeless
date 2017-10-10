@@ -1,5 +1,5 @@
-<div id='emergency_button_div'>
-    <form>
+<div class="mr-auto" id='emergency_button_div'>
+    <formx>
         <input id='emergency_call' src='{{BASE_URL}}/assets/images/prn_ico/call.png' style='background-color: red;' type='image' onclick='javascript:show_drop_down();'>
         <input class='emergency_button' id='emergency_button' type='button' style='background-color:red; height:30px;' onclick='javascript:show_drop_down();' value='Emergency'></input>
     </form>
