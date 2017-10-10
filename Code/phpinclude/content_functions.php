@@ -147,24 +147,23 @@ function create_user($id, $uname)
 //Executing this function returns search frontend search content to results.php based on URL arguments
 function search()
 {
-    $getbacks[9];
     $URLfilter_result = get_filters_URL("search");
     $echo = ""; $result = ""; $result2 = ""; $result3 = "";
     //SEARCH RESULTS ARE DONE BY TYPE
 
-    if($URLfilter_result[2] == "all")
+    if(strtolower($URLfilter_result[3]) == "all")
     {
         $query = build_query_string_search($URLfilter_result, "housing");
         $query2 = build_query_string_search($URLfilter_result, "food");
         $query3 = build_query_string_search($URLfilter_result, "medical");
         
         $result = query_($query);
-        $result = query_($query2);
-        $result = query_($query3);
+        $result2 = query_($query2);
+        $result3 = query_($query3);
     }
     else
     {
-        $query = build_query_string_search($URLfilter_result, $URLfilter_result[2]);
+        $query = build_query_string_search($URLfilter_result, strtolower($URLfilter_result[3]));
         $result = query_($query);
     }
     //$query = build_query_string($URLfilter_result, "search");
@@ -185,6 +184,11 @@ function search()
             echo("<a href='javascript:redirect(\"posting\",".$row["id"].");'><div class='result_box_all' id='resultbox_".$row["id"]."'><div id='content_box_header_1' style='font-family: \"Arial\", underlined; color: rgb(9, 103, 126);; font-size: 16px; width: 100%; height: 37px;'><div id='title_1' style='float: left; margin-left:2%; margin-top:4%; font-size:24px;'><u>".$row["name"]."</u></div></div><br><br><div id='result_box_desc' style='color:black; margin-left:2%; float:left;'>".$row["text2"]."</div><br><div class='result_info' id='info_".row["id"]."' style='float:left; margin-left:2%; color:black;'><img src='../Assets/Images/prn_ico/led_icons/marker.png'> ".$row2["venue"]."<br><img src='../Assets/Images/prn_ico/led_icons/telephone.png'> ".$row2["tel"]."<br><img src='../Assets/Images/prn_ico/led_icons/email.png'> ".$row2["email"]."<br>Venue is: ".$row2["is_"]."<br><img src='../Assets/Images/prn_ico/led_icons/accept.png'> ".$row2["allows"]."</div></div></a><script>document.getElementById('img_". $row["id"] ."').src = '". $img_path ."';</script>");
         }
     }
+    return;
+}
+
+function process_single_search($Result_set)
+{
     return;
 }
 

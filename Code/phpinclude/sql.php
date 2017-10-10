@@ -95,15 +95,10 @@ function build_query_string($URLfilter_result, $Type_)
     return $query;
 }
 
-function build_query_string_search($URLfilter_result, $getback)
+function build_query_string_search($URLfilter_result, $FromTable)
 {
     $query = "";
-    
-    
-    if($getback == $URLfilter_result[2])
-    {
-        $query = "SELECT * FROM contnt_".$getback." WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
-    }
+    $query = "SELECT * FROM contnt_".$FromTable." WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
     return $query;
 }
 ?>
