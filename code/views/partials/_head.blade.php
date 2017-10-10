@@ -2,15 +2,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Prana Deutschland @yield('title')</title>
 
-    <link rel="stylesheet" href="{{DOC_ROOT}}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{BASE_URL}}/css/bootstrap.min.css"/>
     <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{DOC_ROOT}}/css/Mainstyle.css"/>
+    <link rel="stylesheet" href="{{BASE_URL}}/css/Mainstyle.css"/>
     @yield('css')
 
-    <script src="{{DOC_ROOT}}/js/bootstrap.min.js"></script>
-    <script src="{{DOC_ROOT}}/js/objects.js"></script>
-    <script src="{{DOC_ROOT}}/js/forms.js"></script>
-    <script src="{{DOC_ROOT}}/js/session.js"></script>
+    <script src="{{BASE_URL}}/js/bootstrap.min.js"></script>
+    <script src="{{BASE_URL}}/js/objects.js"></script>
+    <script src="{{BASE_URL}}/js/forms.js"></script>
+    <script src="{{BASE_URL}}/js/session.js"></script>
     @yield('js')
 
     <!--Variables-->
