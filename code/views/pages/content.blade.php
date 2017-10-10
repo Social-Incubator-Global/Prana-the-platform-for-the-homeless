@@ -77,17 +77,17 @@ top_menu('content');
      <div id="section_image">
         <script>
            if(home_type == "food")
-           { document.write('<img src="../Assets/Images/icons/icon_food.png" width="105px" height="105px">'); }
+           { document.write('<img src="{{DOC_ROOT}}/assets/images/icons/icon_food.png" width="105px" height="105px">'); }
            else if(home_type == "housing")
-           { document.write('<img src="../Assets/Images/icons/icon_housing.png" width="105px" height="105px">'); }
+           { document.write('<img src="{{DOC_ROOT}}/assets/images/icons/icon_housing.png" width="105px" height="105px">'); }
            else if(home_type == "medical")
-           { document.write('<img src="../Assets/Images/icons/Icon_health.png" width="105px" height="105px">'); }
+           { document.write('<img src="{{DOC_ROOT}}/assets/images/icons/Icon_health.png" width="105px" height="105px">'); }
            else if(home_type == "legal & documents")
-           { document.write('<img src="../Assets/Images/icons/icon_legal and advice.png" width="105px" height="105px">'); }
+           { document.write('<img src="{{DOC_ROOT}}/assets/images/icons/icon_legal and advice.png" width="105px" height="105px">'); }
            else if(home_type == "study")
-           { document.write('<img src="../Assets/Images/icons/icon_study2.png" width="105px" height="105px">'); }
+           { document.write('<img src="{{DOC_ROOT}}/assets/images/icons/icon_study2.png" width="105px" height="105px">'); }
            else if(home_type == "jobs")
-           { document.write('<img src="../Assets/Images/icons/icon_jobs.png" width="105px" height="105px">'); }
+           { document.write('<img src="{{DOC_ROOT}}/assets/images/icons/icon_jobs.png" width="105px" height="105px">'); }
         </script>
      </div>
      <div id="section_title">

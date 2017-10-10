@@ -4,18 +4,11 @@
             <img src="/assets/images/logo/prana_logo_tool.png">
         </div>
     </a>
-    <div id="lang_selector" style="float:right;">
-        {{-- <script>
-            document.write(code_snippets[0]);
-        </script> --}}
-        @include('partials._code_snippets_0')
-    </div>
-    <script>
-        dl_d(code_snippets[7]);
-        dl_d(code_snippets[4]);
-    </script>
+    @include('partials._language_select') {{-- code snippets[0] --}}
+    @include('partials._code_snippets_7') {{-- dl_d(code_snippets[7]); --}}
+    @include('partials._emergency_button') {{-- dl_d(code_snippets[4]); --}}
     <div id="uacnt" style="">
-        <a style="color: white;" href="javascript: if(session==1){redirect('profile');}else{redirect(\'login\');}" id="login_text" href="#">
+        <a style="color: white;" href="javascript: if(session==1){redirect('profile');}else{redirect('login');}" id="login_text" href="#">
             <script>
                 if(session==1){document.write(def_lang[35]); }else if (session!=1){ document.write(def_lang[0]); if(session!=1){document.write} }
             </script>

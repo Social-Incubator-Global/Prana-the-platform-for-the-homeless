@@ -167,7 +167,7 @@ function search()
         while($row2 = $result2->fetch_assoc())
         {
             $img_path = $row2["image_path"];
-            echo("<a href='javascript:redirect(\"posting\",".$row["id"].");'><div class='result_box_all' id='resultbox_".$row["id"]."'><div id='content_box_header_1' style='font-family: \"Arial\", underlined; color: rgb(9, 103, 126);; font-size: 16px; width: 100%; height: 37px;'><div id='title_1' style='float: left; margin-left:2%; margin-top:4%; font-size:24px;'><u>".$row["name"]."</u></div></div><br><br><div id='result_box_desc' style='color:black; margin-left:2%; float:left;'>".$row["text2"]."</div><br><div class='result_info' id='info_".row["id"]."' style='float:left; margin-left:2%; color:black;'><img src='../Assets/Images/prn_ico/led_icons/marker.png'> ".$row2["venue"]."<br><img src='../Assets/Images/prn_ico/led_icons/telephone.png'> ".$row2["tel"]."<br><img src='../Assets/Images/prn_ico/led_icons/email.png'> ".$row2["email"]."<br>Venue is: ".$row2["is_"]."<br><img src='../Assets/Images/prn_ico/led_icons/accept.png'> ".$row2["allows"]."</div></div></a><script>document.getElementById('img_". $row["id"] ."').src = '". $img_path ."';</script>");
+            echo("<a href='javascript:redirect(\"posting\",".$row["id"].");'><div class='result_box_all' id='resultbox_".$row["id"]."'><div id='content_box_header_1' style='font-family: \"Arial\", underlined; color: rgb(9, 103, 126);; font-size: 16px; width: 100%; height: 37px;'><div id='title_1' style='float: left; margin-left:2%; margin-top:4%; font-size:24px;'><u>".$row["name"]."</u></div></div><br><br><div id='result_box_desc' style='color:black; margin-left:2%; float:left;'>".$row["text2"]."</div><br><div class='result_info' id='info_".row["id"]."' style='float:left; margin-left:2%; color:black;'><img src='{{DOC_ROOT}}/assets/images/prn_ico/led_icons/marker.png'> ".$row2["venue"]."<br><img src='{{DOC_ROOT}}/assets/images/prn_ico/led_icons/telephone.png'> ".$row2["tel"]."<br><img src='{{DOC_ROOT}}/assets/images/prn_ico/led_icons/email.png'> ".$row2["email"]."<br>Venue is: ".$row2["is_"]."<br><img src='{{DOC_ROOT}}/assets/images/prn_ico/led_icons/accept.png'> ".$row2["allows"]."</div></div></a><script>document.getElementById('img_". $row["id"] ."').src = '". $img_path ."';</script>");
         }
     }
     return;
@@ -229,7 +229,7 @@ function load_posting()
        if($ndx>0)
        {break;}
 
-       $echo_="<script>refresh_localstorage(); document.getElementById('general_content').innerHTML += '<input id=\"bookmark_".$row["id"]."\" value=\"Bookmark\" type=\"image\" src=\"../Assets/Images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", \'bookmark_".$row["id"]."\');\" style=\"float: left; width:30px; height: 30px; margin-left: 1%; margin-right: 1%;\"/> <div id=\'title_posting_content\'>".$row["name"]." (by: ".$row["organization"].")</div><div id=\'planroute_posting_content\'>' + dl_r(54) +': </div><br>';document.title='Prana : ".$row["name"]."';</script>";
+       $echo_="<script>refresh_localstorage(); document.getElementById('general_content').innerHTML += '<input id=\"bookmark_".$row["id"]."\" value=\"Bookmark\" type=\"image\" src=\"{{DOC_ROOT}}/assets/images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", \'bookmark_".$row["id"]."\');\" style=\"float: left; width:30px; height: 30px; margin-left: 1%; margin-right: 1%;\"/> <div id=\'title_posting_content\'>".$row["name"]." (by: ".$row["organization"].")</div><div id=\'planroute_posting_content\'>' + dl_r(54) +': </div><br>';document.title='Prana : ".$row["name"]."';</script>";
 
     $result5=query_("SELECT * FROM Organizations WHERE id='" . $row["organization"]."'");
         while($row5 = $result5->fetch_assoc())
@@ -558,7 +558,7 @@ function load_content_boxes($query__)
             if($dy_tme_ok == true && $mo_ok == true)
             { $anyresults = true;
                 //echo("1,");
-        $echo_1=$echo_1."<div style='animation-name: fade_in;animation-duration: 0.3s; margin-left: 3%; margin-top:3%; border-radius: 0px; float: left; color: rgb(9, 103, 126); background-color: rgba(230,230,230,1); width: 300px; height: 410px;' id='main_". $row["id"] ."'><a href=\"javascript:redirect('posting', '".$row["id"]."');\"><div id='content_box_header_". $row["id"] ."' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_". $row["id"] ."' style='float: left; margin-left:2%; margin-top:4%;'>".$row["name"]. "</div></div><div id='content_box_image_". $row["id"] ."' style='float:left; width:100%; height: 180px; background-color:white;'><img src='../Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div></a><!--<div id='detalis_box_'" . $row["id"] . " style='height: 20px; font-family: Arial, bold; float:left; margin-left:2%; margin-top: 4%;'><b><div id='info_txt_".$row["id"]."'></div></b><br></div>--><div id='info_org_venue'><div id='hours_".$row["id"]."' style='float:left; margin-left:0%; font-family:Arial,regular; font-size:14px;'></div><div id='tel_".$row["id"]."' style='float:left; margin-left:5%; font-family:Arial,regular; font-size:14px;'></div><br><div id='email_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='allows_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; width:100%;'></div><div id='venue_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; height:40px; width:100%;'></div></div><div id='goto_".$row["id"]."' style='float:left; text-align:right; margin-left:0%; margin-top:0%; font-family:Arial,regular; color:orange; font-size:16px; width:100%'><center><form style=\"width:130px; margin-top:-14px;\"><input type=\"button\" id=\"view_post_bttn_".$row["id"]."\" onclick=\"javascript:set_local('ID','".$row["id"]."'); redirect('posting', '".$row["id"]."');\" style=\"float: left; width:100px; height: 30px;\" value=\"View ".get_result_type_bttxt($ht)."\"></input></form><input id=\"bookmark_".$row["id"]."\" type=\"image\" src=\"../Assets/Images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", 'bookmark_".$row["id"]."');\" style=\"float: left; width:30px; height: 30px;\"></input></center></div></div><script>document.getElementById('view_post_bttn_".$row["id"]."').value = dl_r(47);</script>";
+        $echo_1=$echo_1."<div style='animation-name: fade_in;animation-duration: 0.3s; margin-left: 3%; margin-top:3%; border-radius: 0px; float: left; color: rgb(9, 103, 126); background-color: rgba(230,230,230,1); width: 300px; height: 410px;' id='main_". $row["id"] ."'><a href=\"javascript:redirect('posting', '".$row["id"]."');\"><div id='content_box_header_". $row["id"] ."' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_". $row["id"] ."' style='float: left; margin-left:2%; margin-top:4%;'>".$row["name"]. "</div></div><div id='content_box_image_". $row["id"] ."' style='float:left; width:100%; height: 180px; background-color:white;'><img src='{{DOC_ROOT}}/assets/images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div></a><!--<div id='detalis_box_'" . $row["id"] . " style='height: 20px; font-family: Arial, bold; float:left; margin-left:2%; margin-top: 4%;'><b><div id='info_txt_".$row["id"]."'></div></b><br></div>--><div id='info_org_venue'><div id='hours_".$row["id"]."' style='float:left; margin-left:0%; font-family:Arial,regular; font-size:14px;'></div><div id='tel_".$row["id"]."' style='float:left; margin-left:5%; font-family:Arial,regular; font-size:14px;'></div><br><div id='email_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='allows_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; width:100%;'></div><div id='venue_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; height:40px; width:100%;'></div></div><div id='goto_".$row["id"]."' style='float:left; text-align:right; margin-left:0%; margin-top:0%; font-family:Arial,regular; color:orange; font-size:16px; width:100%'><center><form style=\"width:130px; margin-top:-14px;\"><input type=\"button\" id=\"view_post_bttn_".$row["id"]."\" onclick=\"javascript:set_local('ID','".$row["id"]."'); redirect('posting', '".$row["id"]."');\" style=\"float: left; width:100px; height: 30px;\" value=\"View ".get_result_type_bttxt($ht)."\"></input></form><input id=\"bookmark_".$row["id"]."\" type=\"image\" src=\"{{DOC_ROOT}}/assets/images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", 'bookmark_".$row["id"]."');\" style=\"float: left; width:30px; height: 30px;\"></input></center></div></div><script>document.getElementById('view_post_bttn_".$row["id"]."').value = dl_r(47);</script>";
 
         //$echo_2=$echo_2."<script>document.getElementById('info_txt_".$row["id"]."').innerHTML = dl_r(48);</script>";
 
@@ -572,49 +572,49 @@ function load_content_boxes($query__)
 
             if($row2["houropening"] != null || $row["houropening"] !="" && $row2["hourclosing"] != null || $row["hourclosing"] !="")
             {
-            $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/alarm.png\"/> ". $row2["houropening"] ."-". $row2["hourclosing"] . "';</script>";
+            $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/alarm.png\"/> ". $row2["houropening"] ."-". $row2["hourclosing"] . "';</script>";
             }
             else
             {
-            $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/alarm.png\"/> - / -';</script>";
+            $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/alarm.png\"/> - / -';</script>";
             }
 
             if($row2["tel"] != null && $row2["tel"] != "")
             {
-               $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/telephone.png\"/> ". $row2["tel"] ."';</script>";
+               $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/telephone.png\"/> ". $row2["tel"] ."';</script>";
             }
             else
             {
-               $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/telephone.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
+               $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/telephone.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
             }
 
             if($row2["email"] != null && $row2["email"] != "")
             {
-               $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/email.png\"/> <a  style=\"color:rgb(9, 103, 126);\" href=\"mailto:".$row2["email"]."\">". $row2["email"] ."</a>';</script>";
+               $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/email.png\"/> <a  style=\"color:rgb(9, 103, 126);\" href=\"mailto:".$row2["email"]."\">". $row2["email"] ."</a>';</script>";
             }
             else
             {
-               $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/email.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
+               $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/email.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
             }
 
             //changes to use the icon system string must be cut down
             //figure out loops IN FUCKING PHP
             if($row2["venue"] != null && $row2["venue"] != "")
             {
-                $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/marker.png\"/> <a target=\"_blank\" style=\"color:rgb(9, 103, 126);\" href=\"http://maps.google.com?q=".$row2["venue"]."\">". $row2["venue"] ."</a>';</script>";
+                $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML = '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/marker.png\"/> <a target=\"_blank\" style=\"color:rgb(9, 103, 126);\" href=\"http://maps.google.com?q=".$row2["venue"]."\">". $row2["venue"] ."</a>';</script>";
             }
             else
             {
-                $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML =  '<img src=\"../Assets/Images/prn_ico/led_icons/marker.png\"/> - / -';</script>";
+                $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML =  '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/marker.png\"/> - / -';</script>";
             }
 
             if($row2["allows"] != null && $row2["allows"] != "")
             {
-                $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $row2["allows"] ."';</script>";
+                $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/accept.png\"/> ". $row2["allows"] ."';</script>";
             }
             else
             {
-                $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML =  '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> Everyone';</script>";
+                $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML =  '<img src=\"{{DOC_ROOT}}/assets/images/prn_ico/led_icons/accept.png\"/> Everyone';</script>";
             }
         }
     }

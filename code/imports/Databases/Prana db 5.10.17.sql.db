@@ -551,9 +551,9 @@ CREATE TABLE `organizations_venues` (
 --
 
 INSERT INTO `organizations_venues` (`id`, `organization`, `venue`, `Space`, `Space_type`, `pay_to_stay`, `Contact_person`, `busroutes`, `stops`, `days_open`, `Open_month_from`, `Open_month_to`, `houropening`, `hourclosing`, `tel`, `fax`, `website`, `email`, `image_path`, `is_`, `allows`) VALUES
-(1, 1, 'Geibelstr. 77/78, 12305 Berlin', 25, 1, 'There is no fee here', 'Mr. John Peck', 'M44,M9,101,X3', NULL, '1234567', 'January', 'December', 11, 23, '016065684584', NULL, 'www.google.com', 'test@test.com', '../Assets/Images/Web/orgs/klkl.jpg', 'Shelters,Hostels', '[Women] only'),
+(1, 1, 'Geibelstr. 77/78, 12305 Berlin', 25, 1, 'There is no fee here', 'Mr. John Peck', 'M44,M9,101,X3', NULL, '1234567', 'January', 'December', 11, 23, '016065684584', NULL, 'www.google.com', 'test@test.com', '{{DOC_ROOT}}/assets/images/Web/orgs/klkl.jpg', 'Shelters,Hostels', '[Women] only'),
 (2, 1, 'Arcostrasse 11, 10587 Berlin', NULL, NULL, 'N.A.', 'Christin Fritzsche', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '01758397428', '03027576937', NULL, 'notuebernachtung@gebewo.de', '', 'Shelters', ''),
-(3, 1, '3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '../Assets/Images/Web/orgs/lkjlk.jpg', NULL, NULL);
+(3, 1, '3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{{DOC_ROOT}}/assets/images/Web/orgs/lkjlk.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 

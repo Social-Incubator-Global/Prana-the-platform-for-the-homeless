@@ -1,6 +1,6 @@
 <?php
 
-const BASE_URL = 'http://localhost/prana/code/';
+const BASE_URL = 'http://local.prana.com';
 DEFINE(DOC_ROOT, $_SERVER['DOCUMENT_ROOT']);
 
 const hostname = 'localhost';
