@@ -83,12 +83,13 @@ body
 
 #emergency_button_div
 {
-    position:fixed;
-    float:left;
-    z-index:1000;
-    margin-top: 0%;
-    margin-left: 8%;
-    background-color:red;
+    position: fixed;
+    float: left;
+    z-index: 1000;
+    margin-top: -0.5%;
+    margin-left: 9.5%;
+    background-color: red;
+    height: 6.7%;
 }
 
 #menu_main
@@ -133,9 +134,14 @@ body
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
+#emergency_call
+{
+    margin-top: 6%;
+}
+
 #emergency_button
 {
-    border-radius:0px;
+    margin-top: 6%;
 }
 
 @font-face {
