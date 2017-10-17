@@ -500,19 +500,26 @@ function change_dy()
 
 function change_paidtype(Type_)
 {
-document.getElementById("buttn_free").style.backgroundColor = "rgba(9, 103, 126, 1)";
-document.getElementById("buttn_paid").style.backgroundColor = "rgba(9, 103, 126, 1)";
+    document.getElementById("buttn_free").style.backgroundColor = "rgba(9, 103, 126, 1)";
+    document.getElementById("buttn_paid").style.backgroundColor = "rgba(9, 103, 126, 1)";
+    document.getElementById("buttn_kosten").style.backgroundColor = "rgba(9, 103, 126, 1)";
 
-if(Type_ == def_types[0])
-{
-localStorage.setItem("paid_type", 0);
-document.getElementById("buttn_free").style.backgroundColor = "rgba(255,127,36,1)";
-}
-else if(Type_ == def_types[2])
-{
-localStorage.setItem("paid_type", 2);
-document.getElementById("buttn_paid").style.backgroundColor = "rgba(255,127,36,1)";
-}
+    if(Type_ == def_types[0])
+    {
+        localStorage.setItem("paid_type", 0);
+        document.getElementById("buttn_free").style.backgroundColor = "rgba(255,127,36,1)";
+    }
+    if(Type_ == def_types[1])
+    {
+        localStorage.setItem("paid_type", 1);
+        document.getElementById("buttn_kosten").style.backgroundColor = "rgba(255,127,36,1)";
+    }
+    else if(Type_ == def_types[2])
+    {
+        localStorage.setItem("paid_type", 2);
+        document.getElementById("buttn_paid").style.backgroundColor = "rgba(255,127,36,1)";
+    }
+    return;
 }
 
 function filters_load(Type_)
