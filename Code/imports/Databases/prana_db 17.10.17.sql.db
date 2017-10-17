@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2017 at 10:44 PM
+-- Generation Time: Oct 17, 2017 at 10:54 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -162,6 +162,16 @@ CREATE TABLE `contnt_medical` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `general_types`
+--
+
+CREATE TABLE `general_types` (
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `langs`
 --
 
@@ -308,7 +318,8 @@ INSERT INTO `lang_deutsch` (`id`, `word`, `notes`) VALUES
 (106, '--', NULL),
 (107, '--', ''),
 (108, '--', NULL),
-(109, 'Alles', 'for search');
+(109, 'Alles', 'for search'),
+(116, 'Kostenübernahme', NULL);
 
 -- --------------------------------------------------------
 
@@ -443,7 +454,8 @@ INSERT INTO `lang_english` (`id`, `word`, `owner`, `notes`) VALUES
 (112, 'Your', 'all', NULL),
 (113, 'results', 'all', NULL),
 (114, 'for', 'all', NULL),
-(115, ':', 'all', 'Semicolon used throughout website');
+(115, ':', 'all', 'Semicolon used throughout website'),
+(116, 'Kostenübernahme', 'all', 'CHANGE TO ENGLISH TRANSLATION!');
 
 -- --------------------------------------------------------
 
@@ -782,6 +794,12 @@ ALTER TABLE `contnt_housing`
 ALTER TABLE `contnt_medical`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`,`link`);
+
+--
+-- Indexes for table `general_types`
+--
+ALTER TABLE `general_types`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `langs`
