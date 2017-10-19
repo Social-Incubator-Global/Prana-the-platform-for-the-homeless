@@ -5,3 +5,10 @@ Homeless people come in many shapes and forms, those who want to live on the roa
 # Contributing
 
 Please see CONTRIBUTING.md
+
+# Using Bootstrap Branch
+
+I'm using the blade engine for this, so I've left the vendor folder in the repo.
+
+The access point for the page is:
+http://local.prana.com/home
