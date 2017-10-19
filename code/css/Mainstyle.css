@@ -139,10 +139,10 @@ body {
   height: 70%;
   border: 1px solid #ff7f24; }
 
-#src_in {
+/*#src_in {
   color: white;
   background-color: #09677e;
-  border: 0px solid #FF7F27; }
+  border: 0px solid #FF7F27; }*/
 
 #src_in_top {
   color: white;
@@ -158,16 +158,16 @@ body {
   font-family: 'Arial', regular;
   font-size: 12px; }
 
-#logo {
+/*#logo {*/
   /*float: left;
   font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
   font-size: 56px;*/
-  float: left;
+  /*float: left;
   font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
   font-size: 42px;
   color: white;
   margin-top: 0px;
-  margin-left: 18px; }
+  margin-left: 18px; }*/
 
 hr {
   border: 1px solid white; }
@@ -345,3 +345,12 @@ a:hover {
 .bg-primary {
   background-color: #09677e !important;
 }
+#main-nav a {
+    color: white;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+#home_buttons ul { list-style-type: none}
