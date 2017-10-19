@@ -41,6 +41,5 @@ Thumbs.db
 
 node_modules/*
 nbproject/*
-vendor/
 config.php
 config.js
