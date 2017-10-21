@@ -316,6 +316,7 @@ var def_langs = [];
 
 var def_langs_gmaps = [];
 var def_langs_gmaps_reg = [];
+var def_addresses_gmaps = [];
 
 var special_characters = ["<amp>"];
 

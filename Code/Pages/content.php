@@ -122,6 +122,7 @@ top_menu('content');
     &nbsp;
     <script>
         var directions = [];
+        var markers = [];
 
         function initMap()
         {
@@ -138,12 +139,23 @@ top_menu('content');
                     center: {lat: Number(p_lat), lng: Number(p_long)}
                 }
             );
+            //TEST MARKER!!! TESTING PURPOSES ONLY!
+            var myLatLng={lat: Number(p_lat), lng: Number(p_long)};
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
         }
-    </script></div>
-
+    </script>
+</div>
     <script>
     refresh_localstorage();
+    load_map();
+    function load_map()
+    {
     document.write('<scr'+'ipt as'+'ync def'+'er s'+'rc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA&callback=initMap&language='+def_langs_gmaps[lang]+'&region='+def_langs_gmaps_reg[lang]+'"></scr'+'ipt>');
+    }
     </script>
 </div>
 

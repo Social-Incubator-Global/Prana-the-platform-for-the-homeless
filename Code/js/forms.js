@@ -634,15 +634,22 @@ alert("wkak");
 
 function overlay_menu()
 {
-
+    return;
 }
 
 function clear()
 {
     document.getElementById("content").innerHTML = "";
+    return;
 }
 
 function EVENT_HANDLER_ENTER()
 {
-    
+    return;
+}
+
+function set_address_gmaps(address)
+{
+    def_addresses_gmaps.push(address);
+    return;
 }

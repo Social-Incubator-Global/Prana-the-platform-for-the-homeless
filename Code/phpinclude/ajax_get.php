@@ -66,7 +66,7 @@ if($r_t == "content")
  try
  {
     include_(/*Does not include all files everytime this file is included saving CPU power and bandwidth*/);
-    load_content_boxes(build_query_string(get_filters_URL($h_t), $r_t));
+    $returner = load_content_boxes(build_query_string(get_filters_URL($h_t), $r_t));
  }
  catch(Exception $e){}
 }

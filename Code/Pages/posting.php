@@ -182,7 +182,7 @@
           destination: document.getElementById('end').value,
           travelMode: localStorage.getItem("transit_preference"),
           transitOptions: {
-          modes: [localStorage.getItem("transit_liking")]},
+          modes: [localStorage.getItem("transit_liking")]}
         }, function(response, status) {
           // Route the directions and pass the response to a function to create
           // markers for each step.
