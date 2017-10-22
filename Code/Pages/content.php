@@ -129,7 +129,7 @@ top_menu('content');
             var p_lat = get_local("current_position_lat");
             var p_long = get_local("current_position_long");
 
-            var markerArray = [];
+            var markerArray = def_addresses_gmaps;
             // Instantiate a directions service.
             var directionsService = new google.maps.DirectionsService;
             // Create a map and center it on Berlin MANUALLY.
@@ -139,13 +139,24 @@ top_menu('content');
                     center: {lat: Number(p_lat), lng: Number(p_long)}
                 }
             );
+    
+            var marker, i;
+            for (i = 0; i < def_addresses_gmaps.length; i++)
+            {
+                position_ = geolocate(def_addresses_gmaps[i]);
+                console.log(position_);
+                marker = new google.maps.Marker({
+                position: position_,
+                map: map
+                });
+            }
             //TEST MARKER!!! TESTING PURPOSES ONLY!
-            var myLatLng={lat: Number(p_lat), lng: Number(p_long)};
+            /*var myLatLng={lat: Number(p_lat), lng: Number(p_long)};
             var marker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
                 title: 'Hello World!'
-            });
+            });*/
         }
     </script>
 </div>

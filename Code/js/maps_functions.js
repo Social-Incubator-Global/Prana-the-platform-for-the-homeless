@@ -24,6 +24,7 @@
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
+var geocoder;
 
 function new_route()
 {
@@ -51,6 +52,22 @@ function map_placeholder()
 {
     set_innerhtml("map_", "<center><div style='color: rgb(9, 103, 126); font-size:18px; font-family: \"Arial\", regular;'>Loading map...</div></center>");
     
+    return;
+}
+
+function geolocate(address)
+{
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) 
+    {
+        return results[0].geometry.location;
+    }
+    else
+    {
+        alert('Geocode was not successful for the following reason: ' + status);
+    }
+    });
     return;
 }
 

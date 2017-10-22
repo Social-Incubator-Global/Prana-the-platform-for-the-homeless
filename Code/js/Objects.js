@@ -114,8 +114,12 @@ function send_AJAX(request_type, url, response_action, response_element)
             }
             else
             {
-                try {
-                eval(this.responseText);}catch(exp){}
+                try
+                {
+                    eval(this.responseText);
+                }
+                catch(exp)
+                {}
             }
 
             if(cont)

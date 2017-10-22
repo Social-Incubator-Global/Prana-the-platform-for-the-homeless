@@ -522,6 +522,15 @@ function change_paidtype(Type_)
     return;
 }
 
+function AJAX_SUCCESS_call_exiting_function(Type_)
+{
+    if(Type_ == 1)
+    {
+        refresh_map();
+    }
+    return;
+}
+
 function filters_load(Type_)
 {
 //[1]: loads filters for side column
@@ -610,26 +619,30 @@ function search(content, type)
 
 function news_load()
 {
-document.write('<div id="news_"></div>');
+    document.write('<div id="news_"></div>');
+    return;
 }
 
 //NAME TO CHANGE TO SHOW FOOTER
 function show_copyright()
 {
-document.write("<div id='copyright' style='font-family:Arial,regular; font-size:14px;'>"+def_lang[3]+" | Help us build on <a href='https://github.com/Social-Incubator-Global/Prana-The-platform-for-the-homeless'>Github</a></div>");
+    document.write("<div id='copyright' style='font-family:Arial,regular; font-size:14px;'>"+def_lang[3]+" | Help us build on <a href='https://github.com/Social-Incubator-Global/Prana-The-platform-for-the-homeless'>Github</a></div>");
+    return;
 }
 
 function refresh_map()
 {
-initMap();
+    initMap();
+    return;
 }
 
 function update_(Type_)
 {
-if(Type_ == "distance")
-{
-alert("wkak");
-}
+    if(Type_ == "distance")
+    {
+        alert("wkak");
+    }
+    return;
 }
 
 function overlay_menu()
