@@ -57,17 +57,22 @@ function map_placeholder()
 
 function geolocate(address)
 {
-    geocoder = new google.maps.Geocoder();
-    geocoder.geocode( { 'address': address}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) 
-    {
-        return results[0].geometry.location;
-    }
-    else
-    {
-        alert('Geocode was not successful for the following reason: ' + status);
-    }
-    });
+    /*try
+    {*/
+        geocoder = new google.maps.Geocoder();
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) 
+            {
+                console.log(address);
+                return results[0].geometry.location;
+            }
+            else
+            {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    /*}
+    catch(e){}*/
     return;
 }
 
@@ -91,4 +96,48 @@ function calcRoute() {
       directionsDisplay.setDirections(response);
     }else{alert("hhh");}
   });
+}
+
+function set_markers(map)
+{
+    var marker, i;
+    for (i = 0; i < def_addresses_gmaps.length; i++)
+    {
+        geocoder = new google.maps.Geocoder();
+        console.log("------------");
+        console.log(def_addresses_gmaps[i]);
+        geocoder.geocode( { 'address': def_addresses_gmaps[i]}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) 
+        {
+            console.log(results[0].geometry.location.lat());
+            marker = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map,
+            });
+            //return results[0].geometry.location;
+        }
+        else
+        {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+        
+        
+        
+        /*console.log("ok1");
+        position_ = geolocate(def_addresses_gmaps[i]);
+        console.log(position_.lat());
+        myLatLng={lat: position_.lat(), lng: position_.lng()};
+        marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map
+        });*/
+    }
+    /*var myLatLng={lat: Number(p_lat), lng: Number(p_long)};
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });*/
+    return;
 }

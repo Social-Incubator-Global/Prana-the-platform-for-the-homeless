@@ -538,7 +538,7 @@ function load_content_boxes($query__)
    $dy_tme_ok = FALSE;
    $mo_ok = true;
    $anyresults = false;
-   $result_addresses = array();
+   //$result_addresses = array();
 
    $echo_1 = "";
    $echo_2 = "";
@@ -554,7 +554,7 @@ function load_content_boxes($query__)
        $mo_ok = false;
 
        $filters_time = get_filters_URL("basic");
-       array_push($result_addresses, $row["organization_venue_address"]);
+       //array_push($result_addresses, $row["organization_venue_address"]);
        
        if($filters_time[7] != 7)
        {
@@ -564,8 +564,6 @@ function load_content_boxes($query__)
                $result2 = query_($query2);
                if ($result2->num_rows > 0)
                {
-                   //output data of each row
-                   //echo($result2->num_rows );
                    $dy_tme_ok = true;
                }
             }
@@ -574,26 +572,27 @@ function load_content_boxes($query__)
     {
         $dy_tme_ok=true;
     }
-
     mysqli_free_result($result2);
     if($filters_time[8] != 12)
     {
         $result3 = query_("SELECT * FROM Organizations_Venues_Months WHERE organization='".$row["organization"]."' AND organization_venue='".$row["organization_venue_address"]."' AND ". get_month($filters_time[8])."='1'");
-            if ($result3->num_rows > 0)
-            {
-                $mo_ok = true;
-            }
-            else{ $mo_ok = false; }
+        if ($result3->num_rows > 0)
+        {
+            $mo_ok = true;
+        }
+        else{ $mo_ok = false; }
     }
-    else{ $mo_ok=true; }
-
+    else
+    { 
+        $mo_ok=true;
+    }
     mysqli_free_result($result3);
 
         if($dy_tme_ok == true && $mo_ok == true)
         {
             $anyresults = true;
             
-            $echo_1=$echo_1."<div style='animation-name: fade_in;animation-duration: 0.3s; margin-left: 3%; margin-top:3%; border-radius: 0px; float: left; color: rgb(9, 103, 126); background-color: rgba(230,230,230,1); width: 300px; height: 410px;' id='main_". $row["id"] ."'><a href=\"javascript:redirect('posting', '".$row["id"]."');\"><div id='content_box_header_". $row["id"] ."' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_". $row["id"] ."' style='float: left; margin-left:2%; margin-top:4%;'>".$row["name"]. "</div></div><div id='content_box_image_". $row["id"] ."' style='float:left; width:100%; height: 180px; background-color:white;'><img src='../Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div></a><!--<div id='detalis_box_'" . $row["id"] . " style='height: 20px; font-family: Arial, bold; float:left; margin-left:2%; margin-top: 4%;'><b><div id='info_txt_".$row["id"]."'></div></b><br></div>--><div id='info_org_venue'><div id='hours_".$row["id"]."' style='float:left; margin-left:0%; font-family:Arial,regular; font-size:14px;'></div><div id='tel_".$row["id"]."' style='float:left; margin-left:5%; font-family:Arial,regular; font-size:14px;'></div><br><div id='email_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='allows_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; width:100%;'></div><div id='venue_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; height:40px; width:100%;'></div></div><div id='goto_".$row["id"]."' style='float:left; text-align:right; margin-left:0%; margin-top:0%; font-family:Arial,regular; color:orange; font-size:16px; width:100%'><center><form style=\"width:130px; margin-top:-14px;\"><input type=\"button\" id=\"view_post_bttn_".$row["id"]."\" onclick=\"javascript:set_local('ID','".$row["id"]."'); redirect('posting', '".$row["id"]."');\" style=\"float: left; width:100px; height: 30px;\" value=\"View ".get_result_type_bttxt($ht)."\"></input></form><input id=\"bookmark_".$row["id"]."\" type=\"image\" src=\"../Assets/Images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", 'bookmark_".$row["id"]."');\" style=\"float: left; width:30px; height: 30px;\"></input></center></div></div><script>document.getElementById('view_post_bttn_".$row["id"]."').value = dl_r(47);set_address_gmaps(".$row["organization_venue_address"].");</script>";
+            $echo_1=$echo_1."<div style='animation-name: fade_in;animation-duration: 0.3s; margin-left: 3%; margin-top:3%; border-radius: 0px; float: left; color: rgb(9, 103, 126); background-color: rgba(230,230,230,1); width: 300px; height: 410px;' id='main_". $row["id"] ."'><a href=\"javascript:redirect('posting', '".$row["id"]."');\"><div id='content_box_header_". $row["id"] ."' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_". $row["id"] ."' style='float: left; margin-left:2%; margin-top:4%;'>".$row["name"]. "</div></div><div id='content_box_image_". $row["id"] ."' style='float:left; width:100%; height: 180px; background-color:white;'><img src='../Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div></a><!--<div id='detalis_box_'" . $row["id"] . " style='height: 20px; font-family: Arial, bold; float:left; margin-left:2%; margin-top: 4%;'><b><div id='info_txt_".$row["id"]."'></div></b><br></div>--><div id='info_org_venue'><div id='hours_".$row["id"]."' style='float:left; margin-left:0%; font-family:Arial,regular; font-size:14px;'></div><div id='tel_".$row["id"]."' style='float:left; margin-left:5%; font-family:Arial,regular; font-size:14px;'></div><br><div id='email_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='allows_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; width:100%;'></div><div id='venue_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; height:40px; width:100%;'></div></div><div id='goto_".$row["id"]."' style='float:left; text-align:right; margin-left:0%; margin-top:0%; font-family:Arial,regular; color:orange; font-size:16px; width:100%'><center><form style=\"width:130px; margin-top:-14px;\"><input type=\"button\" id=\"view_post_bttn_".$row["id"]."\" onclick=\"javascript:set_local('ID','".$row["id"]."'); redirect('posting', '".$row["id"]."');\" style=\"float: left; width:100px; height: 30px;\" value=\"View ".get_result_type_bttxt($ht)."\"></input></form><input id=\"bookmark_".$row["id"]."\" type=\"image\" src=\"../Assets/Images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", 'bookmark_".$row["id"]."');\" style=\"float: left; width:30px; height: 30px;\"></input></center></div></div><script>document.getElementById('view_post_bttn_".$row["id"]."').value = dl_r(47);</script>";
         
             $result2=query_("SELECT * FROM Organizations_Venues WHERE organization='" . $row["organization"] . "' AND id='" . $row["organization_venue_address"] . "'");
             while($row2 = $result2->fetch_assoc())

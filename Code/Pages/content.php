@@ -120,6 +120,7 @@ top_menu('content');
     <script>map_placeholder();</script>
     <div id="map" style="width:100%; height:95.8%;"></div>
     &nbsp;
+</div>
     <script>
         var directions = [];
         var markers = [];
@@ -139,17 +140,18 @@ top_menu('content');
                     center: {lat: Number(p_lat), lng: Number(p_long)}
                 }
             );
+            current_map = map;
+            set_markers(current_map);
     
-            var marker, i;
+            /*var marker, i;
             for (i = 0; i < def_addresses_gmaps.length; i++)
             {
                 position_ = geolocate(def_addresses_gmaps[i]);
-                console.log(position_);
                 marker = new google.maps.Marker({
                 position: position_,
                 map: map
                 });
-            }
+            }*/
             //TEST MARKER!!! TESTING PURPOSES ONLY!
             /*var myLatLng={lat: Number(p_lat), lng: Number(p_long)};
             var marker = new google.maps.Marker({
@@ -158,14 +160,12 @@ top_menu('content');
                 title: 'Hello World!'
             });*/
         }
-    </script>
-</div>
-    <script>
+        
     refresh_localstorage();
     load_map();
     function load_map()
     {
-    document.write('<scr'+'ipt as'+'ync def'+'er s'+'rc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA&callback=initMap&language='+def_langs_gmaps[lang]+'&region='+def_langs_gmaps_reg[lang]+'"></scr'+'ipt>');
+        document.write('<scr'+'ipt as'+'ync def'+'er s'+'rc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA&callback=initMap&language='+def_langs_gmaps[lang]+'&region='+def_langs_gmaps_reg[lang]+'"></scr'+'ipt>');
     }
     </script>
 </div>
