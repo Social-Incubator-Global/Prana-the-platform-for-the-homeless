@@ -98,6 +98,14 @@ function calcRoute() {
   });
 }
 
+function clear_markers(map)
+{
+    for (var i = 0; i < markers.length; i++) {
+          def_addresses_gmaps[i].setMap(map);
+        }
+    return;
+}
+
 function set_markers(map)
 {
     var marker, i;
