@@ -15,7 +15,7 @@
 
     if (!$row = mysqli_fetch_assoc($result)) {
         echo 'Password or Username is incorrect<br><br>';
-        echo '<a href="index.php">Try again</a>';
+        echo '<a href="login.php">Try again</a>';
         header("Location: login.php");
     } else {
 

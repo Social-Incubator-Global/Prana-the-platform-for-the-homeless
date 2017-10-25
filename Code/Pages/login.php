@@ -35,6 +35,7 @@ along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/session.js"></script>
+    <script src="../js/functions.js"></script>
     <!--JS Variables-->
     <script>
     set_location("login");
@@ -81,14 +82,14 @@ along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
         <div id="login_content">
           <div id="Logo_login"><script>document.write(def_lang[0]);</script></div>
           <div id="beut_loggy">
-            <form id="input_fm" action="./process.php" method="POST">
+            <form id="input_fm" action="./process.php" method="POST" onsubmit="return validateLogin()">
                 <p>
                     <label>Username:</label>
-                    <input type="text" name="username" />
+                    <input type="text" name="username" id="usr-input" />
                 </p>
                 <p>
                     <label>Password:</label>
-                    <input type="password" name="password" />
+                    <input type="password" name="password" id="pass-input"/>
                 </p>
                 <p style="margin-top:15px">
                     <input type="submit" value="Login" />
