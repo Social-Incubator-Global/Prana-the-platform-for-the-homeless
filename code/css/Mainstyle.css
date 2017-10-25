@@ -64,13 +64,14 @@ body {
   font-size: 14px; }
 
 #emergency_button_div {
-  position: fixed;
+  /* position: fixed; */
   float: left;
   z-index: 1000;
   margin-top: -0.5%;
   margin-left: 9.5%;
   background-color: red;
-  height: 6.7%; }
+  height: 6.7%;
+  }
 
 #menu_main {
   color: #09677e;
