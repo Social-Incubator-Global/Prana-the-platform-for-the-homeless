@@ -334,7 +334,7 @@ var special_characters = ["<amp>"];
 //"/home.php"
 var def_locations = [
     //PLEASE READ ABOVE COMMENTS BEFORE EDITING THE ./ for ./home.php
-    "./home.php",
+    "/home.php",
     "./login.php",
     "./signup.php",
     "./profile.php",
