@@ -21,7 +21,7 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-//LOADS VARIABLES USED THROUGH THE WEBSITE
+//LOADS VARIABLES USED THROUGH THE WEBSITE TO BE OUTSOURCED TO THE BACKEND THROUGH A FUNCTION CALL
 function load_localstorage()
 {
     if(get_local("session_vars_resume") != 1)
@@ -333,7 +333,8 @@ var special_characters = ["<amp>"];
 //def_locations [6]: home here must be directed to the root directory AS
 //"/home.php"
 var def_locations = [
-    "/home.php",
+    //PLEASE READ ABOVE COMMENTS BEFORE EDITING THE ./ for ./home.php
+    "./home.php",
     "./login.php",
     "./signup.php",
     "./profile.php",
