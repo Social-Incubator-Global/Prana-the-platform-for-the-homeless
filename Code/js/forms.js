@@ -63,7 +63,7 @@ function start()
 {
     set_local("location", "home");
     set_local("lang", "0");
-    document.location = "./Pages"+def_locations[0]+'?lang=0';
+    document.location = "./pages"+def_locations[0]+'?lang=0';
     return;
 }
 
@@ -72,7 +72,7 @@ function redirect_ajax(type_, id_, response_element)
     //Type=request type
     //0=content
     //1=bookmark_set
-    //2=bookmark_get  
+    //2=bookmark_get
     //id=posting id/content id
     //4=Get filters for allows and venue type
     if(type_ === 0)
@@ -613,7 +613,7 @@ function fill_search_type(name)
 function search(content, type)
 {
     //SEARCH BY TYPE OF CONTENT. TYPE HELPS DETERMINE WHETHER TO REDIRECT TO CONTENT.php or CONTENT_MODULAR.php
-    
+
     console.log(content, type);
 }
 

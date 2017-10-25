@@ -131,8 +131,8 @@ function send_AJAX(request_type, url, response_action, response_element)
                     redirect_ajax(2);
                 }
             }
-            
-            
+
+
     };
     xmlhttp.open("GET", "../phpinclude/ajax_get.php?r_t="+request_type+"&h_t="+get_local('home_type')+"&"+url.replace(/<amp>/g, '&'), true);
     xmlhttp.send();
@@ -333,7 +333,7 @@ var special_characters = ["<amp>"];
 //def_locations [6]: home here must be directed to the root directory AS
 //"/home.php"
 var def_locations = [
-    "./home.php",
+    "/home.php",
     "./login.php",
     "./signup.php",
     "./profile.php",
