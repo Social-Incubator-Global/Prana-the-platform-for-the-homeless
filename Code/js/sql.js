@@ -23,5 +23,5 @@
 
 function include_sql()
 {
-document.write("<?php include('/PHP/sql.php')?>");
+  document.write("<?php include('/PHP/sql.php')?>");
 }
