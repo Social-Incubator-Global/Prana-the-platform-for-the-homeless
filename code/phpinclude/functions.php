@@ -22,6 +22,8 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+include('../config.php');
+
 global $lang_English; $lang_English = array();
 global $lang_German; $lang_German = array();
 global $languages; $languages = array();
