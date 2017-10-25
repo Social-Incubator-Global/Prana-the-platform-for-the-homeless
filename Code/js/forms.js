@@ -526,7 +526,7 @@ function AJAX_SUCCESS_call_exiting_function(Type_)
 {
     if(Type_ == 1)
     {
-        refresh_map();
+        set_markers(current_map);
     }
     return;
 }

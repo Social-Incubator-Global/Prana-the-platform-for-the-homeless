@@ -129,6 +129,8 @@ function send_AJAX(request_type, url, response_action, response_element)
                     redirect_ajax(2);
                 }
             }
+            
+            
     };
     xmlhttp.open("GET", "../phpinclude/ajax_get.php?r_t="+request_type+"&h_t="+get_local('home_type')+"&"+url.replace(/<amp>/g, '&'), true);
     xmlhttp.send();
@@ -349,3 +351,4 @@ var grammer_correct_sections = [];
 
 var def_organizations = ["All"];
 var def_filters_food = [];
+var current_map;
