@@ -409,7 +409,60 @@ $result6=query_("SELECT * FROM Organizations_Venues_Times WHERE organization='" 
 
     $echo_4 = "<div id='filters_filters_info'><script>document.getElementById('filters_posting_info').innerHTML += '<br><div id=\"is_txt\"></div><div id=\"allows_txt\"></div>';</script>";
 
-    $echo_4 = $echo_4."<script>document.getElementById('is_txt').innerHTML=dl_r(105)+': ' + '".$row[is_]."';document.getElementById('allows_txt').innerHTML=dl_r(106)+': ' + '".$row[allows]."';</script></div>";
+        //JL: 24.10 actual place from where allows are displayed (?)
+    /*$echo_4 = $echo_4."<script>document.getElementById('is_txt').innerHTML=dl_r(105)+': ' + '".$row[is_]."';document.getElementById('allows_txt').innerHTML=dl_r(106)+': ' + '".$row[allows]."';</script></div>";*/
+        
+    //JL:22.10.17 splitting allows strings down by commas with regular expressions
+        $RegEx_pattern = "/[,]+/";
+        
+        //$allows = [];
+        $allows = preg_split($RegEx_pattern, $row[allows]);
+        $allows_length = count($allows);                
+                
+                //JL:22.10.17 assign icon to each allow type
+                $i = 0;
+                $allows_icons; //array containing icons (dedicated to Oscar :p )
+                while($i<$allows_length){
+                    switch($allows[$i]){
+                        case "[Women] only": 
+                            $allows_icons[] = "<img width=\"30px\" title=\"Women Only\" alt=\"Women Only\" src=\"../Assets/Images/icons/icon_womenonly.png\"/>";
+                            break;
+                        case "[Men] only":
+                            $allows_icons[] = "<img width=\"30px\" title=\"Men Only\" alt=\"Men Only\" src=\"../Assets/Images/icons/icon_menonly.png\"/>";
+                            break;
+                        case "Minors (Under 18)":
+                            $allows_icons[] = "<img width=\"30px\" title=\"Anonymous\" alt=\"Anonymous\" src=\"../Assets/Images/icons/icon_anonymous.png\"/>";
+                            break;
+                        case "Allows animals":
+                            $allows_icons[] = "<img width=\"30px\" title=\"Pet allowed\" alt=\"Pet allowed\" src=\"../Assets/Images/icons/icon_pet.png\"/>";
+                            break;
+                        //not in db
+                        case "Wheelchair accessible":
+                            $allows_icons[] = "<img width=\"30px\" title=\"Wheelchair accessible\" alt=\"Wheelchair accessible\" src=\"../Assets/Images/icons/icon_wheelchair.png\"/>";
+                            break;
+                        //not in db
+                        case "Smoking":
+                            $allows_icons[] = "<img width=\"30px\" title=\"Smoking allowed\" alt=\"Smoking allowed\" src=\"../Assets/Images/icons/icon_smoking.png\"/>";
+                            break;
+                        default:
+                            $allows_icons[] = "Not specified";
+                            break;
+                    }
+                    $i++;                      
+                }
+                $i = 0;
+                $allows_icons_length = count($allows_icons);
+       
+                while($i<$allows_icons_length){ //creates string of html img from array
+                    $allows_string .= " ".$allows_icons[$i];
+                    $i++;
+                }
+                
+                /*$echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $allows_string ."';</script>";*/
+        
+        $echo_4 = $echo_4."<script>document.getElementById('is_txt').innerHTML=dl_r(105)+': ' + '".$row[is_]."';document.getElementById('allows_txt').innerHTML=dl_r(106)+': ' + '".$allows_string."';</script></div>";
+        
+        
     }
     echo($echo_);
     echo($echo_2);
@@ -645,6 +698,43 @@ function load_content_boxes($query__)
                 if($row2["allows"] != null && $row2["allows"] != "")
                 {
                     $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $row2["allows"] ."';</script>";
+                    
+                    //JL:22.10.17 splitting allows strings down by commas with regular expressions
+                /*$RegEx_pattern = "[^,\s]+";
+                $allows = preg_split($RegEx_pattern, $row2["allows"]);
+                $allows_length = count($allows);*/
+                
+                //JL:22.10.17 assign icon to each allow type
+                //$i = 0;
+                //$allows_icons = []; //array containing icons (dedicated to Oscar :p )
+                /*while($i<$allows_length){
+                    switch($allow[$i]){
+                        case "[Women] Only": 
+                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_womenonly.png\"/>";
+                        case "[Men] Only":
+                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_menonly.png\"/>";
+                        case "Minors (Under 18)":
+                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_anonymous.png\"/>";
+                        case "Allows animals":
+                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_pet.png\"/>";
+                        //not in db
+                        case "Wheelchair accessible":
+                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_wheelchair.png\"/>";
+                        //not in db
+                        case "Smoking":
+                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_smoking.png\"/>";
+                    }
+                }
+                $i = 0;
+                $allows_icons_length = count($allows_icons);
+                
+                while($i<$allows_icons_length){ 
+                    $allows_string .= $allowsicons[$i];
+                }
+                
+                $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $allows_string ."';</script>";*/
+                
+                    
                 }
                 else
                 {
