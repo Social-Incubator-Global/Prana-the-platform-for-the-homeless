@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('../config.php');
-    include(DOC_ROOT . '/phpinclude/connect.php');
+    include('../phpinclude/connect.php');
 
     //get values passed from login.php
     $username = $_POST['username'];
