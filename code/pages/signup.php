@@ -28,8 +28,8 @@
 <head>
 <?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="../CSS/Mainstyle.css"/>
-<link rel="stylesheet" href="../CSS/signin.css"/>
+<link rel="stylesheet" href="../css/Mainstyle.css"/>
+<link rel="stylesheet" href="../css/signin.css"/>
 
 <?php include '../partials/_js.php' ?>
 <script src="../js/Objects.js"></script>

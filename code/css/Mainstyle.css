@@ -1,4 +1,4 @@
-/*<!-- 
+/*<!--
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Catie Carson, Nicholas Alexander Kearney, Jeremy Leresteux, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe, Nicholas Alexander Kearney, Jeremy Leresteux>
@@ -85,7 +85,7 @@ body {
 /* Dropdown Content (Hidden by Default) ADAPTED FOR EMERGENY BUTTON!!!*/
 .dropdown-content {
   border: 1px #1d7b92;
-  margin-top: 13%;
+  margin-top: 25%;
   display: none;
   margin-left: 35%;
   width: 30%;
@@ -362,4 +362,10 @@ a:hover {
   color: black;
   opacity: 1.0; }
 
-/*# sourceMappingURL=Mainstyle.css.map */
+#login-box {
+  color: white;
+}
+
+#login-box > a {
+  color: white;
+}

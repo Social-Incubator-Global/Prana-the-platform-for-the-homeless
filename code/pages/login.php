@@ -20,46 +20,51 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<?php error_reporting(0);?>
-<?php session_start() ?>
+<?php session_start(); error_reporting(0);?>
 <html>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Prana : Login</title>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Prana : Login</title>
     <?php include '../partials/_css.php' ?>
     <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../CSS/Mainstyle.css"/>
-    <link rel="stylesheet" href="../CSS/login.css"/>
+    <link rel="stylesheet" href="../css/Mainstyle.css"/>
+    <link rel="stylesheet" href="../css/login.css"/>
 
     <?php include '../partials/_js.php' ?>
     <script src="../js/Objects.js"></script>
     <script src="../js/forms.js"></script>
     <script src="../js/session.js"></script>
     <script src="../js/functions.js"></script>
-    <!--JS Variables-->
-    <script>
-    set_location("login");
-    var session = localStorage.getItem("session");
-    if(session==1){redirect('home');}
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
-    <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBAiI7LmsVJTTG-MITrXmdEi8qNw78q3SM",
-      authDomain: "prana-deutschland.firebaseapp.com",
-      databaseURL: "https://prana-deutschland.firebaseio.com",
-      storageBucket: "prana-deutschland.appspot.com"
-    };
-    firebase.initializeApp(config);
-    </script>
-    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 
-    <!-- Leave out Storage -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
+    <!--  Do we need any of this from here.... -->
+
+                  <!--JS Variables-->
+                  <!-- <script>
+                  set_location("login");
+                  var session = localStorage.getItem("session");
+                  if(session==1){redirect('home');}
+                </script>
+                <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+                <script>
+                // Initialize Firebase
+                var config = {
+                apiKey: "AIzaSyBAiI7LmsVJTTG-MITrXmdEi8qNw78q3SM",
+                authDomain: "prana-deutschland.firebaseapp.com",
+                databaseURL: "https://prana-deutschland.firebaseio.com",
+                storageBucket: "prana-deutschland.appspot.com"
+                };
+                firebase.initializeApp(config);
+                </script>
+                <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script> -->
+
+                <!-- Leave out Storage -->
+                <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
+
+    <!-- to here? -->
+    <!-- if not, please delete -->
 
     <?php
     include('../phpinclude/sql.php');
@@ -80,84 +85,58 @@ along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
       <center>
         <br>
         <div id="login_content">
-          <div id="Logo_login"><script>document.write(def_lang[0]);</script></div>
-          <div id="beut_loggy">
-            <form id="input_fm" action="./process.php" method="POST" onsubmit="return validateLogin()">
-                <p>
-                    <label>Username:</label>
-                    <input type="text" name="username" id="usr-input" />
-                </p>
-                <p>
-                    <label>Password:</label>
-                    <input type="password" name="password" id="pass-input"/>
-                </p>
-                <p style="margin-top:15px">
-                    <input type="submit" value="Login" />
-                </p>
-            </form>
+          <div id="Logo_login">
+            <script>document.write(def_lang[0]);</script>
           </div>
+
+          <!-- <form id="input_fm" action="./process.php" method="POST" onsubmit="return validateLogin()">
+            <p>
+              <label>Username:</label>
+              <input type="text" name="username" id="usr-input" />
+            </p>
+            <p>
+              <label>Password:</label>
+              <input type="password" name="password" id="pass-input"/>
+            </p>
+            <p style="margin-top:15px">
+              <input type="submit" value="Login" />
+            </p>
+          </form> -->
+
+          <form id="input_fm" action="./process.php" method="POST" onsubmit="return validateLogin()">
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" name="username" id="usernameInput" class="form-control" aria-describedby="usernameHelp" placeholder="Enter username">
+              <!-- <small id="usernameHelp" class="form-text text-muted">We'll love you till it burns.</small> -->
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input">
+                Agree to stuff
+              </label>
+            </div>
+            <input type="submit" value="Login" class="btn btn-primary"></button>
+          </form>
+
           <br>
           <div id="forgot_txt">
             <script>
-              document.write(def_lang[32] + "<a href=''>"+def_lang[33]+"</a>");
+            document.write(def_lang[32] + "<a href=''>"+def_lang[33]+"</a>");
             </script>
           </div>
         </div>
         <div id="footer">
-          <br><center><script>document.write(def_lang[3])</script></center>
+          <br>
+          <center>
+            <script>document.write(def_lang[3])</script>
+          </center>
           <div id="type_"></div>
         </div>
       </center>
-
-        <script>
-          function login()
-          {
-            var uname_eml_log = document.getElementById("username_log").value;
-            var pwd_log = document.getElementById("password_log").value;
-            var snapshot, snapshot2, snapshot3;
-
-            var pass= true;
-            if(uname_eml_log == "")
-            {
-              pass = false;
-              document.getElementById("username_log").style = "color: white; background-color: red; width: 300px; height: 33px;";
-            }
-            if(pwd_log == "")
-            {
-              pass = false;
-              document.getElementById("password_log").style = "color: white; background-color: red; width: 300px; height: 33px;";
-            }
-
-            if(Boolean(pass)==true)
-            {
-              var ref = new Firebase("https://prana-deutschland.firebaseio.com/web/data/prna_users/" + uname_eml_log + "");
-              ref.orderByChild("username_email").on("value", function(snapshot) {
-                // console.log(snapshot.val().username_email);
-                ref.orderByChild("password").on("value", function(snapshot2) {
-                  // console.log(snapshot2.val().password);
-                  ref.orderByChild("area").on("value", function(snapshot3) {
-
-                    if(snapshot.val().username_email == uname_eml_log)
-                    {
-                      if(snapshot2.val().password == pwd_log)
-                      {
-                        session=1;
-                        uname= snapshot.val().username_email;
-                        /*localStorage.setItem("area", snapshot3.val().area);
-                        localStorage.setItem("session", session);
-                        localStorage.setItem("uname", uname);*/
-                        session_start(session, uname, snapshot3.val().area);
-                        redirect('home');
-                      }
-                      } else
-                      { console.log("Error, return value: " + snapshot.val()); }
-
-                    }, function (errorObject) {
-                      console.log("The read failed: " + errorObject.code);
-                    })
-                  })})
-            }}
-        </script>
-            </div>
-          </body>
-        </html>
+    </div>
+  </body>
+</html>
