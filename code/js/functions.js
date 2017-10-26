@@ -1,9 +1,9 @@
 function validateLogin() {
-  var usrInput = document.getElementById('usr-input').value;
-  var passInput = document.getElementById('pass-input').value;
+  var usernameInput = document.getElementById('usernameInput').value;
+  var passwordInput = document.getElementById('passwordInput').value;
 
-  if(usrInput == "" || passInput == "") {
-    alert("You glubbed up. Also, make the fields turn red.");
+  if(usernameInput == "" || passwordInput == "") {
+    alert("The fields are blank. Also, make them turn red.");
     return false;
   }
 }
