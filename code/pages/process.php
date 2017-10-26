@@ -1,15 +1,16 @@
 <?php
     session_start();
-    include('../phpinclude/connect.php');
+    include('../config.php');
+    include(DOC_ROOT . '/phpinclude/connect.php');
 
     //get values passed from login.php
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     //query the database for user
-
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $result = $link->query($sql);
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    // $result = $link->query($sql);
+    $result = query_($query);
 
     //if there is no username and password in database, display error message and go back to index
 
@@ -34,6 +35,9 @@
 
         // display success message
         // echo 'Success';
+
+        // set logged in
+        $_SESSION['logged_in'] = true;
 
         // redirect!
         header("Location: home.php");

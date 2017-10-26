@@ -1,1 +1,1 @@
-<script src="../js/bootstrap.min.js"></script>
+<script src="<?php DOC_ROOT; ?>/js/bootstrap.js"></script>
