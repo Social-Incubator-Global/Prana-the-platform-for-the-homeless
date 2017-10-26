@@ -334,16 +334,15 @@ var special_characters = ["<amp>"];
 //"/home.php"
 //redirecting def_locations[0] to '/home.php' sends the website to the root home.php file. this reloads any variables set before and ovverrides them as it things its reloading the website from scratch.
 var def_locations = [
-    /*PLEASE READ ABOVE COMMENTS BEFORE EDITING THE ./ for ./home.php*/
-    "./home.php", // 0
-    "./login.php", // 1
-    "./signup.php", // 2
-    "./profile.php", // 3
-    "./content.php", // 4
-    "./posting.php", // 5
-    "/home.php", // 6
-    "./content_modular.php", // 7
-    "./results.php" // 8
+    "../pages/home.php",
+    "./login.php",
+    "./signup.php",
+    "./profile.php",
+    "./content.php",
+    "./posting.php",
+    "/home.php",
+    "./content_modular.php",
+    "./results.php"
 ];
 
 //transform from def_areas_berlin[n] to def_areas_berlin[0]: ALL LOCATIONS WILL BE EMITTED INTO THE DB
