@@ -99,6 +99,7 @@ function redirect_ajax(type_, id_, response_element)
 
 function redirect(Where_, Inner_Where_, area_index_)
 {
+    reset_variables();
     refresh_localstorage();
     if(Inner_Where_ != undefined)
     {

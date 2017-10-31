@@ -97,7 +97,8 @@ top_menu('search');
     </div>
     <div id="filter_elements">
         <script>
-            document.write(code_snippets[8]);
+            //TO BE DEVELOPED IN PHASE II
+            //document.write(code_snippets[8]);
         </script>
     </div>
     <br>

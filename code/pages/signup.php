@@ -120,6 +120,9 @@ var uname = localStorage.getItem("uname");
                  <script>document.write(def_lang[9])</script>
             </div>
                  <input type="text" id="lastname_su" name="last_nme" style="width: 300px; height: 33px;"></input><br>
+            <div id="Profile_Type">
+                <select id="prf_typ" name="s_area" style="float: left; margin-left: 10px; border: 1px solid black; width: 208px; height: 33px; background-color:#31859C; color: white;">
+            </div><br>
             <div id="Area">
                  <script>document.write(def_lang[10])</script>
             </div>

@@ -31,14 +31,16 @@
     background-color: rgba(0, 93, 106, 0.7); }
   to {
     background-color: rgba(0, 63, 86, 0.7); } }
-body {
+body
+{
   color: black;
   background-color: #E7052C2;
   background-size: 100%;
   animation-name: fade_in;
   animation-duration: 0.3s;
   margin-top: 0px;
-  margin-left: 0px; }
+  margin-left: 0px;
+}
 
 #title_ratings_comments {
   font-size: 22px;
@@ -177,18 +179,27 @@ body {
 hr {
   border: 1px solid white; }
 
-#lang_select {
+#lang_select
+{
   border: 1px solid #ff7f24;
   float: right;
   width: 150px;
   height: 33px;
   background-color: gainsboro;
   color: black;
-  opacity: 1.0; }
+  opacity: 1.0;
+}
 
-select {
+select
+{
+  border: 1px solid #ff7f24;
   font-family: 'Arial', regular;
-  font-size: 14px; }
+  font-size: 14px;
+  background-color: gainsboro;
+  color: black;
+  opacity: 1.0;
+  height: 33px;
+}
 
 input {
   -webkit-transition: background-color 0.1s;

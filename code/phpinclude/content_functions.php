@@ -231,6 +231,16 @@ function load_profile($Type_)
         }
     }
   }
+  else if($Type_ == "organization")
+  {
+      /*inherits values from the SQL table organizations*/
+      $URLfilter_result = get_filters_URL("profile");
+      $query = build_query_string($URLfilter_result, "profile");
+      $result = query_($query);
+  }
+  else if($Type_ == "project")
+  {}
+  return;
 }
 
 function load_posting()

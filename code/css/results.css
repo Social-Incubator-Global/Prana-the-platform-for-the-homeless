@@ -181,6 +181,12 @@ b {
 #filter_singular_text {
   color: #09677e; }
 
+#filter_elements
+{
+    width: 88%;
+    margin-left: 5%;
+}
+
 #description_posting_content {
   float: left;
   margin-left: 1%;

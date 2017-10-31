@@ -100,17 +100,26 @@ function calcRoute() {
 
 function clear_markers(map)
 {
-    for (var i = 0; i < markers.length; i++) {
-          def_addresses_gmaps[i].setMap(map);
-        }
+    for (var i = 0; i < markers.length; i++)
+    {
+        def_addresses_gmaps[i].setMap(map);
+    }
     return;
 }
 
 function set_markers(map)
 {
+    //GOOGLE SERVICES DO NOT ALLOW A QUERY OF MORE THAN 10 MARKERS PER SECOND
+    //MORE THAN 10 MARKERS SET OFF A QUERY_LIMIT EXCEPTION PLEASE REFREAIN FROM GOING OVER 9.
     var marker, i;
-    for (i = 0; i < def_addresses_gmaps.length; i++)
+    //for (i = 0; i < def_addresses_gmaps.length; i++)
+    for (i = get_local("current_pin_index"); i < get_local("current_pin_index") + 9; i++)
     {
+        if(i == get_local("current_pin_index") + 9 || i >= def_addresses_gmaps.length)
+        {
+            set_local("current_pin_index", i + 1);
+            break;
+        }
         geocoder = new google.maps.Geocoder();
         console.log("------------");
         console.log(def_addresses_gmaps[i]);
@@ -120,18 +129,15 @@ function set_markers(map)
             console.log(results[0].geometry.location.lat());
             marker = new google.maps.Marker({
             position: results[0].geometry.location,
-            map: map,
+            map: map
             });
             //return results[0].geometry.location;
         }
         else
         {
-            alert('Geocode was not successful for the following reason: ' + status);
+            console.log('Geocode was not successful for the following reason: ' + status);
         }
     });
-        
-        
-        
         /*console.log("ok1");
         position_ = geolocate(def_addresses_gmaps[i]);
         console.log(position_.lat());
