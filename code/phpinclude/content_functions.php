@@ -156,11 +156,11 @@ function search()
         $query = build_query_string_search($URLfilter_result, "housing");
         $query2 = build_query_string_search($URLfilter_result, "food");
         $query3 = build_query_string_search($URLfilter_result, "medical");
-        
+
         $result = query_($query);
         $result2 = query_($query2);
         $result3 = query_($query3);
-        
+
         /*echo("<div class='results_titles'><img style='margin-top:-3%' width='30px' src=/>In Housing:</div>");*/
         process_single_search($result, $URLfilter_result, '../Assets/Images/icons/icon_housing.png');
         /*echo("<div class='results_titles'><img style='margin-top:-3%' width='30px' src=/>In Food:</div>");*/
@@ -186,7 +186,7 @@ function process_single_search($result, $URLfilter_result, $ico_path)
         $query2 = "SELECT * FROM organizations_venues WHERE id=".$row["organization_venue_address"];
         $result2 = query_($query2);
         $img_path = "";
-        
+
         //IS THERE A BETTER WAY TO GET JUST ONE LINE?
         //GETS IMAGE PATH
         while($row2 = $result2->fetch_assoc())
@@ -421,20 +421,20 @@ $result6=query_("SELECT * FROM Organizations_Venues_Times WHERE organization='" 
 
         //JL: 24.10 actual place from where allows are displayed (?)
     /*$echo_4 = $echo_4."<script>document.getElementById('is_txt').innerHTML=dl_r(105)+': ' + '".$row[is_]."';document.getElementById('allows_txt').innerHTML=dl_r(106)+': ' + '".$row[allows]."';</script></div>";*/
-        
+
     //JL:22.10.17 splitting allows strings down by commas with regular expressions
         $RegEx_pattern = "/[,]+/";
-        
+
         //$allows = [];
         $allows = preg_split($RegEx_pattern, $row[allows]);
-        $allows_length = count($allows);                
-                
+        $allows_length = count($allows);
+
                 //JL:22.10.17 assign icon to each allow type
                 $i = 0;
                 $allows_icons; //array containing icons (dedicated to Oscar :p )
                 while($i<$allows_length){
                     switch($allows[$i]){
-                        case "[Women] only": 
+                        case "[Women] only":
                             $allows_icons[] = "<img width=\"30px\" title=\"Women Only\" alt=\"Women Only\" src=\"../Assets/Images/icons/icon_womenonly.png\"/>";
                             break;
                         case "[Men] only":
@@ -458,21 +458,21 @@ $result6=query_("SELECT * FROM Organizations_Venues_Times WHERE organization='" 
                             $allows_icons[] = "Not specified";
                             break;
                     }
-                    $i++;                      
+                    $i++;
                 }
                 $i = 0;
                 $allows_icons_length = count($allows_icons);
-       
+
                 while($i<$allows_icons_length){ //creates string of html img from array
                     $allows_string .= " ".$allows_icons[$i];
                     $i++;
                 }
-                
+
                 /*$echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $allows_string ."';</script>";*/
-        
+
         $echo_4 = $echo_4."<script>document.getElementById('is_txt').innerHTML=dl_r(105)+': ' + '".$row[is_]."';document.getElementById('allows_txt').innerHTML=dl_r(106)+': ' + '".$allows_string."';</script></div>";
-        
-        
+
+
     }
     echo($echo_);
     echo($echo_2);
@@ -589,6 +589,27 @@ function get_allows_type_filter($home_type)
     return $echo_3.$echo_4;
 }
 
+//////////////////////////////////////////////
+// section for new query, filter, etc functions
+//////////////////////////////////////////////
+
+function get_query() {
+    // get content from table
+}
+
+function filter_query() {
+    //
+}
+
+function limit_query() {
+    //
+}
+
+function offset_query() {
+    //
+}
+
+
 function load_content_boxes($query__)
 {
     //FUCK THIS, WE WILL MAKE THIS WORK!!! SHIT CODE IS BETTER THAN NO CODE! FIX THIS LATER
@@ -618,7 +639,7 @@ function load_content_boxes($query__)
 
        $filters_time = get_filters_URL("basic");
        //array_push($result_addresses, $row["organization_venue_address"]);
-       
+
        if($filters_time[7] != 7)
        {
            if($filters_time[5] != 24 || $filters_time[6] != 24)
@@ -646,7 +667,7 @@ function load_content_boxes($query__)
         else{ $mo_ok = false; }
     }
     else
-    { 
+    {
         $mo_ok=true;
     }
     mysqli_free_result($result3);
@@ -654,15 +675,15 @@ function load_content_boxes($query__)
         if($dy_tme_ok == true && $mo_ok == true)
         {
             $anyresults = true;
-            
+
             $echo_1=$echo_1."<div style='animation-name: fade_in;animation-duration: 0.3s; margin-left: 3%; margin-top:3%; border-radius: 0px; float: left; color: rgb(9, 103, 126); background-color: rgba(230,230,230,1); width: 300px; height: 410px;' id='main_". $row["id"] ."'><a href=\"javascript:redirect('posting', '".$row["id"]."');\"><div id='content_box_header_". $row["id"] ."' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_". $row["id"] ."' style='float: left; margin-left:2%; margin-top:4%;'>".$row["name"]. "</div></div><div id='content_box_image_". $row["id"] ."' style='float:left; width:100%; height: 180px; background-color:white;'><img src='../Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div></a><!--<div id='detalis_box_'" . $row["id"] . " style='height: 20px; font-family: Arial, bold; float:left; margin-left:2%; margin-top: 4%;'><b><div id='info_txt_".$row["id"]."'></div></b><br></div>--><div id='info_org_venue'><div id='hours_".$row["id"]."' style='float:left; margin-left:0%; font-family:Arial,regular; font-size:14px;'></div><div id='tel_".$row["id"]."' style='float:left; margin-left:5%; font-family:Arial,regular; font-size:14px;'></div><br><div id='email_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='allows_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; width:100%;'></div><div id='venue_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; height:40px; width:100%;'></div></div><div id='goto_".$row["id"]."' style='float:left; text-align:right; margin-left:0%; margin-top:0%; font-family:Arial,regular; color:orange; font-size:16px; width:100%'><center><form style=\"width:130px; margin-top:-14px;\"><input type=\"button\" id=\"view_post_bttn_".$row["id"]."\" onclick=\"javascript:set_local('ID','".$row["id"]."'); redirect('posting', '".$row["id"]."');\" style=\"float: left; width:100px; height: 30px;\" value=\"View ".get_result_type_bttxt($ht)."\"></input></form><input id=\"bookmark_".$row["id"]."\" type=\"image\" src=\"../Assets/Images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", 'bookmark_".$row["id"]."');\" style=\"float: left; width:30px; height: 30px;\"></input></center></div></div><script>document.getElementById('view_post_bttn_".$row["id"]."').value = dl_r(47);</script>";
-        
+
             $result2=query_("SELECT * FROM Organizations_Venues WHERE organization='" . $row["organization"] . "' AND id='" . $row["organization_venue_address"] . "'");
             while($row2 = $result2->fetch_assoc())
             {
                 //ADD ADDRESS JS ARRAY_PUSH FOR GOOGLE MAPS
                 $echo_1=$echo_1."<script>def_addresses_gmaps.push('".$row2["venue"]."');</script>";
-                
+
                 if($row2["image_path"] != null && $row2["image_path"] != "")
                 {
                     $echo_2=$echo_2."<script>document.getElementById('img_". $row["id"] ."').src = '". $row2["image_path"] ."';</script>";
@@ -707,18 +728,18 @@ function load_content_boxes($query__)
                 if($row2["allows"] != null && $row2["allows"] != "")
                 {
                     $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $row2["allows"] ."';</script>";
-                    
+
                     //JL:22.10.17 splitting allows strings down by commas with regular expressions
                 /*$RegEx_pattern = "[^,\s]+";
                 $allows = preg_split($RegEx_pattern, $row2["allows"]);
                 $allows_length = count($allows);*/
-                
+
                 //JL:22.10.17 assign icon to each allow type
                 //$i = 0;
                 //$allows_icons = []; //array containing icons (dedicated to Oscar :p )
                 /*while($i<$allows_length){
                     switch($allow[$i]){
-                        case "[Women] Only": 
+                        case "[Women] Only":
                             $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_womenonly.png\"/>";
                         case "[Men] Only":
                             $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_menonly.png\"/>";
@@ -736,14 +757,14 @@ function load_content_boxes($query__)
                 }
                 $i = 0;
                 $allows_icons_length = count($allows_icons);
-                
-                while($i<$allows_icons_length){ 
+
+                while($i<$allows_icons_length){
                     $allows_string .= $allowsicons[$i];
                 }
-                
+
                 $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $allows_string ."';</script>";*/
-                
-                    
+
+
                 }
                 else
                 {
