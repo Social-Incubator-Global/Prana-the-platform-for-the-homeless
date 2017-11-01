@@ -58,7 +58,7 @@ function load_localstorage()
         localStorage.setItem("va", "");
 
         localStorage.setItem("search_txt_index", "0");
-        
+
         //GOOGLE MAPS INDEXING
         localStorage.setItem("current_pin_index", 0);
     }
@@ -88,7 +88,6 @@ function send_AJAX(request_type, url, response_action, response_element)
             def_addresses_gmaps = [];
             if(request_type==="content")
             {
-                clear_markers(current_map);
                 itm = get_item("All_Content_Boxes");
                 itm.innerHTML=this.responseText;
                 js_type = true;

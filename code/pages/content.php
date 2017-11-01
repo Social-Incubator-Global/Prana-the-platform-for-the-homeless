@@ -31,9 +31,11 @@
 <link rel="stylesheet" href="../css/content.css"/>
 <?php include '../partials/_js.php' ?>
 <script src="../js/Objects.js"></script>
+<script src="../js/maps_functions.js"></script>
 <script src="../js/forms.js"></script>
 <script src="../js/session.js"></script>
-<script src="../js/maps_functions.js"></script>
+
+</script>
 <!--Variables-->
 <script>
 set_location("content");
@@ -127,6 +129,8 @@ top_menu('content');
 
         function initMap()
         {
+            getLocation();
+
             var p_lat = get_local("current_position_lat");
             var p_long = get_local("current_position_long");
 
@@ -138,11 +142,12 @@ top_menu('content');
                 {
                     zoom: 11,
                     center: {lat: Number(p_lat), lng: Number(p_long)}
+                    // center: new google.maps.LatLng(52.5069312, 13.1445412),
                 }
             );
             current_map = map;
             set_markers(current_map);
-    
+
             /*var marker, i;
             for (i = 0; i < def_addresses_gmaps.length; i++)
             {
@@ -160,7 +165,7 @@ top_menu('content');
                 title: 'Hello World!'
             });*/
         }
-        
+
     refresh_localstorage();
     load_map();
     function load_map()

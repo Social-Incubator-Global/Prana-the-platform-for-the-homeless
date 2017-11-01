@@ -20,7 +20,7 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
-
+var gmarkers = []; // global array to store markers
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
@@ -51,7 +51,7 @@ function center_marker()
 function map_placeholder()
 {
     set_innerhtml("map_", "<center><div style='color: rgb(9, 103, 126); font-size:18px; font-family: \"Arial\", regular;'>Loading map...</div></center>");
-    
+
     return;
 }
 
@@ -61,7 +61,7 @@ function geolocate(address)
     {*/
         geocoder = new google.maps.Geocoder();
         geocoder.geocode( { 'address': address}, function(results, status) {
-            if (status == google.maps.GeocoderStatus.OK) 
+            if (status == google.maps.GeocoderStatus.OK)
             {
                 console.log(address);
                 return results[0].geometry.location;
@@ -107,37 +107,29 @@ function clear_markers(map)
     return;
 }
 
-function set_markers(map)
-{
+function set_markers(map) {
+    removeMarkers(); // from maps_functions.js // clear before setting
     //GOOGLE SERVICES DO NOT ALLOW A QUERY OF MORE THAN 10 MARKERS PER SECOND
     //MORE THAN 10 MARKERS SET OFF A QUERY_LIMIT EXCEPTION PLEASE REFREAIN FROM GOING OVER 9.
     var marker, i;
-    //for (i = 0; i < def_addresses_gmaps.length; i++)
-    for (i = get_local("current_pin_index"); i < get_local("current_pin_index") + 9; i++)
-    {
-        if(i == get_local("current_pin_index") + 9 || i >= def_addresses_gmaps.length)
-        {
-            set_local("current_pin_index", i + 1);
-            break;
-        }
+
+    for (i = 0; i < def_addresses_gmaps.length; i++) {
         geocoder = new google.maps.Geocoder();
-        console.log("------------");
-        console.log(def_addresses_gmaps[i]);
-        geocoder.geocode( { 'address': def_addresses_gmaps[i]}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) 
-        {
-            console.log(results[0].geometry.location.lat());
-            marker = new google.maps.Marker({
-            position: results[0].geometry.location,
-            map: map
-            });
-            //return results[0].geometry.location;
-        }
-        else
-        {
-            console.log('Geocode was not successful for the following reason: ' + status);
-        }
-    });
+        // console.log("------------");
+        // console.log(def_addresses_gmaps[i]);
+        geocoder.geocode( { 'address': def_addresses_gmaps[i]}, function(results, status) { // turns the addresses into pins
+            if (status == google.maps.GeocoderStatus.OK) {
+                // console.log(results[0].geometry.location.lat());
+                marker = new google.maps.Marker({
+                    position: results[0].geometry.location,
+                    map: map
+                });
+                //return results[0].geometry.location;
+                gmarkers.push(marker); // add markers to global markers array
+            } else {
+                console.log('Geocode was not successful for the following reason: ' + status);
+            }
+        });
         /*console.log("ok1");
         position_ = geolocate(def_addresses_gmaps[i]);
         console.log(position_.lat());
@@ -154,4 +146,11 @@ function set_markers(map)
                 title: 'Hello World!'
             });*/
     return;
+}
+
+function removeMarkers() {
+    for(i=0; i < gmarkers.length; i++){
+        gmarkers[i].setMap(null);
+    }
+    console.log('markers removed');
 }
