@@ -85,10 +85,10 @@ function send_AJAX(request_type, url, response_action, response_element)
             //itm created exclusively so that response InnerHTML .js can be executed
             var itm; var cont = false;
             var js_type; //0=execute innerHTML, 1=execute returned expression AKA "var resp" directly through "eval()".
-            clear_markers(current_map);
             def_addresses_gmaps = [];
             if(request_type==="content")
             {
+                clear_markers(current_map);
                 itm = get_item("All_Content_Boxes");
                 itm.innerHTML=this.responseText;
                 js_type = true;
