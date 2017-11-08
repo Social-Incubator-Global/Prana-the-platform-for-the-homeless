@@ -178,7 +178,7 @@ function search()
         else if(strtolower($URLfilter_result[3]) == 'food')
         { $img_path = '../Assets/Images/icons/icon_food.png'; }
         else if(strtolower($URLfilter_result[3]) == 'medical')
-        { $img_path = '../Assets/Images/icons/Icon_health.png'; }
+        { $img_path = '../Assets/Images/icons/Icon_health.png'; } 
         process_single_search($result, $URLfilter_result, $img_path);
     }
     echo("<script>document.title='Prana '+dl_r(110)+' ".$URLfilter_result[3]."  : ".$URLfilter_result[1]."'</script>");
