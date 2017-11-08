@@ -589,29 +589,9 @@ function get_allows_type_filter($home_type)
     return $echo_3.$echo_4;
 }
 
-//////////////////////////////////////////////
-// section for new query, filter, etc functions
-//////////////////////////////////////////////
+// function load_content_boxes($query__, $limit, $offset)
 
-function get_query() {
-    // get content from table
-}
-
-function filter_query() {
-    //
-}
-
-function limit_query() {
-    //
-}
-
-function offset_query() {
-    //
-}
-
-
-function load_content_boxes($query__)
-{
+function load_content_boxes($query__) {
     //FUCK THIS, WE WILL MAKE THIS WORK!!! SHIT CODE IS BETTER THAN NO CODE! FIX THIS LATER
     //ADD QUERY TO CHECK TYPE AND ALLOWS FROM organization_venue instead of contnt_housing... with an if else the root should be the org.
    $ht = get_home_type();
@@ -629,157 +609,94 @@ function load_content_boxes($query__)
    $query2 = "";
    $query3 = "";
 
-   if ($result->num_rows > 0)
-   {
-    // output data of each row
-   while($row = $result->fetch_assoc())
-   {
-       $dy_tme_ok = FALSE;
-       $mo_ok = false;
+   if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $dy_tme_ok = FALSE;
+           $mo_ok = false;
 
-       $filters_time = get_filters_URL("basic");
-       //array_push($result_addresses, $row["organization_venue_address"]);
+           $filters_time = get_filters_URL("basic");
+           //array_push($result_addresses, $row["organization_venue_address"]);
 
-       if($filters_time[7] != 7)
-       {
-           if($filters_time[5] != 24 || $filters_time[6] != 24)
+           if($filters_time[7] != 7)
            {
-               $query2 = "SELECT * FROM Organizations_Venues_Times WHERE organization='".$row["organization"]."' AND organization_venue='".$row["organization_venue_address"]."' AND ".get_day($filters_time[7])."='1' AND ".get_day($filters_time[7])."_time_start <=".$filters_time[5]." AND ".get_day($filters_time[7])."_time_stop >=".$filters_time[6];
-               $result2 = query_($query2);
-               if ($result2->num_rows > 0)
+               if($filters_time[5] != 24 || $filters_time[6] != 24)
                {
-                   $dy_tme_ok = true;
-               }
+                   $query2 = "SELECT * FROM Organizations_Venues_Times WHERE organization='".$row["organization"]."' AND organization_venue='".$row["organization_venue_address"]."' AND ".get_day($filters_time[7])."='1' AND ".get_day($filters_time[7])."_time_start <=".$filters_time[5]." AND ".get_day($filters_time[7])."_time_stop >=".$filters_time[6];
+                   $result2 = query_($query2);
+                   if ($result2->num_rows > 0)
+                   {
+                       $dy_tme_ok = true;
+                   }
+                }
+            } else {
+            $dy_tme_ok=true;
+        }
+        mysqli_free_result($result2);
+        if($filters_time[8] != 12) {
+            $result3 = query_("SELECT * FROM Organizations_Venues_Months WHERE organization='".$row["organization"]."' AND organization_venue='".$row["organization_venue_address"]."' AND ". get_month($filters_time[8])."='1'");
+            if ($result3->num_rows > 0) {
+                $mo_ok = true;
+            } else {
+                $mo_ok = false;
             }
+        } else {
+            $mo_ok=true;
         }
-    else
-    {
-        $dy_tme_ok=true;
-    }
-    mysqli_free_result($result2);
-    if($filters_time[8] != 12)
-    {
-        $result3 = query_("SELECT * FROM Organizations_Venues_Months WHERE organization='".$row["organization"]."' AND organization_venue='".$row["organization_venue_address"]."' AND ". get_month($filters_time[8])."='1'");
-        if ($result3->num_rows > 0)
-        {
-            $mo_ok = true;
-        }
-        else{ $mo_ok = false; }
-    }
-    else
-    {
-        $mo_ok=true;
-    }
-    mysqli_free_result($result3);
+        mysqli_free_result($result3);
 
-        if($dy_tme_ok == true && $mo_ok == true)
-        {
-            $anyresults = true;
+            if($dy_tme_ok == true && $mo_ok == true) {
+                $anyresults = true;
 
-            $echo_1=$echo_1."<div style='animation-name: fade_in;animation-duration: 0.3s; margin-left: 3%; margin-top:3%; border-radius: 0px; float: left; color: rgb(9, 103, 126); background-color: rgba(230,230,230,1); width: 300px; height: 410px;' id='main_". $row["id"] ."'><a href=\"javascript:redirect('posting', '".$row["id"]."');\"><div id='content_box_header_". $row["id"] ."' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_". $row["id"] ."' style='float: left; margin-left:2%; margin-top:4%;'>".$row["name"]. "</div></div><div id='content_box_image_". $row["id"] ."' style='float:left; width:100%; height: 180px; background-color:white;'><img src='../Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div></a><!--<div id='detalis_box_'" . $row["id"] . " style='height: 20px; font-family: Arial, bold; float:left; margin-left:2%; margin-top: 4%;'><b><div id='info_txt_".$row["id"]."'></div></b><br></div>--><div id='info_org_venue'><div id='hours_".$row["id"]."' style='float:left; margin-left:0%; font-family:Arial,regular; font-size:14px;'></div><div id='tel_".$row["id"]."' style='float:left; margin-left:5%; font-family:Arial,regular; font-size:14px;'></div><br><div id='email_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='allows_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; width:100%;'></div><div id='venue_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; height:40px; width:100%;'></div></div><div id='goto_".$row["id"]."' style='float:left; text-align:right; margin-left:0%; margin-top:0%; font-family:Arial,regular; color:orange; font-size:16px; width:100%'><center><form style=\"width:130px; margin-top:-14px;\"><input type=\"button\" id=\"view_post_bttn_".$row["id"]."\" onclick=\"javascript:set_local('ID','".$row["id"]."'); redirect('posting', '".$row["id"]."');\" style=\"float: left; width:100px; height: 30px;\" value=\"View ".get_result_type_bttxt($ht)."\"></input></form><input id=\"bookmark_".$row["id"]."\" type=\"image\" src=\"../Assets/Images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", 'bookmark_".$row["id"]."');\" style=\"float: left; width:30px; height: 30px;\"></input></center></div></div><script>document.getElementById('view_post_bttn_".$row["id"]."').value = dl_r(47);</script>";
+                $echo_1=$echo_1."<div style='animation-name: fade_in;animation-duration: 0.3s; margin-left: 3%; margin-top:3%; border-radius: 0px; float: left; color: rgb(9, 103, 126); background-color: rgba(230,230,230,1); width: 300px; height: 410px;' id='main_". $row["id"] ."'><a href=\"javascript:redirect('posting', '".$row["id"]."');\"><div id='content_box_header_". $row["id"] ."' style='font-family: \"Arial\", regular; color: white; font-size: 16px; background-color: rgb(9, 103, 126); width: 100%; height: 37px;'><div id='title_". $row["id"] ."' style='float: left; margin-left:2%; margin-top:4%;'>".$row["name"]. "</div></div><div id='content_box_image_". $row["id"] ."' style='float:left; width:100%; height: 180px; background-color:white;'><img src='../Assets/Images/def_none.png' id='img_". $row["id"] ."' style='float:left;' width=100%; height=100%;></div></a><!--<div id='detalis_box_'" . $row["id"] . " style='height: 20px; font-family: Arial, bold; float:left; margin-left:2%; margin-top: 4%;'><b><div id='info_txt_".$row["id"]."'></div></b><br></div>--><div id='info_org_venue'><div id='hours_".$row["id"]."' style='float:left; margin-left:0%; font-family:Arial,regular; font-size:14px;'></div><div id='tel_".$row["id"]."' style='float:left; margin-left:5%; font-family:Arial,regular; font-size:14px;'></div><br><div id='email_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px;'></div><div id='allows_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; width:100%;'></div><div id='venue_".$row["id"]."' style='float:left; margin-left:0%; margin-top:3%; font-family:Arial,regular; font-size:14px; height:40px; width:100%;'></div></div><div id='goto_".$row["id"]."' style='float:left; text-align:right; margin-left:0%; margin-top:0%; font-family:Arial,regular; color:orange; font-size:16px; width:100%'><center><form style=\"width:130px; margin-top:-14px;\"><input type=\"button\" id=\"view_post_bttn_".$row["id"]."\" onclick=\"javascript:set_local('ID','".$row["id"]."'); redirect('posting', '".$row["id"]."');\" style=\"float: left; width:100px; height: 30px;\" value=\"View ".get_result_type_bttxt($ht)."\"></input></form><input id=\"bookmark_".$row["id"]."\" type=\"image\" src=\"../Assets/Images/prn_ico/Bookmark.png\" onclick=\"javascript: redirect_ajax(1, ".$row["id"].", 'bookmark_".$row["id"]."');\" style=\"float: left; width:30px; height: 30px;\"></input></center></div></div><script>document.getElementById('view_post_bttn_".$row["id"]."').value = dl_r(47);</script>";
 
-            $result2=query_("SELECT * FROM Organizations_Venues WHERE organization='" . $row["organization"] . "' AND id='" . $row["organization_venue_address"] . "'");
-            while($row2 = $result2->fetch_assoc())
-            {
-                //ADD ADDRESS JS ARRAY_PUSH FOR GOOGLE MAPS
-                $echo_1=$echo_1."<script>def_addresses_gmaps.push('".$row2["venue"]."');</script>";
+                $result2=query_("SELECT * FROM Organizations_Venues WHERE organization='" . $row["organization"] . "' AND id='" . $row["organization_venue_address"] . "'");
+                while($row2 = $result2->fetch_assoc()) {
+                    //ADD ADDRESS JS ARRAY_PUSH FOR GOOGLE MAPS
+                    $echo_1=$echo_1."<script>def_addresses_gmaps.push('".$row2["venue"]."');</script>";
 
-                if($row2["image_path"] != null && $row2["image_path"] != "")
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('img_". $row["id"] ."').src = '". $row2["image_path"] ."';</script>";
-                }
-                if($row2["houropening"] != null || $row["houropening"] !="" && $row2["hourclosing"] != null || $row["hourclosing"] !="")
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/alarm.png\"/> ". $row2["houropening"] ."-". $row2["hourclosing"] . "';</script>";
-                }
-                else
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/alarm.png\"/> - / -';</script>";
-                }
+                    if($row2["image_path"] != null && $row2["image_path"] != "") {
+                        $echo_2=$echo_2."<script>document.getElementById('img_". $row["id"] ."').src = '". $row2["image_path"] ."';</script>";
+                    }
+                    if($row2["houropening"] != null || $row["houropening"] !="" && $row2["hourclosing"] != null || $row["hourclosing"] !="") {
+                        $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/alarm.png\"/> ". $row2["houropening"] ."-". $row2["hourclosing"] . "';</script>";
+                    } else {
+                        $echo_2=$echo_2."<script>document.getElementById('hours_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/alarm.png\"/> - / -';</script>";
+                    }
 
-                if($row2["tel"] != null && $row2["tel"] != "")
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/telephone.png\"/> ". $row2["tel"] ."';</script>";
-                }
-                else
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/telephone.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
-                }
+                    if($row2["tel"] != null && $row2["tel"] != "") {
+                        $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/telephone.png\"/> ". $row2["tel"] ."';</script>";
+                    } else {
+                        $echo_2=$echo_2."<script>document.getElementById('tel_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/telephone.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
+                    }
 
-                if($row2["email"] != null && $row2["email"] != "")
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/email.png\"/> <a  style=\"color:rgb(9, 103, 126);\" href=\"mailto:".$row2["email"]."\">". $row2["email"] ."</a>';</script>";
-                }
-                else
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/email.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
-                }
+                    if($row2["email"] != null && $row2["email"] != "") {
+                        $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/email.png\"/> <a  style=\"color:rgb(9, 103, 126);\" href=\"mailto:".$row2["email"]."\">". $row2["email"] ."</a>';</script>";
+                    }
+                    else {
+                        $echo_2=$echo_2."<script>document.getElementById('email_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/email.png\"/> <a href=\"javascript:redirect(\'home\');\">Contact organization</a>';</script>";
+                    }
 
-                //changes to use the icon system string must be cut down
-                if($row2["venue"] != null && $row2["venue"] != "")
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/marker.png\"/> <a target=\"_blank\" style=\"color:rgb(9, 103, 126);\" href=\"http://maps.google.com?q=".$row2["venue"]."\">". $row2["venue"] ."</a>';</script>";
-                }
-                else
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML =  '<img src=\"../Assets/Images/prn_ico/led_icons/marker.png\"/> - / -';</script>";
-                }
+                    //changes to use the icon system string must be cut down
+                    if($row2["venue"] != null && $row2["venue"] != "") {
+                        $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/marker.png\"/> <a target=\"_blank\" style=\"color:rgb(9, 103, 126);\" href=\"http://maps.google.com?q=".$row2["venue"]."\">". $row2["venue"] ."</a>';</script>";
+                    } else {
+                        $echo_2=$echo_2."<script>document.getElementById('venue_". $row["id"] ."').innerHTML =  '<img src=\"../Assets/Images/prn_ico/led_icons/marker.png\"/> - / -';</script>";
+                    }
 
-                if($row2["allows"] != null && $row2["allows"] != "")
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $row2["allows"] ."';</script>";
-
-                    //JL:22.10.17 splitting allows strings down by commas with regular expressions
-                /*$RegEx_pattern = "[^,\s]+";
-                $allows = preg_split($RegEx_pattern, $row2["allows"]);
-                $allows_length = count($allows);*/
-
-                //JL:22.10.17 assign icon to each allow type
-                //$i = 0;
-                //$allows_icons = []; //array containing icons (dedicated to Oscar :p )
-                /*while($i<$allows_length){
-                    switch($allow[$i]){
-                        case "[Women] Only":
-                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_womenonly.png\"/>";
-                        case "[Men] Only":
-                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_menonly.png\"/>";
-                        case "Minors (Under 18)":
-                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_anonymous.png\"/>";
-                        case "Allows animals":
-                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_pet.png\"/>";
-                        //not in db
-                        case "Wheelchair accessible":
-                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_wheelchair.png\"/>";
-                        //not in db
-                        case "Smoking":
-                            $allowsicons[] = "<img src=\"../Assets/Images/icons/icon_smoking.png\"/>";
+                    if($row2["allows"] != null && $row2["allows"] != "") {
+                        $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $row2["allows"] ."';</script>";
+                    } else {
+                        $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML =  '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> Everyone';</script>";
                     }
                 }
-                $i = 0;
-                $allows_icons_length = count($allows_icons);
-
-                while($i<$allows_icons_length){
-                    $allows_string .= $allowsicons[$i];
-                }
-
-                $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML = '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> ". $allows_string ."';</script>";*/
-
-
-                }
-                else
-                {
-                    $echo_2=$echo_2."<script>document.getElementById('allows_". $row["id"] ."').innerHTML =  '<img src=\"../Assets/Images/prn_ico/led_icons/accept.png\"/> Everyone';</script>";
-                }
             }
         }
-    }
-    if($anyresults==false)
-    {
+
+    if($anyresults==false) {
         $echo_1=$echo_1."<div id='no_results'><script></script></div>";
     }
-    }
-    else
-    {
+    } else {
         $echo_1=$echo_1."<div id='no_results'><script></script></div>";
     }
 
