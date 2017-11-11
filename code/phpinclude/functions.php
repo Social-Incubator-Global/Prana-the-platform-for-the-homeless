@@ -23,6 +23,7 @@
 */
 
 include('../config.php');
+include('./sql.php');
 
 global $lang_English; $lang_English = array();
 global $lang_German; $lang_German = array();
@@ -30,20 +31,39 @@ global $languages; $languages = array();
 global $username; global $session;
 global $authentication;
 
-//USER FUNCTIONS -------->
-function login($elements)
+//THIS FUNCTION DEPRECATES THE WHOLE JAVASCRIPT BASED SESSION SYSTEM ALLOWING LOGINS, LOGOUTS, SESSION STATUSES ETC.
+function user($Type_, $elements)
 {
+    //elements= [0]: uname, [2]: phash
+    //1: Login, 2. Logout, 3. Signup, 4. Session status
+    if($Type_ == 1)
+    {
+        $res = query_("SELECT * FROM users WHERE name='".$elements[0]."'");
+        confirm_hash($res[4]);
+    }
+    else if($Type_ == 2)
+    {
+        
+    }
+    else if($Type_ == 3)
+    {
+        
+    }
+    else if($Type_ == 4)
+    {
+        return;
+    }
+    return;
+}
 
+function confirm_hash($hash)
+{
+    return;
 }
 
 function json()
 {
     echo("JSON!!!");
-}
-
-function signup($elements)
-{
-
 }
 
 function hash_($password)

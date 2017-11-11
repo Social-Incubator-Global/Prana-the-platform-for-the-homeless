@@ -22,6 +22,8 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+//u_var contains session user variables
+$u_var = array();
 $languages = array();
 $def_days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
 
