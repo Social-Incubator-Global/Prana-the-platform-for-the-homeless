@@ -123,8 +123,9 @@ body {
   width: 79%; }
 
 #section_title {
-  font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
-  font-size: 56px; }
+  font-family: 'Arial', regular;
+  font-size: 28px; 
+}
 
 #more_filters {
   color: #FF7F27;
