@@ -54,6 +54,11 @@ function get_objects($type_)
     {
         return array(get_home_type());
     }
+    else if($type_ == "get_user_status")
+    {
+        //RETURNS SESSION INFORMATION
+    }
+    return;
 }
 
 $r_t = $_GET['r_t'];
@@ -116,6 +121,14 @@ else if($r_t == "get_allows_type_filters")
         echo(get_allows_type_filter($res_[0]));
     }
     catch (Exception $ex){echo("console.log(".$e.");");}
+}
+else if($r_t == "user_functions")
+{
+    try
+    {
+        include_();
+        $res_ = get_objects($r_t);
+    }catch(Exception $ex){echo("console.log(".$e.");");}
 }
 
 function internal_test()

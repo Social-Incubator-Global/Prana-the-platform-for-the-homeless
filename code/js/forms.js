@@ -74,7 +74,8 @@ function redirect_ajax(type_, id_, response_element)
     //1=bookmark_set
     //2=bookmark_get
     //id=posting id/content id
-    //4=Get filters for allows and venue type
+    //4=get filters for allows and venue type
+    //5=user functions
     if(type_ === 0)
     {
         send_AJAX('content',eval_build_url(get_local('home_type'), get_local('area'), true, true), 'set', 'test_cnt');
@@ -95,6 +96,12 @@ function redirect_ajax(type_, id_, response_element)
     {
         send_AJAX('get_allows_type_filters', eval_build_url('get_allows_type_filters',get_local('area'), true, true, id_), 'set', response_element);
     }
+    else if(type_ === 5)
+    {
+        console.log("ok");
+        send_AJAX('user_functions', eval_build_url('user_functions', get_local('area'), true, true, id_), 'set', response_element);
+    }
+    return;
 }
 
 function redirect(Where_, Inner_Where_, area_index_)
@@ -209,6 +216,10 @@ function eval_build_url(Type__, area_index_, use_special_character, direct_url, 
     else if(Type__ === "get_allows_type_filters")
     {
         link = link + 'home_type=' + get_local("home_type");
+    }
+    else if(Type__ === "user_functions")
+    {
+        link = link + 'user=' + get_local("uname");
     }
     else
     {

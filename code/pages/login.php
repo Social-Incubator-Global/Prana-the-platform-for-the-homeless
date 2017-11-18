@@ -89,7 +89,7 @@ along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
             <script>document.write(def_lang[0]);</script>
           </div>
 
-          <!-- <form id="input_fm" action="./process.php" method="POST" onsubmit="return validateLogin()">
+          <form id="input_fm" action="./process.php" method="POST" onsubmit="return validateLogin()">
             <p>
               <label>Username:</label>
               <input type="text" name="username" id="usr-input" />
@@ -101,25 +101,6 @@ along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
             <p style="margin-top:15px">
               <input type="submit" value="Login" />
             </p>
-          </form> -->
-
-          <form id="input_fm" action="./process.php" method="POST" onsubmit="return validateLogin()">
-            <div class="form-group">
-              <label>Username</label>
-              <input type="text" name="username" id="usernameInput" class="form-control" aria-describedby="usernameHelp" placeholder="Enter username">
-              <!-- <small id="usernameHelp" class="form-text text-muted">We'll love you till it burns.</small> -->
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Password">
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input">
-                Agree to stuff
-              </label>
-            </div>
-            <input type="submit" value="Login" class="btn btn-primary"></button>
           </form>
 
           <br>
