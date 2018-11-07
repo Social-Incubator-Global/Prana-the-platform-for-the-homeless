@@ -20,189 +20,41 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<?php error_reporting(0);?>
 <html>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Prana Deutschland</title>
-<head bgcolor="white">
-<?php include '../partials/_css.php' ?>
+<title>Ticketry</title>
+<script src='../packages/jquery/jquery-3.3.1.min.js'></script>
+<script src='../packages/moment/moment.js'></script>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="../css/Mainstyle.css"/>
-<link rel="stylesheet" href="../css/content.css"/>
-<?php include '../partials/_js.php' ?>
-<script src="../js/Objects.js"></script>
-<script src="../js/maps_functions.js"></script>
-<script src="../js/forms.js"></script>
-<script src="../js/session.js"></script>
-
-</script>
-<!--Variables-->
-<script>
-set_location("content");
-var session = localStorage.getItem("session");
-var uname = localStorage.getItem("uname");
-var ID = localStorage.getItem("ID");
-var home_type = localStorage.getItem("home_type");
-var sql_ = localStorage.getItem("sql_");
-</script>
 <?php
-//GODADDY
-//include('/home/otark/public_html/phpinclude/content_functions.php');
-//NEW
-include('../phpinclude/content_functions.php');
-include('../phpinclude/sql.php');
-include('../phpinclude/functions.php');
-include('../phpinclude/objects.php');
-get_languages();
-load_languages_ToArrays("");
-$resu_ = get_filters_URL("basic");
-apply_language($resu_[3]);
-load_organizations();?>
+include("../phpinclude/core/includer.php");
+includes(1);
+?>
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
 </head>
+
 <body>
-<!--SESSION VARIABLES-->
-<script>
-var session = localStorage.getItem("session");
-var uname = localStorage.getItem("uname");
-var home_type = localStorage.getItem("home_type");
-var paid_type = localStorage.getItem("paid_type");
-var view_type = localStorage.getItem("view_type");
-var area = localStorage.getItem("area");
-</script>
 <script>
 top_menu('content');
 </script>
-<div id="sidebanner">
-  <div id="section_info">
-      <center>
-          <center>
-     <div id="section_image">
-        <script>
-           if(home_type == "food")
-           { document.write('<img src="../Assets/Images/icons/icon_food.png" width="105px" height="105px">'); }
-           else if(home_type == "housing")
-           { document.write('<img src="../Assets/Images/icons/icon_housing.png" width="105px" height="105px">'); }
-           else if(home_type == "medical")
-           { document.write('<img src="../Assets/Images/icons/Icon_health.png" width="105px" height="105px">'); }
-           else if(home_type == "legal & documents")
-           { document.write('<img src="../Assets/Images/icons/icon_legal and advice.png" width="105px" height="105px">'); }
-           else if(home_type == "study")
-           { document.write('<img src="../Assets/Images/icons/icon_study2.png" width="105px" height="105px">'); }
-           else if(home_type == "jobs")
-           { document.write('<img src="../Assets/Images/icons/icon_jobs.png" width="105px" height="105px">'); }
-        </script>
-     </div>
-              <br>
-     <div id="section_title">
-         <script>
-           if(home_type == "food")
-           { document.title = "Prana : " + dl_r(19); dl(19); }
-           else if(home_type == "housing")
-           { document.title = "Prana : " + dl_r(20); dl(20); }
-           else if(home_type == "medical")
-           { document.title = "Prana : " + dl_r(21); dl(21); }
-           else if(home_type == "legal & documents")
-           { document.title = "Prana : " + dl_r(22); dl(22); }
-           else if(home_type == "study")
-           { document.title = "Prana : " + dl_r(23); dl(23); }
-           else if(home_type == "jobs")
-           { document.title = "Prana : " + dl_r(24); dl(24); }
-           else(document.write("Oppa, something broke :("));
-         </script>
-     </div>
-        </center>
-          <script>menu_home_type();</script><br><hr><br>
-    <center><script>filters_load(home_type); redirect_ajax(4);</script></center>
-  </div>
-</div>
 <div id="content">
-<!--<br><br>-->
-<div id="main_content">
-<div id ="gmaps" style ="border: 1px #27697C; height: 97.3%; width: 29.1%; position: fixed; margin-top: 0%; margin-right: 0%; margin-left: 70.8%;">
-<div id='map_'>
-    <script>//map_placeholder();</script>
-    <div id="map" style="width:100%; height:95.8%;"></div>
-    &nbsp;
-</div>
-    <script>
-        var directions = [];
-        var markers = [];
-
-        function initMap()
-        {
-            getLocation();
-
-            var p_lat = get_local("current_position_lat");
-            var p_long = get_local("current_position_long");
-
-            var markerArray = def_addresses_gmaps;
-            // Instantiate a directions service.
-            var directionsService = new google.maps.DirectionsService;
-            // Create a map and center it on Berlin MANUALLY.
-            var map = new google.maps.Map(document.getElementById('map'),
-                {
-                    zoom: 11,
-                    center: {lat: Number(p_lat), lng: Number(p_long)}
-                    // center: new google.maps.LatLng(52.5069312, 13.1445412),
-                }
-            );
-            current_map = map;
-            set_markers(current_map);
-
-            /*var marker, i;
-            for (i = 0; i < def_addresses_gmaps.length; i++)
-            {
-                position_ = geolocate(def_addresses_gmaps[i]);
-                marker = new google.maps.Marker({
-                position: position_,
-                map: map
-                });
-            }*/
-            //TEST MARKER!!! TESTING PURPOSES ONLY!
-            /*var myLatLng={lat: Number(p_lat), lng: Number(p_long)};
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });*/
-        }
-
-    refresh_localstorage();
-    load_map();
-    function load_map()
-    {
-        document.write('<scr'+'ipt as'+'ync def'+'er s'+'rc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA&callback=initMap&language='+def_langs_gmaps[lang]+'&region='+def_langs_gmaps_reg[lang]+'"></scr'+'ipt>');
-    }
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([37.41, 8.82]),
+          zoom: 4
+        })
+      });
     </script>
-</div>
-
-<div id="content_boxes_area">
-<script>
-var variableToSend = 'home_type';
-</script>
-<!--AFTER PROCESSING IS DONE HERE/AFTERLOAD PROCESSING-->
-<script>
-    change_area();
-    change_paidtype(def_types[paid_type]);
-    change_lang();
-    change_org();
-    change_to_tc();
-    change_dy();
-    change_mo();
-    change_ven_type();
-    change_ven_allows();
-</script>
-<br><br>
-<div id="All_Content_Boxes">
-<?php
-//LOAD CONTENT
-$home_type = get_home_type();
-$URLfilter_result=get_filters_URL($home_type);
-$query = build_query_string($URLfilter_result, "content");
-?>
-<script>redirect_ajax(0);/*redirect_ajax(2);*/ /*response is async resp(2) is finished before resp(0)*/</script>
-</div>
-</div>
-</div>
 </div>
 </body>
