@@ -34,7 +34,6 @@
 body
 {
   color: black;
-  background-color: #E7052C2;
   background-size: 100%;
   animation-name: fade_in;
   animation-duration: 0.3s;
@@ -52,11 +51,10 @@ body
 #sidebanner {
   overflow-x: hidden;
   overflow-y: scroll;
-  position: fixed;
   bottom: 0;
   top: 0%;
   margin-top: 45px;
-  float: left;
+  float: right;
   width: 20%;
   /*height: 100%;*/
   border-radius: 0px;
@@ -65,13 +63,23 @@ body
   font-family: 'Arial', regular;
   font-size: 14px; }
 
+.gmaps
+{
+  border: 1px #27697C;
+  height: 100%;
+  width: 100%;
+  position: none;
+  margin-top: 0%;
+  margin-right: 0%;
+  margin-left: 0%;
+}
+
 #emergency_button_div {
   /* position: fixed; */
   float: left;
   z-index: 1000;
   margin-top: -0.5%;
   margin-left: 9.5%;
-  background-color: red;
   height: 6.7%;
   }
 
@@ -119,14 +127,12 @@ body
 #emergency_button {
   margin-top: 6%; }
 
-@font-face {
+@font-face
   font-family: 'Reenie Beanie';
   font-style: normal;
   font-weight: 400;
   src: local("Reenie Beanie"), local("ReenieBeanie"), url(https://fonts.gstatic.com/s/reeniebeanie/v7/ljpKc6CdXusL1cnGUSamXzxObtw73-qQgbr7Be51v5c.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-#lang_selector {
-  margin-right: 0.5%; }
 
 #highlighted_text {
   color: #09677e;
@@ -143,20 +149,25 @@ body
 #src_bx_top {
   width: 35px;
   background-color: #ff7f24;
-  height: 70%;
-  border: 1px solid #ff7f24; }
+  height: 35px;
+  border: 1px solid #ff7f24; 
+  margin-top: 7px;
+}
 
 #src_in {
   color: white;
   background-color: #09677e;
   border: 0px solid #FF7F27; }
 
-#src_in_top {
+.src_in_top {
   color: white;
-  height: 70%;
+  height: 35px;
   float: left;
   background-color: #09677e;
-  border: 1px solid #ff7f24; }
+  border: 1px solid #ff7f24;
+  border-left: 0px;
+  margin-top: 7px;
+ }
 
 #footer {
   float: auto;
@@ -183,9 +194,9 @@ hr {
   border: 1px solid #ff7f24;
   float: right;
   width: 150px;
-  height: 33px;
-  background-color: gainsboro;
-  color: black;
+  height: 35px;
+  background-color: rgba(0, 93, 106, 0.7);
+  color: white;
   opacity: 1.0;
 }
 
@@ -219,8 +230,33 @@ input:hover {
 input:active {
   background-color: rgba(0, 63, 86, 0.7); }
 
+.selector_button
+{
+  height: 35px;
+  background-color: #ff7f24;
+}
+
+.search_box
+{
+  float:left;
+  margin-left:0%;
+  width:70%;
+  height:35px;
+  border-radius:0px;
+  border: 1px solid rgb(255, 127, 36);
+  background-color: rgba(0, 93, 106, 0.7);
+  border-right: 0px; 
+  margin-top: 7px;
+}
+
 #top_banner {
-  margin-top: 0px; }
+  background-color: #09677e;
+  width: 100%;
+  margin-top: 0%;
+  height: 95px;
+  color: white;
+  border-bottom: 2px solid #ff7f24;
+ }
 
 #logo {
   margin-left: 10px;
@@ -282,7 +318,14 @@ input:active {
 
 #sel_home_type {
   width: 35%;
-  margin-top: 7px; }
+  height: 45px; }
+
+.selectors
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 37%;
+}
 
 #Logotext {
   font-family: 'Reenie Beanie', cursive;
@@ -296,7 +339,7 @@ input:active {
   width: 15%;
   margin-right: 1%;
   margin-top: 6px;
-  background-color: #E7052C2; }
+}
 
 #uacnt_alternative {
   float: right;

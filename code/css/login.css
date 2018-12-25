@@ -43,9 +43,9 @@
   float: left; }
 
 #input_fm {
-  margin-top: 3%;
-  margin-left: 12.3%;
-  float: left; }
+margin-top: 3%;
+width: 100%;
+}
 
 input {
   color: #31859C;
@@ -120,10 +120,10 @@ input:hover {
   margin-right: 13.4px; }
 
 #login_content {
-  border-radius: 5px;
+  border-radius: 0px;
   color: #FF7F27;
   opacity: 0.9;
-  border: 1px solid #FF7F27;
+  border: 3px solid #FF7F27;
   background-color: white;
   float: none;
   margin-left: 25%;

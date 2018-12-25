@@ -3,7 +3,7 @@
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Catie Carson, Nicholas Alexander Kearney, Jeremy Leresteux, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe, Nicholas Alexander Kearney, Jeremy Leresteux>
 
-    Visitable link: www.prana-deutschland.de , for any inquiries contact at contact@prana-deutschland.de
+    Visitable link: www.prana-deutschland.de , for any inquiries contact at oscartark91@gmail.com
 
     This file is part of Prana-deutschland.
 
@@ -23,7 +23,7 @@
 <?php error_reporting(0);?>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Prana Deutschland</title>
+<title>Prana</title>
 <head bgcolor="white">
 <?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
@@ -70,58 +70,15 @@ var view_type = localStorage.getItem("view_type");
 var area = localStorage.getItem("area");
 </script>
 <script>
-top_menu('content');
+top_menu();
 </script>
-<div id="sidebanner">
-  <div id="section_info">
-      <center>
-          <center>
-     <div id="section_image">
-        <script>
-           if(home_type == "food")
-           { document.write('<img src="../Assets/Images/icons/icon_food.png" width="105px" height="105px">'); }
-           else if(home_type == "housing")
-           { document.write('<img src="../Assets/Images/icons/icon_housing.png" width="105px" height="105px">'); }
-           else if(home_type == "medical")
-           { document.write('<img src="../Assets/Images/icons/Icon_health.png" width="105px" height="105px">'); }
-           else if(home_type == "legal & documents")
-           { document.write('<img src="../Assets/Images/icons/icon_legal and advice.png" width="105px" height="105px">'); }
-           else if(home_type == "study")
-           { document.write('<img src="../Assets/Images/icons/icon_study2.png" width="105px" height="105px">'); }
-           else if(home_type == "jobs")
-           { document.write('<img src="../Assets/Images/icons/icon_jobs.png" width="105px" height="105px">'); }
-        </script>
-     </div>
-              <br>
-     <div id="section_title">
-         <script>
-           if(home_type == "food")
-           { document.title = "Prana : " + dl_r(19); dl(19); }
-           else if(home_type == "housing")
-           { document.title = "Prana : " + dl_r(20); dl(20); }
-           else if(home_type == "medical")
-           { document.title = "Prana : " + dl_r(21); dl(21); }
-           else if(home_type == "legal & documents")
-           { document.title = "Prana : " + dl_r(22); dl(22); }
-           else if(home_type == "study")
-           { document.title = "Prana : " + dl_r(23); dl(23); }
-           else if(home_type == "jobs")
-           { document.title = "Prana : " + dl_r(24); dl(24); }
-           else(document.write("Oppa, something broke :("));
-         </script>
-     </div>
-        </center>
-          <script>menu_home_type();</script><br><hr><br>
-    <center><script>filters_load(home_type); redirect_ajax(4);</script></center>
-  </div>
-</div>
 <div id="content">
 <!--<br><br>-->
 <div id="main_content">
-<div id ="gmaps" style ="border: 1px #27697C; height: 97.3%; width: 29.1%; position: fixed; margin-top: 0%; margin-right: 0%; margin-left: 70.8%;">
+<div id ="gmaps" class="gmaps">
 <div id='map_'>
     <script>//map_placeholder();</script>
-    <div id="map" style="width:100%; height:95.8%;"></div>
+    <div id="map" style="width:100%; height:100%;"></div>
     &nbsp;
 </div>
     <script>
@@ -174,35 +131,5 @@ top_menu('content');
         document.write('<scr'+'ipt as'+'ync def'+'er s'+'rc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIaHbCJHko4ThhoZ2UWKEj4sVV6VZnOeA&callback=initMap&language='+def_langs_gmaps[lang]+'&region='+def_langs_gmaps_reg[lang]+'"></scr'+'ipt>');
     }
     </script>
-</div>
-
-<div id="content_boxes_area">
-<script>
-var variableToSend = 'home_type';
-</script>
-<!--AFTER PROCESSING IS DONE HERE/AFTERLOAD PROCESSING-->
-<script>
-    change_area();
-    change_paidtype(def_types[paid_type]);
-    change_lang();
-    change_org();
-    change_to_tc();
-    change_dy();
-    change_mo();
-    change_ven_type();
-    change_ven_allows();
-</script>
-<br><br>
-<div id="All_Content_Boxes">
-<?php
-//LOAD CONTENT
-$home_type = get_home_type();
-$URLfilter_result=get_filters_URL($home_type);
-$query = build_query_string($URLfilter_result, "content");
-?>
-<script>redirect_ajax(0);/*redirect_ajax(2);*/ /*response is async resp(2) is finished before resp(0)*/</script>
-</div>
-</div>
-</div>
 </div>
 </body>
