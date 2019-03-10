@@ -21,10 +21,6 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
-
-include('../config.php');
-include('./sql.php');
-
 global $lang_English; $lang_English = array();
 global $lang_German; $lang_German = array();
 global $languages; $languages = array();

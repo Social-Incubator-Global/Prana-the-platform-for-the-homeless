@@ -25,6 +25,6 @@
 //test
 function set_sqlobjects()
 {
-$queries = ("SELECT * FROM Contnt");
+    $queries = ("SELECT * FROM Contnt");
 }
 ?>

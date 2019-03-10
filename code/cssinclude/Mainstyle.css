@@ -66,12 +66,12 @@ body
 .gmaps
 {
   border: 1px #27697C;
-  height: 100%;
-  width: 100%;
-  position: none;
+  height: 70%;
+  width: 20%;
+  position: absolute;
   margin-top: 0%;
   margin-right: 0%;
-  margin-left: 0%;
+  right: 0;
 }
 
 #emergency_button_div {
@@ -233,7 +233,6 @@ input:active {
 .selector_button
 {
   height: 35px;
-  background-color: #ff7f24;
 }
 
 .search_box
@@ -324,7 +323,7 @@ input:active {
 {
   margin-left: auto;
   margin-right: auto;
-  width: 37%;
+  margin-left: 1%;
 }
 
 #Logotext {

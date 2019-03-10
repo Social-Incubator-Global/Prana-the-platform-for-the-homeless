@@ -1,7 +1,4 @@
 <?php
-
-//include("objects.php");
-
 function includes($concatenation_level)
 {
     //Takes: int
@@ -18,14 +15,12 @@ function includes($concatenation_level)
     }
 
     $final_path = $concat."jsinclude/core/*.js";
-
     foreach(glob($final_path) as $filename)
     {
         echo "<script src=".$filename."></script>";
     }
 
     $final_path = $concat."jsinclude/modules/*.js";
-
     foreach(glob($final_path) as $filename)
     {
         echo "<script src=".$filename."></script>";

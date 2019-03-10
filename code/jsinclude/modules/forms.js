@@ -262,7 +262,7 @@ function search_box()
 
 function draw_selectionmenu()
 {
-    document.getElementById("top_banner").innerHTML += "<br><div class='selectors' id='selectors'><input class='selector_button' type='button' value='Shelter'/><input class='selector_button' type='button' value='Food'/><input class='selector_button' type='button' value='Medical & sanitary'/><input class='selector_button' type='button' value='Legal help'/><input class='selector_button' type='button' value='Jobs & job agencies'/></div>";
+    document.getElementById("top_banner").innerHTML += "<br><div class='selectors' id='selectors'><input class='selector_button' type='button' value='> Shelter'/><input class='selector_button' type='button' value='> Food'/><input class='selector_button' type='button' value='> Medical'/><input class='selector_button' type='button' value='> Legal'/><input class='selector_button' type='button' value='> Jobs'/></div>";
     return;
 }
 
@@ -271,36 +271,7 @@ function top_menu()
 
     dl_d('<div id="top_banner" style="" ><a href="javascript:redirect(\'content\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><script>dl_d(code_snippets[7]);</script></div>');
     draw_selectionmenu();
-/*if(Type_=="home0")
-{
-dl_d('<div id="top_banner"><script>dl_d(code_snippets[4]);</script><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><div id="uacnt"><a style="color: black;" href="javascript: if(session==1){redirect(\'profile\');}else{redirect(\'login\');}" id="login_text" href="#"><script>if(session==1){document.write(def_lang[35]); }else if (session!=1){ document.write(def_lang[0]); if(session!=1){document.write} }</script></a><script>if(session==0){document.write(" | ");}</script><a style="color: black;" href="javascript:redirect(\'signup\');"><script>if(session==0){document.write(def_lang[6]);}</script></a><a style="color: black;" href="javascript:redirect(\'logout\');" id="login_text" href="#"><script>if(session==1){document.write(" | " + def_lang[1]); }</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>');
-}
-else if(Type_ == "content")
-{
-    var top = "";
-    else if(Subtype__ == "login")
-    {
-        top='<div id="top_banner"  style="" ><a href="javascript:redirect(\'home\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><div id="uacnt" style=""><a style="color: white;" href="javascript: redirect(\'home\');" id="login_text" href="#"><script>dl(4);</script></a><script>if(session==0){document.write(" | ");}</script><a  style="color: white;"  href="javascript:redirect(\'signup\');"><script>if(session==0){document.write(def_lang[6]);}</script></a><a href="javascript:redirect(\'logout\');" id="login_text" href="#" style="color: white;"><script>if(session==1){document.write(" | " + def_lang[1]); }</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>';
-    }
-    else if(Subtype__ == "signup")
-    {
-        top='<div id="top_banner"  style="" ><a href="javascript:redirect(\'home\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><div id="uacnt" style=""><a style="color: white;" href="javascript: redirect(\'home\');" id="login_text" href="#"><script>dl(4);</script></a><script>document.write(" | ");</script><a style="color: white;"  href="javascript:redirect(\'login\');"><script>dl(0);</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>';
-    }
-    dl_d(top);
-}
-else if(Type_ == "profile")
-{
-    dl_d('<div id="top_banner"><a href="javascript:redirect(\'home\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><script>dl_d(code_snippets[4]);</script><script>dl_d(code_snippets[6]);</script><div id="uacnt"><a style="color: white;" href="javascript: if(session==1){redirect(\'profile\');}else{redirect(\'login\');}" id="login_text" href="#"><script>if(session==1){document.write(def_lang[35]); }else if (session!=1){ document.write(def_lang[28]); }</script></a><a style="color: white;" href="javascript:redirect(\'logout\');" id="login_text" href="#"><script>if(session==1){document.write(" | " + def_lang[1]); }</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>');
-}
-else if(Type_ == "posting")
-{
-    dl_d('<div id="top_banner"><a href="javascript:redirect(\'home\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><script>dl_d(code_snippets[7]);</script><script>dl_d(code_snippets[4]);</script><div id="uacnt"><a style="color: white;" href="javascript: if(session==1){redirect(\'profile\');}else{redirect(\'login\');}" id="login_text" href="#"><script>if(session==1){document.write(def_lang[35]); }else if (session!=1){ document.write(def_lang[0]); if(session!=1){document.write} }</script></a><script>if(session==0){document.write(" | ");}</script><a style="color: white;" href="javascript:redirect(\'signup\');"><script>if(session==0){document.write(def_lang[6]);}</script></a><a style="color: white;" href="javascript:redirect(\'logout\');" id="login_text" href="#"><script>if(session==1){document.write(" | " + def_lang[1]); }</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>');
-}
-else if(Type_ == "search")
-{
-    dl_d('<div id="top_banner" style="" ><a href="javascript:redirect(\'home\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><script>dl_d(code_snippets[7]); dl_d(code_snippets[4]);</script><div id="uacnt" style=""><a style="color: white;" href="javascript: if(session==1){redirect(\'profile\');}else{redirect(\'login\');}" id="login_text" href="#"><script>if(session==1){document.write(def_lang[35]); }else if (session!=1){ document.write(def_lang[0]); if(session!=1){document.write} }</script></a><script>if(session==0){document.write(" | ");}</script><a  style="color: white;"  href="javascript:redirect(\'signup\');"><script>if(session==0){document.write(def_lang[6]);}</script></a><a href="javascript:redirect(\'logout\');" id="login_text" href="#" style="color: white;"><script>if(session==1){document.write(" | " + def_lang[1]); }</script></a><a href="javascript:login_form()" id="login_text" href="#"></a></div></div>');
-}*/
-return;
+    return;
 }
 
 function change_bookmark_content(itm, status)
