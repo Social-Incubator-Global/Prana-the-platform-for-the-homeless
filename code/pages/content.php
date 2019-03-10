@@ -119,3 +119,7 @@ top_menu();
     </script>
 </div>
 </body>
+
+<script>
+    dashboard('');
+</script>

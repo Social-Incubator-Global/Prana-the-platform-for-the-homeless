@@ -207,6 +207,18 @@ function set_value(name, ndx)
     return;
 }
 
+function remove_inner_HTML(name)
+{
+    get_item(name).parentNode.removeChild(get_item(name));
+    return;
+}
+
+function set_addition_inner_HTML(name, value)
+{
+    get_item(name).innerHTML += value;
+    return;
+}
+
 function set_innerhtml(name, HTML)
 {
     document.getElementById(name).innerHTML = HTML;

@@ -63,15 +63,39 @@ body
   font-family: 'Arial', regular;
   font-size: 14px; }
 
+.dash
+{
+  width: 70%;
+}
+
+.dash_button_general
+{
+  margin-top: 5px;
+  margin-left: 5px;
+  background-color: #F2F2F2;
+  border: 2px solid #09677e;
+  color: #09677e;
+  width: 300px;
+  height: 140px;
+  transition: .2s border;
+  text-align: left;
+}
+
+.dash_button_general:hover
+{
+  border: 2px solid black;
+}
+
 .gmaps
 {
   border: 1px #27697C;
-  height: 70%;
+  height: 75%;
   width: 20%;
-  position: absolute;
   margin-top: 0%;
   margin-right: 0%;
   right: 0;
+  z-index: 1;
+  position: absolute;
 }
 
 #emergency_button_div {

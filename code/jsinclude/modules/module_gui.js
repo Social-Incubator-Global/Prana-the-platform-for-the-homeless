@@ -21,43 +21,6 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-//30.9.17 REMOVE THIS LINE WHEN DONE. BELOW VARIABLES COMMENTED TO TEST USING THEM ONLY THROUGH get_local();
-//VARIABLES BELOW WILL BE REMOVED FROM ALL FILES. THEY WILL ONLY BE ACCESSIBLE THROUGH get_local();
-                 /*var session = get_local("session");
-                 var uname = get_local("uname");
-                 var ID = get_local("ID");
-                 var home_type = get_local("home_type");
-                 var paid_type = get_local("paid_type");
-                 var view_type = get_local("view_type");
-                 var area = get_local("area");
-                 var lang = get_local("lang");
-                 var location_ = get_local("location");
-                 var organization = get_local("organization");
-
-
-                 var all = localStorage.getItem("all");
-                 var to = localStorage.getItem("to");
-                 var tc = localStorage.getItem("tc");
-                 var dy = localStorage.getItem("dy");
-                 var mo = localStorage.getItem("mo");
-                 var vt = localStorage.getItem("vt");
-                 var va = localStorage.getItem("va");
-                 //filters housing
-                 var filters_housing_shelters = localStorage.getItem("filters_housing_shelters");
-                 var filters_housing_hostels = localStorage.getItem("filters_housing_hostels");
-                 var filters_housing_govt = localStorage.getItem("filters_housing_govt");
-                 var filters_housing_coldshelters = localStorage.getItem("filters_housing_coldshelters");
-                 var filters_wo = localStorage.getItem("filters_wo");
-                 var filters_mo = localStorage.getItem("filters_mo");
-                 var filters_childrenok = localStorage.getItem("filters_childrenok");
-                 var filters_petsok = localStorage.getItem("filters_petsok");
-                 var filters_smoking = localStorage.getItem("filters_smoking");
-                 var filters_alcohol = localStorage.getItem("filters_alcohol");
-
-                 //filters food
-                 var filters_food_soupkitchens = localStorage.getItem("filters_food_soupkitchens");
-                 var filters_food_tafels = localStorage.getItem("filters_food_tafels");*/
-
 //STARTS PRANA-DEUTSCHLAND.DE --> THIS IS THE ENTRY POINT OF THE WEBSITE.
 function start()
 {
@@ -240,14 +203,18 @@ dl_d('<center><div id="Logo">Prana</div><div id="main_box"></div></center>');
 
 function dashboard(Type_)
 {
+    //NEW
+    set_addition_inner_HTML("content", "<div id='dash' class='dash'><button class='dash_button_general'><img src=''/><label>Home</label><br><label>fff</label></button><button class='dash_button_general'><label>Home</label><br><label>fff</label></button><button class='dash_button_general'><label>Home</label><br><label>fff</label></button><button class='dash_button_general'><label>Home</label><br><label>fff</label></button><button class='dash_button_general'><label>Home</label><br><label>fff</label></button></div>");
+
+    //OLD
     if(Type_ == "home")
     {
         dl_d('<div id="home_"><center><br><div id="logo" style="font-size:132; float:none;"><img src="../Assets/Images/logo/prana_logo.png"></div><br><br><div id=home_src><div id="src_txt">'+dl_r(17)+'</div><br><br><form><input type="text" value="'+dl_r(18)+'" name="src_bx" id="src_bx" style="width: 300px; height: 33px;" onclick="javscript:val=document.getElementById(\'src_bx\').value;if(val==\''+dl_r(18)+'\'){remove_value(\'src_bx\');}" onblur="val=document.getElementById(\'src_bx\').value;if(val==\'\'){document.getElementById(\'src_bx\').value='+dl_r(18)+';}"><select id="src_in" value="In"></select><input type="button" value=">" name="src_bx" style="width: 35px; height: 33px; background-color: rgba(9, 103, 126, 1.0);" onclick="javascipt:val=document.getElementById(\'src_bx\').value; redirect(\'search\');"></form></div><br><div id="home_buttons"><div id="button1"><a href="javascript:redirect(\'content\', \'food\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_food.png" width="50px" height="50px"><br>'+dl_r(19)+'</div></a><div id="button2"><a href="javascript:redirect(\'content\',\'housing\','+get_local("area")+');"><img src="../Assets/Images/icons/icon_housing.png" width="50px" height="50px"><br>'+dl_r(20)+'</a></div><div id="button3"><a href="javascript:redirect(\'content\',\'medical\', '+get_local("area")+');"><img src="../Assets/Images/icons/Icon_health.png" width="50px" height="50px"><br>'+dl_r(21)+'</a></div><div id="button4"><a href="javascript:redirect(\'content\',\'legal\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_legal and advice.png" width="50px" height="50px"><br>'+dl_r(22)+'</a></div><div id="button5"><a href="javascript:redirect(\'content\',\'study\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_study2.png" width="50px" height="50px"><br>'+dl_r(23)+'</a></div><div id="button6"><a href="javascript:redirect(\'content\',\'jobs\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_jobs.png" width="50px" height="50px"><br>'+dl_r(24)+'</a></div><div id="button7"><a href="javascript:redirect(\'content_modular\',\'\', '+get_local("area")+');"><img src="../Assets/Images/icons/icon_tips.png" width="50px" height="50px"><br>'+dl_r(108)+'</a></div></div></center></div></br></br><script>fill_search_type("src_in");</script>');
-}
-else if(Type_ == "profile")
-{
-   dl_d("<center><div id='profile_container'><div id='title_profile'><script>document.write(def_lang[16]);</script></div></div></center>");
-}
+    }
+    else if(Type_ == "profile")
+    {
+        dl_d("<center><div id='profile_container'><div id='title_profile'><script>document.write(def_lang[16]);</script></div></div></center>");
+    }
 }
 
 function emergency_button()
