@@ -24,18 +24,19 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Prana</title>
-<head bgcolor="white">
-<?php include '../partials/_css.php' ?>
 <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="../css/Mainstyle.css"/>
-<link rel="stylesheet" href="../css/content.css"/>
-<?php include '../partials/_js.php' ?>
-<script src="../js/Objects.js"></script>
-<script src="../js/maps_functions.js"></script>
-<script src="../js/forms.js"></script>
-<script src="../js/session.js"></script>
 
-</script>
+<?php
+include("../phpinclude/core/includer.php");
+includes(1);
+
+get_languages();
+load_languages_ToArrays("");
+$resu_ = get_filters_URL("basic");
+apply_language($resu_[3]);
+load_organizations();
+?>
+
 <!--Variables-->
 <script>
 set_location("content");
@@ -45,19 +46,7 @@ var ID = localStorage.getItem("ID");
 var home_type = localStorage.getItem("home_type");
 var sql_ = localStorage.getItem("sql_");
 </script>
-<?php
-//GODADDY
-//include('/home/otark/public_html/phpinclude/content_functions.php');
-//NEW
-include('../phpinclude/content_functions.php');
-include('../phpinclude/sql.php');
-include('../phpinclude/functions.php');
-include('../phpinclude/objects.php');
-get_languages();
-load_languages_ToArrays("");
-$resu_ = get_filters_URL("basic");
-apply_language($resu_[3]);
-load_organizations();?>
+
 </head>
 <body>
 <!--SESSION VARIABLES-->

@@ -21,9 +21,6 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
-
-include 'connect.php'; 
-
 function build_query_string($URLfilter_result, $Type_)
 {
     $query = "";
