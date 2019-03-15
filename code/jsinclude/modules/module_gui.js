@@ -204,7 +204,7 @@ dl_d('<center><div id="Logo">Prana</div><div id="main_box"></div></center>');
 function dashboard(Type_)
 {
     //NEW
-    set_addition_inner_HTML("content", "<div id='dash' class='dash'><button class='dash_button_general'><img src=''/><label>Home</label><br><label>fff</label></button><button class='dash_button_general'><label>Home</label><br><label>fff</label></button><button class='dash_button_general'><label>Home</label><br><label>fff</label></button><button class='dash_button_general'><label>Home</label><br><label>fff</label></button><button class='dash_button_general'><label>Home</label><br><label>fff</label></button></div>");
+    set_addition_inner_HTML("content", "<div id='dash' class='dash'><a href='https://mokli-help.de/#/'><button class='dash_button_general'><img src=''/><label>Find basic ameneties</label><br><label>fff</label></button></a><button class='dash_button_general'><label>Find a job</label><br><label>fff</label></button><button class='dash_button_general'><label>Becoming a student</label><br><label>fff</label></button><button class='dash_button_general'><label>Hartz IV</label><br><label>fff</label></button><button class='dash_button_general'><label>Access to healthcare</label><br><label>fff</label></button><button class='dash_button_general'><label>Get help from a volunteer</label><br><label>fff</label></button></div>");
 
     //OLD
     if(Type_ == "home")
