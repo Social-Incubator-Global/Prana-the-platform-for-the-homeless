@@ -31,15 +31,6 @@
     background-color: rgba(0, 93, 106, 0.7); }
   to {
     background-color: rgba(0, 63, 86, 0.7); } }
-body
-{
-  color: black;
-  background-size: 100%;
-  animation-name: fade_in;
-  animation-duration: 0.3s;
-  margin-top: 0px;
-  margin-left: 0px;
-}
 
 #title_ratings_comments {
   font-size: 22px;
@@ -66,6 +57,9 @@ body
 .dash
 {
   width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
 }
 
 .dash_button_general
@@ -152,11 +146,13 @@ body
   margin-top: 6%; }
 
 @font-face
+{
   font-family: 'Reenie Beanie';
   font-style: normal;
   font-weight: 400;
   src: local("Reenie Beanie"), local("ReenieBeanie"), url(https://fonts.gstatic.com/s/reeniebeanie/v7/ljpKc6CdXusL1cnGUSamXzxObtw73-qQgbr7Be51v5c.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
 
 #highlighted_text {
   color: #09677e;
@@ -259,24 +255,29 @@ input:active {
   height: 35px;
 }
 
-.search_box
+.top_banner_search
 {
-  float:left;
-  margin-left:0%;
-  width:70%;
-  height:35px;
-  border-radius:0px;
-  border: 1px solid rgb(255, 127, 36);
-  background-color: rgba(0, 93, 106, 0.7);
-  border-right: 0px; 
-  margin-top: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
 }
 
-#top_banner {
+.search_box
+{
+  float: none;
+  margin-left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  background-color: rgba(0, 63, 86, 0.7);
+  font-size: 20px;
+}
+
+.top_banner {
   background-color: #09677e;
   width: 100%;
   margin-top: 0%;
-  height: 125px;
+  height: 50px;
   color: white;
   border-bottom: 2px solid #ff7f24;
  }

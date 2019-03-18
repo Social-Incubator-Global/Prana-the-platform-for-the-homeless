@@ -233,14 +233,6 @@ function draw_selectionmenu()
     return;
 }
 
-function top_menu()
-{
-
-    dl_d('<div id="top_banner" style="" ><a href="javascript:redirect(\'content\');"><div id="logo"><img src="../Assets/Images/logo/prana_logo_tool.png"></div></a><div id="lang_selector" style="float:right;"><script>document.write(code_snippets[0]);</script></div><script>dl_d(code_snippets[7]);</script></div>');
-    draw_selectionmenu();
-    return;
-}
-
 function change_bookmark_content(itm, status)
 {
     if(status==1)

@@ -14,6 +14,12 @@ function includes($concatenation_level)
         include($filename);
     }
 
+    $final_path = $concat."phpinclude/gui_modules/*.php";
+    foreach(glob($final_path) as $filename)
+    {
+        include($filename);
+    }
+
     $final_path = $concat."jsinclude/core/*.js";
     foreach(glob($final_path) as $filename)
     {

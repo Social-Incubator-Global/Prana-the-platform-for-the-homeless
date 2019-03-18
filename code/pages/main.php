@@ -1,9 +1,9 @@
-<!-- 
+<!--
 <Prana-deutschland. The platform for the homeless>
-    Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Catie Carson, Nicholas Alexander Kearney, Jeremy Leresteux, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
+    Copyright (C) <2016-2019>  <Oscar Arjun Singh Tark, Catie Carson, Nicholas Alexander Kearney, Jeremy Leresteux, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
     <Original programmers: Oscar Arjun Singh Tark, Robinson Choe, Nicholas Alexander Kearney, Jeremy Leresteux>
 
-    Visitable link: www.prana-deutschland.de , for any inquiries contact at contact@prana-deutschland.de
+    Visitable link: www.prana-deutschland.de , for any inquiries contact at oscartark91@gmail.com
 
     This file is part of Prana-deutschland.
 
@@ -20,16 +20,25 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
+<?php error_reporting(0);?>
 <html>
-<head>
-<meta name="description" content="Find Housing, Shelters, Food, Medical & Sanitary care, Emergency services, Legal advice, Jobs, Study programmes or find a project to volunteer in, places to donate.">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Prana : The platform for the homeless</title>
-    <script src="./js/forms.js"></script>
-    <script src="./js/Objects.js"></script>
-</head>
-<body bgcolor="#F2F2F2">
-    <script>start();</script>
-</body>
-</html>
+<title>Prana</title>
+<link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+
+<?php
+include("../phpinclude/core/includer.php");
+includes(1);
+
+get_languages();
+load_languages_ToArrays("");
+$resu_ = get_filters_URL("basic");
+apply_language($resu_[3]);
+
+draw_html("../htmlinclude/content.html");
+draw_html_inside("../htmlinclude/top_banner.html", "content");
+?>
+
+<script>
+    dashboard('');
+</script>

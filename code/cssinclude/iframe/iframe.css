@@ -1,0 +1,12 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainiframe
+{
+    border: 0px solid white;
+	width: 100%;
+	height: 100%;
+}
