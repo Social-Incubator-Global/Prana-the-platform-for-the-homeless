@@ -24,68 +24,6 @@
 global $lang_English; $lang_English = array();
 global $lang_German; $lang_German = array();
 global $languages; $languages = array();
-global $username; global $session;
-global $authentication;
-
-//THIS FUNCTION DEPRECATES THE WHOLE JAVASCRIPT BASED SESSION SYSTEM ALLOWING LOGINS, LOGOUTS, SESSION STATUSES ETC.
-function user($Type_, $elements)
-{
-    //elements= [0]: uname, [2]: phash
-    //1: Login, 2. Logout, 3. Signup, 4. Session status
-    if($Type_ == 1)
-    {
-        $res = query_("SELECT * FROM users WHERE name='".$elements[0]."'");
-        confirm_hash($res[4]);
-    }
-    else if($Type_ == 2)
-    {
-        
-    }
-    else if($Type_ == 3)
-    {
-        
-    }
-    else if($Type_ == 4)
-    {
-        return;
-    }
-    return;
-}
-
-function confirm_hash($hash)
-{
-    return;
-}
-
-function json()
-{
-    echo("JSON!!!");
-}
-
-function hash_($password)
-{
-
-}
-//USER FUNCTIONS END --------<
-
-//JSON -------->
-
-//JSON END --------<
-
-function cut_variables($string_)
-{
-
-}
-
-function load_organizations()
-{
-$lang_result = query_("SELECT * FROM Organizations");
-while($row = $lang_result->fetch_assoc())
-{
-   echo('<script>def_organizations.push("'.$row["name"].'")</script>');
-}
-mysqli_free_result($lang_result);
-}
 
 function get_languages()
 {
@@ -103,26 +41,26 @@ function get_languages()
 
 function load_languages_ToArrays($page)
 {
-global $lang_English;
-global $lang_German;
-global $languages;
+   global $lang_English;
+   global $lang_German;
+   global $languages;
 
-foreach($languages as $lang)
-{
-$lang_result = query_("SELECT * FROM Lang_".$lang." ORDER BY id ASC");
-while($row = $lang_result->fetch_assoc())
-{
-   if($lang == "English")
+   foreach($languages as $lang)
    {
-      array_push($lang_English, $row["word"]);
-   }
-   else if($lang == "Deutsch")
+   $lang_result = query_("SELECT * FROM Lang_".$lang." ORDER BY id ASC");
+   while($row = $lang_result->fetch_assoc())
    {
-      array_push($lang_German, $row["word"]);
+      if($lang == "English")
+      {
+         array_push($lang_English, $row["word"]);
+      }
+      else if($lang == "Deutsch")
+      {
+         array_push($lang_German, $row["word"]);
+      }
    }
-}
-mysqli_free_result($lang_result);
-}
+   mysqli_free_result($lang_result);
+   }
 }
 
 function apply_language($name)

@@ -22,94 +22,9 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-//u_var contains session user variables
+//u_var session variables
 $u_var = array();
 $languages = array();
 $def_days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
-
-function get_month($ndx)
-{
-    if($ndx == 0)
-    {
-        return "january";
-    }
-    if($ndx == 1)
-    {
-        return "febuary";
-    }
-    if($ndx == 2)
-    {
-        return "march";
-    }
-    if($ndx == 3)
-    {
-        return "april";
-    }
-    if($ndx == 4)
-    {
-        return "may";
-    }
-    if($ndx == 5)
-    {
-        return "june";
-    }
-    if($ndx == 6)
-    {
-        return "july";
-    }
-    if($ndx == 7)
-    {
-        return "august";
-    }
-    if($ndx == 8)
-    {
-        return "september";
-    }
-    if($ndx == 9)
-    {
-        return "october";
-    }
-    if($ndx == 10)
-    {
-        return "november";
-    }
-    if($ndx == 11)
-    {
-        return "december";
-    }
-}
-
-function get_day($ndx)
-{
-////dumbshit php
-    //return $def_days[$ndx];
-    if($ndx==0)
-    {
-        return "monday";
-    }
-    else if($ndx==1)
-    {
-        return "tuesday";
-    }
-    else if($ndx==2)
-    {
-        return "wednesday";
-    }
-    else if($ndx==3)
-    {
-        return "thursday";
-    }
-    else if($ndx==4)
-    {
-        return "friday";
-    }
-    else if($ndx==5)
-    {
-        return "saturday";
-    }
-    else if($ndx==6)
-    {
-        return "sunday";
-    }
-}
+$def_months = ["january"];
 ?>

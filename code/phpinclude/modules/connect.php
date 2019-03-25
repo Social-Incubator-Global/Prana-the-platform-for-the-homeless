@@ -1,4 +1,6 @@
 <?php
+
+//INSECURE GARBAGE CODE!
 function query_($quer)
 {
 	//Takes: string

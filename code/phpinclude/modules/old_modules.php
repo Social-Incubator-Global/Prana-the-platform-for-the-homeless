@@ -1,4 +1,10 @@
 <?php
+
+
+/*WARNING TO ALL THOSE WHO TREAD THROUGH THIS GRABAGE. THIS CODE IS FROM VERSION 0.1 IT IS UTTER GRBAGE,
+BUT STILL NEEDED FOR SOME OPERATIONS. TREAD LIGHTLY*/
+
+
 /*
 <Prana-deutschland. The platform for the homeless>
     Copyright (C) <2016-2017>  <Oscar Arjun Singh Tark, Catie Carson, Nicholas Alexander Kearney, Jeremy Leresteux, Emilie Caron, Robinson Choe and all underlying members of Prana-deutschland>
