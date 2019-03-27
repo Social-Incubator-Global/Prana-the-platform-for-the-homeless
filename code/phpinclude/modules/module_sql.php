@@ -222,8 +222,8 @@ function sql_query_custom($quer, $dbname)
 
     //NEVER SET ROOT AS THE MAIN USER! REMEMBER TO SET PERMISSIONS ACCORDINGLY
     $hostname = 'localhost';
-    $username = 'cleanery';
-    $password = 'using System.cleanery;';
+    $username = 'root';
+    $password = '';
     $link = new mysqli($hostname, $username, $password, $dbname)
         or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
     $link->set_charset('utf8_swedish_ci');
