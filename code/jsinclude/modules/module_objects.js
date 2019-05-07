@@ -22,6 +22,11 @@
 */
 
 //LOADS VARIABLES USED THROUGH THE WEBSITE TO BE OUTSOURCED TO THE BACKEND THROUGH A FUNCTION CALL
+
+var images = {
+    "DEF" : "../Assets/icons/def.png"   
+}
+
 function load_localstorage()
 {
     if(get_local("session_vars_resume") != 1)

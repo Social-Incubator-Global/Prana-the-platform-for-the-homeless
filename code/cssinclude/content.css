@@ -20,6 +20,64 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->*/
+
+/*NEW*/
+
+.button_img
+{
+  height:25px;
+}
+
+.button_img_solo
+{
+  height: 30px;
+}
+
+.copyright
+{
+  font-size: 10px;
+  background-color: #09677e;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+}
+
+.nav_bar
+{
+  width: 100%;
+  background-color: #09677e;
+  height: 50px;
+  border-bottom: 2px solid #FF7F27;
+}
+
+.nav_buttons
+{
+  height: 50px;
+  background-color: #09677e;
+  color: white;
+}
+
+.sidebanner
+{
+  height: 100%;
+  position: relative;
+  background-color: rgb(230,230,230);
+  color: black;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+  top: 0%;
+  margin-top: 0px;
+  float: right;
+  width: 20%;
+  /*height: 100%;*/
+  border-radius: 0px;
+  font-family: 'Arial', regular;
+  font-size: 14px;
+}
+
+/*OLD*/
 #All_Categories_Boxes {
   overflow: auto;
   height: 40%;

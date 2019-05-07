@@ -29,16 +29,19 @@
 <?php
 include("../phpinclude/core/includer.php");
 includes(1);
-
-get_languages();
+/*get_languages();
 load_languages_ToArrays("");
 $resu_ = get_filters_URL("basic");
-apply_language($resu_[3]);
-
+apply_language($resu_[3]);*/
 draw_html("../htmlinclude/content.html");
 draw_html_inside("../htmlinclude/top_banner.html", "content");
+draw_html_inside("../htmlinclude/side_banner.html", "content");
+draw_html_inside("../htmlinclude/nav_bar.html", "sidebanner");
+draw_html_inside("../htmlinclude/side_banner_menu.html", "sidebanner");
+draw_html_inside("../htmlinclude/copyright.html", "sidebanner");
 ?>
 
 <script>
     dashboard('');
+    AJAX('parent', 0);
 </script>

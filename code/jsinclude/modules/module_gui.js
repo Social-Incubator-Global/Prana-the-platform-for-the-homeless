@@ -21,6 +21,23 @@
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+//NEW-->
+function add_nav_button(text, image_path)
+{
+    set_addition_inner_HTML("side_banner_menu", "<button><img class='button_img' src='"+get_image_path(image_path)+"'><label>"+text+"</label></button>");
+    return;
+}
+
+function get_image_path(image_path)
+{
+    if(!image_path)
+    {
+        return images["DEF"];
+    }
+    return images[image_path];
+}
+
+//OLD -->
 //STARTS PRANA-DEUTSCHLAND.DE --> THIS IS THE ENTRY POINT OF THE WEBSITE.
 function start()
 {

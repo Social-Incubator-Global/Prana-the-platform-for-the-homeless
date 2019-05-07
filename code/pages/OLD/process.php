@@ -1,7 +1,7 @@
 <?php
-    session_start();
+    /*session_start();
     include('../config.php');
-    include('../phpinclude/connect.php');
+    include('../phpinclude/module_sql.php');
 
     //get values passed from login.php
     $username = $_POST['username'];
@@ -41,5 +41,5 @@
 
         // redirect!
         header("Location: home.php");
-    }
+    }*/
 ?>

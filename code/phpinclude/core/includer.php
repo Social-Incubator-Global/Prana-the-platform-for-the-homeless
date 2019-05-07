@@ -1,4 +1,22 @@
 <?php
+
+function php_includes()
+{
+    $concat = "./";
+    $final_path = $concat."phpinclude/modules/*.php";
+    foreach(glob($final_path) as $filename)
+    {
+        include($filename);
+    }
+
+    $final_path = $concat."phpinclude/gui_modules/*.php";
+    foreach(glob($final_path) as $filename)
+    {
+        include($filename);
+    }
+    return;
+}
+
 function includes($concatenation_level)
 {
     //Takes: int

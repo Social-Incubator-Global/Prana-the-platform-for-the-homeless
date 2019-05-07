@@ -35,13 +35,7 @@ function send_custom($query_, $dbname)
 
 function send_system_protected($type, $query, $token)
 {
-    //Type as 0 = System
-    //Type as 1 = Protected
-
-    if(token_verify($token))
-    {
-        return sql_query_system_protected($query, $type);
-    }
+    //d
 }
 
 function sql_get($table, $conditions)
@@ -67,6 +61,7 @@ function sql_update($table, $conditions, $values)
 function sql_get_all($table)
 {
     //Takes: string
+    echo("console.log('anus');");
     return send("SELECT * FROM ".$table.";--");
 }
 
@@ -167,13 +162,11 @@ function return_first_row($sql_result)
 //Previously known as query_();
 function sql_query_($quer)
 {
-	//Takes: string
-
     //NEVER SET ROOT AS THE MAIN USER! REMEMBER TO SET PERMISSIONS ACCORDINGLY
     $hostname = 'localhost';
-    $username = 'cleanery';
-    $password = 'using System.cleanery;';
-    $dbname = 'cleanery';
+    $username = 'root';
+    $password = '';
+    $dbname = 'prana_db';
     $link = new mysqli($hostname, $username, $password, $dbname)
         or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
     $link->set_charset('utf8_swedish_ci');
@@ -221,7 +214,7 @@ function sql_query_custom($quer, $dbname)
 	//Takes: string
 
     //NEVER SET ROOT AS THE MAIN USER! REMEMBER TO SET PERMISSIONS ACCORDINGLY
-    $hostname = 'localhost';
+    $hostname = '127.0.0.1';
     $username = 'root';
     $password = '';
     $link = new mysqli($hostname, $username, $password, $dbname)
@@ -238,7 +231,7 @@ function sql_query_custom($quer, $dbname)
 
 function sql_module_test()
 {
-    echo("<script>console.log('SQL: ok.');</script>");
+    echo("console.log('SQL: ok.');");
 }
 
 

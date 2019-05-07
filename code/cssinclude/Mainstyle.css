@@ -39,21 +39,6 @@
 #section_image {
   margin-top: 50px; }
 
-#sidebanner {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  bottom: 0;
-  top: 0%;
-  margin-top: 45px;
-  float: right;
-  width: 20%;
-  /*height: 100%;*/
-  border-radius: 0px;
-  color: #09677e;
-  background-color: #ededed;
-  font-family: 'Arial', regular;
-  font-size: 14px; }
-
 .dash
 {
   width: 70%;
@@ -248,6 +233,24 @@ input:hover {
   background-color: rgba(0, 93, 106, 0.7); }
 
 input:active {
+  background-color: rgba(0, 63, 86, 0.7); }
+
+button {
+  -webkit-transition: border 0.1s;
+  border-radius: 0px;
+  color: #09677e;
+  background-color: white;
+  float: left;
+  height: 50px;
+  display: block;
+  border: 2px solid #09677e;
+  font-family: 'Arial', regular;
+  font-size: 14px; }
+
+button:hover {
+  border: 2px solid #FF7F27 }
+
+button:active {
   background-color: rgba(0, 63, 86, 0.7); }
 
 .selector_button
