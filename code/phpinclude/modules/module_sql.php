@@ -61,7 +61,6 @@ function sql_update($table, $conditions, $values)
 function sql_get_all($table)
 {
     //Takes: string
-    echo("console.log('anus');");
     return send("SELECT * FROM ".$table.";--");
 }
 
@@ -149,12 +148,12 @@ function return_first_row($sql_result)
     }
     else if(mysqli_num_rows($sql_result) == 0 || mysqli_num_rows($sql_result) == false)
     {
-        echo("<script>console.log('SERVER ERROR: zero rows returned from database');</script>");
+        echo("console.log('SERVER ERROR: zero rows returned from database');");
         return null;
     }
     else
     {
-        echo("<script>console.log('SERVER ERROR: more rows returned from database');</script>");
+        echo("console.log('SERVER ERROR: more rows returned from database');");
         return null;
     }
 }
@@ -163,49 +162,24 @@ function return_first_row($sql_result)
 function sql_query_($quer)
 {
     //NEVER SET ROOT AS THE MAIN USER! REMEMBER TO SET PERMISSIONS ACCORDINGLY
-    $hostname = 'localhost';
+    $hostname = '127.0.0.1';
     $username = 'root';
     $password = '';
     $dbname = 'prana_db';
     $link = new mysqli($hostname, $username, $password, $dbname)
-        or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
+        or die("console.log('MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error().");");
     $link->set_charset('utf8_swedish_ci');
     if ($link->connect_errno)
     {
-      echo "Failed to connect to DB: " . $link->connect_errno;
-    } //else { print 'connected'; }
-    $result = $link->query($quer) or die("".$link->error.' Woah! An error occured: '.$quer);
+      echo "console.log('Failed to connect to DB: " . $link->connect_errno."');";
+    }
+    $result = $link->query($quer) or die('console.log("'.$link->error.' Woah! An error occured: '.$quer.'");');
     $link->close();
     return $result;
 }
 
 function sql_query_system_protected($quer, $type)
 {
-	//Takes: string
-
-    //NEVER SET ROOT AS THE MAIN USER! REMEMBER TO SET PERMISSIONS ACCORDINGLY
-    $hostname = 'localhost';
-    $username = 'cleanery';
-    $password = 'using System.cleanery;';
-
-    if($type == 0)
-    {
-        $dbname = 'cleanery_system';
-    }
-    else
-    {
-        $dbname = 'cleanery_protected';
-    }
-    $link = new mysqli($hostname, $username, $password, $dbname)
-        or die("MYSQL: Unable to connect to the specific host.\n[END]\n".mysql_error());
-    $link->set_charset('utf8_swedish_ci');
-    if ($link->connect_errno)
-    {
-      echo "Failed to connect to DB: " . $link->connect_errno;
-    } //else { print 'connected'; }
-    $result = $link->query($quer) or die("".$link->error.' Woah! An error occured: '.$quer);
-    $link->close();
-    return $result;
 }
 
 //Previously known as query_();
@@ -233,85 +207,4 @@ function sql_module_test()
 {
     echo("console.log('SQL: ok.');");
 }
-
-
-//OLD TRASH -->
-
-/*function build_query_string($URLfilter_result, $Type_)
-{
-    $query = "";
-    if($Type_ == "content")
-    {
-        if($URLfilter_result[1] == 0 || $URLfilter_result[1] == undefined || $URLfilter_result[1] == null)
-        {
-            $query="SELECT * FROM Contnt_".$URLfilter_result[0]." WHERE category='" . $URLfilter_result[0] . "' AND paid_type='" . $URLfilter_result[2] . "'";
-        }
-    else
-    {
-        $query="SELECT * FROM Contnt_".$URLfilter_result[0]." WHERE area='" . $URLfilter_result[1] . "' AND category='" . $URLfilter_result[0] . "' AND paid_type='" . $URLfilter_result[2] . "'";
-    }
-    //STANDARDIZE ALL FILTERS HERE!!!!
-    if($URLfilter_result[0] == "housing" || $URLfilter_result[0] == "medical" || $URLfilter_result[0] == "food")
-    {
-        //VT
-        if($URLfilter_result[3] != '--' && $URLfilter_result[3] != '')
-        {
-            $query = $query . " AND is_ LIKE '%" . $URLfilter_result[3] . "%'";
-        }
-        //VA
-        if($URLfilter_result[4] != '--' && $URLfilter_result[4] != '')
-        {
-            $query = $query . " AND allows LIKE '%" . $URLfilter_result[4] . "%'";
-        }
-        //ORG
-        if($URLfilter_result[6] != 0)
-        {
-            $query = $query . " AND organization='". $URLfilter_result[6] ."'";
-        }
-    }
-    //Housing end
-    }
-    //CONTENT END--------------<
-    if($Type_ == "posting")
-    {
-        $query = "SELECT * FROM Contnt_" . $URLfilter_result[1] . " WHERE id='" . $URLfilter_result[0] . "'";
-    }
-    if($Type_ == "profile")
-    {
-        $query = "SELECT * FROM People WHERE id='".$URLfilter_result[4]."'";
-    }
-
-    //DEPRECIATED
-    //SEARCH BASED QUERIES
-    if($Type_ == "search")
-    {
-        if($URLfilter_result[2] == 0)
-        {
-
-        }
-        else if($URLfilter_result[2] == 1)
-        {
-            //FOOD
-            $query = "SELECT * FROM Contnt_food WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";;
-        }
-        else if($URLfilter_result[2] == 2)
-        {
-            //HOUSING
-            $query = "SELECT * FROM Contnt_housing WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
-        }
-        else if($URLfilter_result[2] == 2)
-        {
-            //MEDICAL
-            $query = "SELECT * FROM Contnt_housing WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
-        }
-    }
-    return $query;
-}
-
-function build_query_string_search($URLfilter_result, $FromTable)
-{
-    $query = "";
-    $query = "SELECT * FROM Contnt_".$FromTable." WHERE name LIKE '%".$URLfilter_result[1]."%' OR fee LIKE '%".$URLfilter_result[1]."%' OR text1 LIKE '%".$URLfilter_result[1]."%' OR text2 LIKE '%".$URLfilter_result[1]."' OR link LIKE '%".$URLfilter_result[1]."%' OR is_ LIKE '%".$URLfilter_result[1]."%' OR allows LIKE '%".$URLfilter_result[1]."%'";
-    return $query;
-}*/
 ?>

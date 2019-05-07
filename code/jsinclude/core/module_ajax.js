@@ -31,6 +31,7 @@ function AJAX(content)
     }
     try
     {
+        console.log("../getter.php?cnt=" + content);
         xmlhttp.open("GET", "../getter.php?cnt=" + content, true);
         xmlhttp.send();
     }

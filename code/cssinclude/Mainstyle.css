@@ -39,11 +39,27 @@
 #section_image {
   margin-top: 50px; }
 
+.popup
+{
+  visibility: hidden;
+  z-index: 1;
+  box-shadow: 0px 0px 10px gray;
+  position: fixed;
+  right: 0px;
+  border: 1px solid gray;
+  width: 300px;
+  height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 0px;
+  background-color: rgb(230,230,230);
+  height: 100%;
+}
+
 .dash
 {
+  margin-left: 70px;
   width: 70%;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 70px;
 }
 
@@ -343,9 +359,10 @@ button:active {
   font-family: 'Arial', regular;
   font-size: 16px; }
 
-#sel_home_type {
+#sel_home_type
+{
   width: 35%;
-  height: 45px; }
+}
 
 .selectors
 {

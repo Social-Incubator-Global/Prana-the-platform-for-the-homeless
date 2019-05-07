@@ -23,9 +23,23 @@
 
 /*NEW*/
 
+.label_highlighted
+{
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #09677e;
+  border: 2px solid #FF7F27;
+}
+
 .button_img
 {
-  height:25px;
+  height:35px;
+}
+
+.button_gen
+{
+  border: 2px solid #FF7F27;
+  height:35px;
 }
 
 .button_img_solo
@@ -75,6 +89,21 @@
   border-radius: 0px;
   font-family: 'Arial', regular;
   font-size: 14px;
+}
+
+.side_ban_button
+{
+  width: 100%;
+  border: 2px solid rgb(230,230,230);
+  background-color: rgb(230,230,230);
+  text-align: left;
+}
+
+.title
+{
+  color: black;
+  width: 100%;
+  font-size: 28px;
 }
 
 /*OLD*/

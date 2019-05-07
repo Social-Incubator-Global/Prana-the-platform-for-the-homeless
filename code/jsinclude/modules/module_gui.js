@@ -22,9 +22,30 @@
 */
 
 //NEW-->
-function add_nav_button(text, image_path)
+function bread_crumbs(crumb)
 {
-    set_addition_inner_HTML("side_banner_menu", "<button><img class='button_img' src='"+get_image_path(image_path)+"'><label>"+text+"</label></button>");
+    if(crumb == "back")
+    {
+        //delete last..
+    }
+    breadcrumbs.push(crumb);
+    return;
+}
+
+function popup(class_)
+{
+    if(system["popup"])
+    {
+        set_hidden("popup", "hidden");
+        return;
+    }
+    set_hidden("popup", "visible");
+    return;
+}
+
+function add_sideban_button(text, image_path, id)
+{
+    set_addition_inner_HTML("side_banner_menu", "<button class='side_ban_button' id='nav_button_"+id+"'><img class='button_img' src='"+get_image_path(image_path)+"'><label>"+text+"</label></button>");
     return;
 }
 
@@ -37,6 +58,11 @@ function get_image_path(image_path)
     return images[image_path];
 }
 
+function render_content(title, paragraph, image)
+{
+    set_innerhtml("dash", "<div><label class='title'>"+title+"</label><br>"+paragraph+"</div>");
+}
+
 //OLD -->
 //STARTS PRANA-DEUTSCHLAND.DE --> THIS IS THE ENTRY POINT OF THE WEBSITE.
 function start()
@@ -45,116 +71,6 @@ function start()
     set_local("lang", "0");
     document.location = "./pages"+def_locations[6]+'?lang=0';
     return;
-}
-
-function redirect_ajax(type_, id_, response_element)
-{
-    //Type=request type
-    //0=content
-    //1=bookmark_set
-    //2=bookmark_get
-    //id=posting id/content id
-    //4=get filters for allows and venue type
-    //5=user functions
-    if(type_ === 0)
-    {
-        send_AJAX('content',eval_build_url(get_local('home_type'), get_local('area'), true, true), 'set', 'test_cnt');
-    }
-    else if(type_ === 1)
-    {
-        send_AJAX('set_unset_bookmark', eval_build_url('set_unset_bookmark', get_local('area'), true, true, id_), 'set', response_element);
-    }
-    else if(type_ === 2)
-    {
-        send_AJAX('get_bookmarks_content', eval_build_url('get_bookmarks_content', get_local('area'), true, true), 'set', response_element);
-    }
-    else if(type_ === 3)
-    {
-        send_AJAX('get_bookmark_posting', eval_build_url('get_bookmark_posting', get_local('area'), true, true, id_), 'set', response_element);
-    }
-    else if(type_ === 4)
-    {
-        send_AJAX('get_allows_type_filters', eval_build_url('get_allows_type_filters',get_local('area'), true, true, id_), 'set', response_element);
-    }
-    else if(type_ === 5)
-    {
-        console.log("ok");
-        send_AJAX('user_functions', eval_build_url('user_functions', get_local('area'), true, true, id_), 'set', response_element);
-    }
-    return;
-}
-
-function redirect(Where_, Inner_Where_, area_index_)
-{
-    reset_variables();
-    refresh_localstorage();
-    if(Inner_Where_ != undefined)
-    {
-        Inner_Where_ = Inner_Where_.toLocaleString().toLowerCase();
-    }
-    def_sql_structure = [];
-    set_local("location", Where_);
-    if(Where_ == "home")
-    {
-        document.location = def_locations[0] + '?lang=' + get_local("lang");
-    }
-    if(Where_ == "homeinner")
-    {
-        document.location = ".." + def_locations[6] + '?lang=' + get_local("lang");
-    }
-    else if(Where_ == "signup")
-    {
-        document.location = def_locations[2] + '?lang=' + get_local("lang");
-    }
-    else if(Where_ == "login")
-    {
-        document.location = def_locations[1] + '?lang=' + get_local("lang");
-    }
-    else if(Where_ == "profile")
-    {
-        document.location = def_locations[3] + '?lang=' + get_local("lang") + '&id=' + get_local("uname");
-    }
-    else if(Where_ == "posting")
-    {
-        document.location = def_locations[5] + '?lang=' + get_local("lang") + '&home_type=' + get_local("home_type") + '&id=' + Inner_Where_;
-    }
-    else if(Where_ == "logout")
-    {
-        session_reset();
-    }
-    else if(Where_ == "content")
-    {
-        clear_ven_type_allows();
-        set_local("home_type", Inner_Where_);
-        if(area_index_ != undefined)
-        {
-            set_local("area", area_index_);
-        }
-        document.location = eval_build_url(home_type, area);
-    }
-    else if(Where_ == "content_modular")
-    {
-        set_local("home_type", Inner_Where_);
-        document.location = def_locations[7] + '?lang=' + get_local("lang");
-    }
-    else if(Where_ == "search")
-    {
-        val = get_item_value("src_bx");
-        ndx=null; val2=null;
-        try
-        {
-            ndx = get_selected_index("src_in");
-            val2 = get_selected_item("src_in");
-        }
-        catch(Exception)
-        {
-            ndx = get_selected_index("src_in_top");
-            val2 = get_selected_item("src_in_top");
-        }
-        set_local("search_txt_index", ndx);
-        document.location = def_locations[8] + '?lang=' + get_local("lang") + "&keys=" + val + "&src=" + ndx + "&word=" + val2;
-    }
-return;
 }
 
 function set_location(Location_string)
