@@ -162,7 +162,7 @@ function return_first_row($sql_result)
 function sql_query_($quer)
 {
     //NEVER SET ROOT AS THE MAIN USER! REMEMBER TO SET PERMISSIONS ACCORDINGLY
-    $hostname = '127.0.0.1';
+    $hostname = 'localhost';
     $username = 'root';
     $password = '';
     $dbname = 'prana_db';
