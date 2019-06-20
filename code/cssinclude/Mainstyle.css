@@ -196,14 +196,20 @@
   font-family: 'Arial', regular;
   font-size: 12px; }
 
+.logo
+{
+    float: left;
+    font-size: 42px;
+    margin-top: 0px;
+    margin-left: 18px; 
+}
+
 #logo {
   /*float: left;
   font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
   font-size: 56px;*/
   float: left;
-  font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
   font-size: 42px;
-  color: white;
   margin-top: 0px;
   margin-left: 18px; }
 

@@ -125,6 +125,11 @@
   font-size: 32px;
   font-family: 'Arial', regular; }
 
+.logo__
+{
+  font-size: 42px;
+}
+
 #logo {
   float: left;
   font-family: 'Reenie Beanie', 'ReenieBeanie', regular;
