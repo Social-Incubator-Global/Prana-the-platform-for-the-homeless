@@ -43,6 +43,11 @@ function popup(class_)
     return;
 }
 
+function clear_sideban()
+{
+    clear_inner_HTML("side_banner_menu");   
+}
+
 function add_sideban_button(text, image_path, id)
 {
     set_addition_inner_HTML("side_banner_menu", "<button class='side_ban_button' id='nav_button_"+id+"'><img class='button_img' src='"+get_image_path(image_path)+"'><label>"+text+"</label></button>");
@@ -60,7 +65,7 @@ function get_image_path(image_path)
 
 function render_content(title, paragraph, image)
 {
-    set_innerhtml("dash", "<div><label class='title'>"+title+"</label><br>"+paragraph+"</div>");
+    set_innerhtml("dash", "<div><label class='title'>"+title+"</label><br><br>"+paragraph+"</div>");
 }
 
 //OLD -->

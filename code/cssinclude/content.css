@@ -171,10 +171,13 @@
 #content_boxes_area {
   width: 100%; }
 
-body {
+body
+{
   margin-top: 0%;
   background-color: #F2F2F2;
-  margin-left: 0%; }
+  margin-left: 0%; 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 #uacnt_alternative {
   float: right;

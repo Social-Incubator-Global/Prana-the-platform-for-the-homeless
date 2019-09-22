@@ -115,6 +115,12 @@ function remove_inner_HTML(name)
     return;
 }
 
+function clear_inner_HTML(name)
+{
+    get_item(name).innerHTML = "";
+    return;
+}
+
 function set_addition_inner_HTML(name, value)
 {
     get_item(name).innerHTML += value;
