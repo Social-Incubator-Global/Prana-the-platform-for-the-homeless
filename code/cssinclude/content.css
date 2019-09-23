@@ -295,5 +295,10 @@ body
   margin-top: 0px;
   float: none;
   background-color: #09677e; }
+  
+.lang_div
+{
+	visibility: hidden;
+}
 
 /*# sourceMappingURL=content.css.map */

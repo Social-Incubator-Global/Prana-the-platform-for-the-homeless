@@ -24,7 +24,7 @@
 
 <?php
 include("./phpinclude/core/includer.php");
-includes(-1);
+includes(-1, false);
 ?>
 
 <html>
@@ -38,19 +38,3 @@ includes(-1);
     <iframe class="mainiframe" src="./pages/inconst.php"></iframe>
 </body>
 </html>
-
-<?php
-/*
-<html>
-<head>
-<meta name="description" content="Find Housing, Shelters, Food, Medical & Sanitary care, Emergency services, Legal advice, Jobs, Study programmes or find a project to volunteer in, places to donate.">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Prana : The platform for the homeless</title>
-    <script src="./js/forms.js"></script>
-    <script src="./js/Objects.js"></script>
-</head>
-<body bgcolor="#F2F2F2">
-    <script>start();</script>
-</body>
-</html>*/
-?>
