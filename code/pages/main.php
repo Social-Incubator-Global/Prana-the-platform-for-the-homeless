@@ -28,18 +28,19 @@ error_reporting(E_ALL);
 include("../phpinclude/core/includer.php");
 $includer->includes_contained(1, false);
 
-
 draw_html("../htmlinclude/content.html");
 draw_html_inside("../htmlinclude/top_banner.html", "content");
+draw_html_inside("../htmlinclude/search.html", "top_banner");
 draw_html_inside("../htmlinclude/side_banner.html", "content");
 draw_html_inside("../htmlinclude/nav_bar.html", "sidebanner");
 draw_html_inside("../htmlinclude/side_banner_menu.html", "sidebanner");
-draw_html_inside("../htmlinclude/copyright.html", "sidebanner");
 draw_html_inside("../htmlinclude/dash.html", "content");
 draw_html_inside("../htmlinclude/popup.html", "content");
+draw_html_inside("../htmlinclude/copyright.html", "content");
 draw_html_inside("../htmlinclude/langdiv.html", "content");
 ?>
 
 <script>
+	var instantiator = new Instantiator();
     AJAX('parent', 0);
 </script>

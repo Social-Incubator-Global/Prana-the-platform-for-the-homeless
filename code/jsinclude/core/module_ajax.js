@@ -7,14 +7,12 @@ function AJAX(content)
         {
             //itm created exclusively so that response InnerHTML .js can be executed
             var itm = get_item("lang_div");
-            var js_type = true;
-            itm.innerHTML=this.responseText;
+            var js_type = false;
+            itm.innerHTML = this.responseText;
             
-            alert(itm.innerHTML);
 			if(js_type)
 			{
 				var x = itm.getElementsByTagName("script");
-				alert(x);
 				for(var i=0; i < x.length; i++)
 				{
 					window.eval(x[i].text);
@@ -23,11 +21,18 @@ function AJAX(content)
 			}
 			else
 				window.eval(itm.innerHTML);
+			
+			nav.set_button();
         };
     }
     try
     {
-        console.log("../getter.php?cnt=" + content);
+		if(content != "parent")
+		{
+			breadcrumbs.push(content);
+			breadcrumbs_current = breadcrumbs_current+1;
+		}
+		
         xmlhttp.open("GET", "../getter.php?cnt=" + content, true);
         xmlhttp.send();
     }

@@ -9,7 +9,7 @@ function content_find($content)
     }
     else if($content == "back")
     {
-
+		
     }
     else
     {
@@ -34,11 +34,12 @@ function set_content($content, $result)
 {
     if($content == "parent")
     {
-        echo("render_content('Welcome to prana', '<label>Prana is an interactive guide for those at risk of being homeless or those who have been pushed off the cliff in and around Berlin. Useful tips on how to stay clean, where and when to find food and how to survive, including many different free offers at establishments, advice on how to get around and advice with beurocratic hurdles. Our main focus is on the long term. Getting you back on your feet. <label class=\"label_highlighted\">If you are in desperate need to find somewhere for tonight</label></label><br><br><input class=\"button_gen\" type=\"button\" value=\"Click here\"/><br><br><hr><br><label class=\"title\">Emergencies</label><br><br><label>Need <label class=\"label_highlighted\">EMERGENCY assistance?</label> you my contact these emergency services:</label><br><br>> <a href=\"javascript: AJAX(\'emergency_medi_healthinsure\');\">Medical attention with health insurance</a><br>> <a href=\"\">Medical attention without health insurance</a><br>> <a href=\"\">Police</a><br>> <a href=\"\">Police for the homeless</a>', 'image');");
+        echo("render_content('Welcome to prana', '<label>Prana is an interactive guide for those at risk of being homeless or those who have been pushed off the cliff in and around Berlin. Useful tips on how to stay clean, where and when to find food and how to survive, including many different free offers at establishments, advice on how to get around and advice with beurocratic hurdles. Our main focus is on the long term. Getting you back on your feet. <label class=\"label_highlighted\">If you are in desperate need to find somewhere for tonight</label></label><br><br><input onclick=\"javascript: AJAX(\'emergency_immediate\');\" class=\"button_gen\" type=\"button\" value=\"Click here\"/><br><br><hr><br><label class=\"title\">Emergencies</label><br><br><label>Need <label class=\"label_highlighted\">EMERGENCY assistance?</label> you my contact these emergency services:</label><br><br>> <a href=\"javascript: AJAX(\'emergency_medi_healthinsure\');\">Medical attention with health insurance</a><br>> <a href=\"\">Medical attention without health insurance</a><br>> <a href=\"\">Police</a><br>> <a href=\"\">Police for the homeless</a>', 'image');");
     }
     else
     {
         echo("render_content('".$result["title"]."', '".$result["paragraph"]."', 'img');");
+        echo("map.draw_map();");
     }
     return;
 }

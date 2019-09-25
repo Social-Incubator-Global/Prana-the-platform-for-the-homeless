@@ -20,29 +20,17 @@
     You should have received a copy of the GNU General Public License
     along with Prana-deutschland.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<?php error_reporting(0);?>
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Prana - In construction</title>
-<link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-
 <?php
 include("../phpinclude/core/includer.php");
-includes(1);
-/*get_languages();
-load_languages_ToArrays("");
-$resu_ = get_filters_URL("basic");
-apply_language($resu_[3]);*/
+$includer->includes_contained(1);
 draw_html("../htmlinclude/content.html");
 draw_html_inside("../htmlinclude/top_banner.1.html", "content");
-//draw_html_inside("../htmlinclude/side_banner.html", "content");
 draw_html_inside("../htmlinclude/nav_bar.html", "sidebanner");
-//draw_html_inside("../htmlinclude/side_banner_menu.html", "sidebanner");
 draw_html_inside("../htmlinclude/copyright.html", "sidebanner");
 draw_html_inside("../htmlinclude/inconstruction.html", "content");
 draw_html_inside("../htmlinclude/popup.html", "content");
 ?>
 
 <script>
-    AJAX('parent', 0);
+    //AJAX('parent', 0);
 </script>

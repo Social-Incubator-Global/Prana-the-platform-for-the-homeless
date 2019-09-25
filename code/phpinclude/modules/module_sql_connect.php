@@ -3,7 +3,7 @@ class Sqlconnect
 {
 	function get_conf()
 	{
-		return array('127.0.0.1', 'root', '', 'prana_db');
+		return array('localhost', 'root', '', 'prana_db');
 	}
 	
 	function sql_connect()

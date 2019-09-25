@@ -50,7 +50,7 @@ function clear_sideban()
 
 function add_sideban_button(text, image_path, id)
 {
-    set_addition_inner_HTML("side_banner_menu", "<button class='side_ban_button' id='nav_button_"+id+"'><img class='button_img' src='"+get_image_path(image_path)+"'><label>"+text+"</label></button>");
+    set_addition_inner_HTML("side_banner_menu", "<button class='side_ban_button' id='nav_button_"+id+"'><img class='button_img' src='"+get_image_path(image_path)+"'><div class='button_label_div'><label class='button_label'>"+text+"</label></div></button>");
     return;
 }
 
@@ -63,9 +63,22 @@ function get_image_path(image_path)
     return images[image_path];
 }
 
-function render_content(title, paragraph, image)
+function gui_back()
 {
-    set_innerhtml("dash", "<div><label class='title'>"+title+"</label><br><br>"+paragraph+"</div>");
+		nav.go_back();
+		return;
+}
+
+function gui_forward()
+{
+		nav.go_forward();
+		return;
+}
+
+function render_content(title, paragraph, image, map_type)
+{
+    set_innerhtml("dash", "<div class='rendered_content'><input id='back_button' onclick='javascript: gui_back();' type='button' value='&#8617 Go back'/><br><hr><br><label class='title'>"+title+"</label><br><br>"+paragraph+"</div>");
+    return;
 }
 
 //OLD -->

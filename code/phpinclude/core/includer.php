@@ -64,6 +64,24 @@ class Includer
         }
         return;
     }
+    
+    function includes_getter($concatenation_level)
+    {
+		global $instantiator, $javascript, $includer_objects;
+		$objects = $includer_objects->get_objects();
+		$objects[0] = $this->create_concatenation($concatenation_level, $objects[0]);
+    
+		foreach ($objects[1] as $path)
+		{
+			foreach(glob($objects[0].$path) as $filename)
+			{
+				include_once($filename);
+			}
+		}
+		//Instantiate php classes to continue
+		$instantiator->instantiate();
+		return;
+	}
 
 	//FUNCTION USED TO INCLUDE BASIC FILES FOR DISPLAYING CONTAINED FILES IN IFRAMES
 	function includes_container($concatenation_level)

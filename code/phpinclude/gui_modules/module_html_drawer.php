@@ -2,20 +2,20 @@
 
 function draw_html($file)
 {
-	$html = file_get_contents($file);
+	$html = str_replace("\n","",file_get_contents($file));
 	echo($html);
 	return;
 }
 
 function draw_html_to_body($file)
 {	
-	$html = file_get_contents($file);
+	$html = str_replace("\n","",file_get_contents($file));
 	echo("<script>document.body.innerHTML += '".$html."';</script>");
 }
 
 function draw_html_inside($file, $control)
 {
-	$html = file_get_contents($file);
+	$html = str_replace("\n","",file_get_contents($file));
 	echo("<script>document.getElementById('".$control."').innerHTML += '".$html."';</script>");
 	return;
 }

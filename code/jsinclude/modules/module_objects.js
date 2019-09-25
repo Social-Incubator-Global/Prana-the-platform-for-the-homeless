@@ -25,6 +25,7 @@
 
 //Adds classes sequentially related to depth.
 var breadcrumbs = [];
+var breadcrumbs_current = 0;
 
 var system = {
     popup : false
@@ -95,6 +96,20 @@ function dl_d(value)
 function dl_r(ndx)
 {
     return def_lang[ndx];
+}
+
+function set_disabled(name)
+{
+    get_item(name).enabled = false;
+    get_item(name).disabled = true;
+	return;
+}
+
+function set_enabled(name)
+{
+    get_item(name).enabled = true;
+    get_item(name).disabled = false;
+	return;
 }
 
 function set_hidden(name, visibility)
